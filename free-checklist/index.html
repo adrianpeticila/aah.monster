@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Brand Killer Checklist — free · aah, monster!</title>
+  <meta name="description" content="10 yes/no questions that show exactly where your personal brand breaks. Free PDF. No spam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F2F1ED; --fg: #111111; --cream: #F2F1ED; --ink: #111111;
+      --mid: #777777; --mid-t: #777777; --red: #D42020; --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1); --card: #FFFFFF; --card-border: rgba(17,17,17,0.09);
+      --display: 'Sprite Graffiti', sans-serif; --body: 'Sono', monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #0F0F0F; --fg: #F0EFEB; --cream: #0F0F0F; --ink: #F0EFEB;
+      --mid: #999; --mid-t: #999; --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A; --card-border: rgba(255,255,255,0.08);
+    }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 3rem; background: var(--bg); border-bottom: 1px solid var(--rule); transition: background 0.3s;
+    }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; color: var(--fg); text-decoration: none; }
+    .nav-cta { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.65rem 1.4rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--red-deep); }
+    #theme-toggle { background: none; border: 1px solid var(--rule); color: var(--fg); font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0.9rem; cursor: pointer; transition: all 0.2s; }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+
+    .page-header { padding-top: 80px; min-height: 70vh; display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+    .ph-top { display: flex; justify-content: space-between; padding: 1.5rem 3rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    .ph-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-words { padding: 0 3rem; overflow: hidden; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .fit-line { font-family: var(--display); font-weight: 400; line-height: 0.88; white-space: nowrap; display: block; color: var(--red); }
+    .fit-line.outline { color: transparent; -webkit-text-stroke: 4px var(--red); }
+    .ph-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding: 1.5rem 3rem 2rem; border-top: 1px solid var(--rule); gap: 2rem; }
+    .ph-bottom-left { font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-bottom-center { font-family: var(--body); font-size: 0.85rem; color: var(--mid-t); font-style: italic; text-align: center; max-width: 420px; line-height: 1.55; }
+
+    .btn-red { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.9rem 2rem; display: inline-block; transition: background 0.2s; }
+    .btn-red:hover { background: var(--red-deep); }
+    .btn-sub { display: block; margin-top: 0.5rem; font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid-t); opacity: 0.7; }
+
+    section { padding: 6rem 0; border-top: 1px solid var(--rule); }
+    .sec-top { display: flex; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .sec-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+
+    h2 { font-family: var(--display); font-size: clamp(2rem, 5vw, 4rem); line-height: 1; color: var(--fg); margin-bottom: 3rem; }
+    h2 .red { color: var(--red); }
+    h2 .outline { color: transparent; -webkit-text-stroke: 2px var(--fg); }
+
+    /* question list */
+    .question-list { border-top: 3px solid var(--fg); }
+    .q-item { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.8rem 0; border-bottom: 1px solid var(--rule); }
+    .q-num { font-family: var(--display); font-size: 3.5rem; color: var(--rule); line-height: 1; flex-shrink: 0; min-width: 4rem; }
+    .q-text { font-size: 0.95rem; font-weight: 700; color: var(--fg); line-height: 1.4; padding-top: 0.8rem; }
+
+    /* deliverables / steps (reused for after-cards) */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--fg); }
+    .step { padding: 2.5rem 2rem 2.5rem 0; border-right: 1px solid var(--rule); }
+    .step:last-child { border-right: none; padding-right: 0; }
+    .step:not(:first-child) { padding-left: 2rem; }
+    .step-n { font-family: var(--display); font-size: 4rem; color: var(--rule); line-height: 1; margin-bottom: 1.5rem; }
+    .step h3 { font-size: 0.9rem; font-weight: 800; color: var(--fg); margin-bottom: 0.4rem; }
+    .step p { font-size: 0.82rem; color: var(--mid-t); line-height: 1.65; }
+
+    /* tally / form card */
+    .tally-placeholder { max-width: 480px; margin: 0 auto; padding: 2.5rem; background: var(--card); border: 1px solid var(--card-border); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-t); margin-bottom: 0.4rem; }
+    .form-group input { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--rule); background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 0.87rem; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus { border-color: var(--red); }
+
+    /* cta block (red) */
+    .cta-block { background: var(--red); padding: 5rem 3rem; text-align: center; }
+    .cta-block h2 { color: #fff; }
+    .cta-block h2 .red { color: #fff; -webkit-text-stroke: 2px rgba(255,255,255,0.4); }
+    .cta-block p { font-size: 0.9rem; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto 2.5rem; line-height: 1.65; }
+    .btn-cream { font-family: var(--body); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--bg); color: var(--fg); text-decoration: none; padding: 1.1rem 2.8rem; display: inline-block; transition: opacity 0.2s; }
+    .btn-cream:hover { opacity: 0.85; }
+    .btn-outline { font-family: var(--body); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; border: 2px solid var(--bg); color: var(--bg); background: transparent; text-decoration: none; padding: 1.1rem 2.8rem; display: inline-block; transition: opacity 0.2s; }
+    .btn-outline:hover { opacity: 0.7; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    footer { background: var(--bg); padding: 4rem 3rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h4 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .ph-top, .ph-words, .ph-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .ph-bottom { flex-direction: column; align-items: flex-start; }
+      .wrap { padding: 0 1.5rem; }
+      section { padding: 3.5rem 0; }
+      .q-num { font-size: 2.5rem; min-width: 3rem; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+      .step:last-child { border-bottom: none; }
+      .cta-block { padding: 3.5rem 1.5rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      footer { padding: 3rem 1.5rem; }
+      .footer-inner { flex-direction: column; }
+      .f-bottom { flex-direction: column; gap: 0.3rem; }
+      .tally-placeholder { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button id="theme-toggle">◐ dark</button>
+      <a href="#get-it" class="nav-cta">get the checklist →</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="ph-top">
+      <span>free resource</span>
+      <span>no cost · no fluff</span>
+    </div>
+    <div class="ph-words">
+      <span class="fit-line" id="line1">FREE.</span>
+      <span class="fit-line outline" id="line2">CHECKLIST.</span>
+    </div>
+    <div class="ph-bottom">
+      <div class="ph-bottom-left">aah.monster</div>
+      <div class="ph-bottom-center">10 questions that show exactly where your personal brand breaks.</div>
+      <div style="text-align:right;">
+        <a href="#get-it" class="btn-red">get the free checklist →</a>
+        <span class="btn-sub">no spam · unsubscribe anytime</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>01 — what it is</span><span>01</span></div>
+      <h2>10 questions.<br><span class="red">brutal answers.</span></h2>
+      <p style="font-size:1rem; color:var(--mid-t); max-width:640px; line-height:1.75; margin-bottom:1.5rem;">most personal brands die of the same five things. invisible positioning. a linkedin profile that sounds like a job description. content with no point of view. zero audience specificity. and fear of being wrong in public.</p>
+      <p style="font-size:1rem; color:var(--mid-t); max-width:640px; line-height:1.75;">the brand killer checklist is 10 yes/no questions. most founders answer no to at least six. that's the point. you leave knowing exactly where your brand is leaking.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>02 — the 10 questions</span><span>02</span></div>
+      <h2>see where<br><span class="red">yours breaks.</span></h2>
+      <div class="question-list">
+        <div class="q-item">
+          <div class="q-num">01</div>
+          <div class="q-text">can a stranger tell who you help and why in under 10 seconds from your linkedin headline?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">02</div>
+          <div class="q-text">does your linkedin about section have a point of view — or is it a cv in paragraph form?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">03</div>
+          <div class="q-text">have you posted on linkedin in the last 14 days?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">04</div>
+          <div class="q-text">does your content attract the audience you want — or the audience you already have?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">05</div>
+          <div class="q-text">do you have one topic you're known for, or do you post about everything?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">06</div>
+          <div class="q-text">when someone googles your name, do they find something useful — or nothing?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">07</div>
+          <div class="q-text">is your brand consistent across linkedin, your website, and how you introduce yourself in person?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">08</div>
+          <div class="q-text">does your content ask people to think differently — or does it just confirm what they already believe?</div>
+        </div>
+        <div class="q-item">
+          <div class="q-num">09</div>
+          <div class="q-text">are you the most credible person in your category online — or is someone with half your experience outranking you?</div>
+        </div>
+        <div class="q-item" style="border-bottom:none;">
+          <div class="q-num">10</div>
+          <div class="q-text">if you disappeared from linkedin for 3 months, would anyone notice?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-it">
+    <div class="wrap">
+      <div class="sec-top"><span>03 — get the checklist</span><span>03</span></div>
+      <h2>get the<br><span class="red">full checklist.</span></h2>
+      <p style="font-size:0.92rem; color:var(--mid-t); max-width:560px; line-height:1.7; margin-bottom:3rem;">the pdf version includes scoring, what each answer means, and the three most common brand killers for each failure point.</p>
+
+      <div class="tally-placeholder">
+        <iframe data-tally-src="https://tally.so/embed/b5OYdg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="250" frameborder="0" marginheight="0" marginwidth="0" title="The Brand Killer Checklist"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}</script>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>04 — what happens after</span><span>04</span></div>
+      <h2>you get the checklist.<br><span class="outline">then what?</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <h3>you score yourself</h3>
+          <p>answer the 10 questions honestly. add up your nos. most people get 6–8. that's normal. it means there's work to do.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <h3>you see the pattern</h3>
+          <p>the scoring guide shows which failures cluster together. positioning problems look different from content problems. you'll know which category you're in.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <h3>you know what to fix</h3>
+          <p>the checklist includes a "fix this first" guide based on your score. whether you do it yourself or with help, you have a starting point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-block">
+    <div class="wrap">
+      <h2>want help<br><span class="red">fixing it?</span></h2>
+      <p>the checklist shows you what's broken. the brand audit tells you exactly how. €199. 48 hours.</p>
+      <div class="cta-buttons">
+        <a href="/brand-audit/" class="btn-cream">get the brand audit — €199 →</a>
+        <a href="/#offers" class="btn-outline">see all offers →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand"><div class="f-logo">aah, monster!</div><p>brand strategy for founders and C-suite who are tired of being invisible.</p><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a></div>
+      <div class="f-col"><h4>offers</h4><ul><li><a href="/#offers">The Monster Job — €2,500</a></li><li><a href="/#offers">The Monster on Retainer — €2k/mo</a></li><li><a href="/brand-audit/">Personal Brand Audit — €199</a></li><li><a href="/positioning-sprint/">Positioning Sprint — €499</a></li><li><a href="/free-checklist/">Free Checklist</a></li></ul></div>
+      <div class="f-col"><h4>pages</h4><ul><li><a href="/about/">about</a></li><li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li><li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li><li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li><li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li></ul></div>
+      <div class="f-col"><h4>books</h4><ul><li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer — €49</a></li><li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual — €97</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><span>© 2026 aah, monster! · adrian m. peticila</span><span>aah.monster</span></div>
+  </footer>
+
+  <script>
+    function fitLine(el) {
+      const container = el.closest('.ph-words');
+      const maxWidth = container.offsetWidth;
+      let lo = 10, hi = 800, mid;
+      el.style.fontSize = hi + 'px';
+      while (lo < hi - 1) {
+        mid = Math.floor((lo + hi) / 2);
+        el.style.fontSize = mid + 'px';
+        el.scrollWidth <= maxWidth ? (lo = mid) : (hi = mid);
+      }
+      el.style.fontSize = lo + 'px';
+    }
+    function fitAll() { document.querySelectorAll('.ph-words .fit-line').forEach(fitLine); }
+    document.fonts.ready.then(fitAll);
+    window.addEventListener('resize', fitAll);
+
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.textContent = 'sent! check your inbox →';
+      submitBtn.style.background = '#111';
+      submitBtn.disabled = true;
+    }
+  </script>
+</body>
+</html>

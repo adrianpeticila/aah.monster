@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Adrian M. Peticila · aah, monster!</title>
+  <meta name="description" content="20+ years in marketing. 22k LinkedIn followers. Personal branding consultant for founders and C-suite who are tired of being invisible. No calls. Written deliverables only.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F2F1ED; --fg: #111111; --cream: #F2F1ED; --ink: #111111;
+      --mid: #777777; --mid-t: #777777; --red: #D42020; --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1); --card: #FFFFFF; --card-border: rgba(17,17,17,0.09);
+      --display: 'Sprite Graffiti', sans-serif; --body: 'Sono', monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #0F0F0F; --fg: #F0EFEB; --cream: #0F0F0F; --ink: #F0EFEB;
+      --mid: #999; --mid-t: #999; --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A; --card-border: rgba(255,255,255,0.08);
+    }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 3rem; background: var(--bg); border-bottom: 1px solid var(--rule); transition: background 0.3s;
+    }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; color: var(--fg); text-decoration: none; }
+    .nav-cta { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.65rem 1.4rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--red-deep); }
+    #theme-toggle { background: none; border: 1px solid var(--rule); color: var(--fg); font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0.9rem; cursor: pointer; transition: all 0.2s; }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+
+    /* ── PAGE HEADER ── */
+    .page-header { padding-top: 80px; min-height: 70vh; display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+    .ph-top { display: flex; justify-content: space-between; padding: 1.5rem 3rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    .ph-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-words { padding: 0 3rem; overflow: hidden; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+    .fit-line { font-family: var(--display); font-weight: 400; line-height: 0.88; white-space: nowrap; display: block; color: var(--red); }
+    .fit-line.outline { color: transparent; -webkit-text-stroke: 4px var(--red); }
+    .ph-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding: 1.5rem 3rem 2rem; border-top: 1px solid var(--rule); gap: 2rem; }
+    .ph-bottom-left { font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-bottom-center { font-family: var(--body); font-size: 0.85rem; color: var(--mid-t); font-style: italic; text-align: center; max-width: 420px; line-height: 1.55; }
+
+    /* ── BUTTONS ── */
+    .btn-red { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.9rem 2rem; display: inline-block; transition: background 0.2s; }
+    .btn-red:hover { background: var(--red-deep); }
+    .btn-cream { font-family: var(--body); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--bg); color: var(--fg); text-decoration: none; padding: 1.1rem 2.8rem; display: inline-block; transition: opacity 0.2s; }
+    .btn-cream:hover { opacity: 0.85; }
+    .btn-outline { font-family: var(--body); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: transparent; color: var(--bg); text-decoration: none; padding: 1.1rem 2.8rem; display: inline-block; border: 2px solid var(--bg); transition: opacity 0.2s; }
+    .btn-outline:hover { opacity: 0.7; }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 0; border-top: 1px solid var(--rule); }
+    .sec-top { display: flex; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .sec-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+
+    h2 { font-family: var(--display); font-size: clamp(2rem, 5vw, 4rem); line-height: 1; color: var(--fg); margin-bottom: 3rem; }
+    h2 .red { color: var(--red); }
+    h2 .outline { color: transparent; -webkit-text-stroke: 2px var(--fg); }
+
+    /* ── STATS BAR ── */
+    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .stat-cell { padding: 3rem 2rem; border-right: 1px solid var(--rule); display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-family: var(--display); font-size: clamp(3rem, 5vw, 5rem); color: var(--red); line-height: 1; }
+    .stat-label { font-family: var(--body); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); }
+
+    /* ── TWO-COL TEXT ── */
+    .two-col-text { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .two-col-text p { font-size: 0.93rem; color: var(--mid-t); line-height: 1.75; margin-bottom: 1.2rem; }
+    .two-col-text p:last-child { margin-bottom: 0; }
+
+    /* ── PHOTO + BIO ── */
+    .photo-bio { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .photo-bio-img img { width: 100%; max-width: 400px; display: block; }
+    .bio-label { font-family: var(--body); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); margin-bottom: 1rem; }
+    .bio-name { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--fg); margin-bottom: 1.5rem; line-height: 1.05; }
+    .bio-text p { font-size: 0.93rem; color: var(--mid-t); line-height: 1.75; margin-bottom: 1.1rem; }
+    .bio-text p:last-of-type { margin-bottom: 0; }
+
+    /* ── BELIEF CARDS ── */
+    .beliefs { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--fg); }
+    .belief { padding: 2.5rem 2rem 2.5rem 0; border-right: 1px solid var(--rule); }
+    .belief:last-child { border-right: none; padding-right: 0; }
+    .belief:not(:first-child) { padding-left: 2rem; }
+    .belief-n { font-family: var(--display); font-size: 4rem; color: var(--rule); line-height: 1; margin-bottom: 1.2rem; }
+    .belief h3 { font-family: var(--body); font-size: 0.88rem; font-weight: 800; color: var(--fg); margin-bottom: 0.6rem; text-transform: lowercase; }
+    .belief p { font-size: 0.82rem; color: var(--mid-t); line-height: 1.65; }
+
+    /* ── CTA BLOCK ── */
+    .cta-block { background: var(--red); padding: 5rem 3rem; text-align: center; }
+    .cta-block h2 { color: #fff; }
+    .cta-block h2 .red { color: #fff; -webkit-text-stroke: 2px rgba(255,255,255,0.4); }
+    .cta-block p { font-size: 0.9rem; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto 2.5rem; line-height: 1.65; }
+    .cta-btns { display: flex; justify-content: center; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg); padding: 4rem 3rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h4 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; }
+
+    /* ── PRESS GRID ── */
+    .press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border-top: 3px solid var(--fg); }
+    .press-item { background: var(--bg); padding: 2.5rem 2rem; text-decoration: none; transition: background 0.2s; display: block; }
+    .press-item:hover { background: var(--card); }
+    .press-pub { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 0.8rem; }
+    .press-title { font-size: 1rem; font-weight: 700; color: var(--fg); line-height: 1.4; margin-bottom: 1.2rem; }
+    .press-cta { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-t); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .ph-top, .ph-words, .ph-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .ph-bottom { flex-direction: column; align-items: flex-start; }
+      .wrap { padding: 0 1.5rem; }
+      section { padding: 3.5rem 0; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .stat-cell:nth-child(3) { border-top: 1px solid var(--rule); }
+      .stat-cell:nth-child(4) { border-top: 1px solid var(--rule); border-right: none; }
+      .two-col-text { grid-template-columns: 1fr; gap: 0; }
+      .photo-bio { grid-template-columns: 1fr; gap: 2.5rem; }
+      .photo-bio-img img { max-width: 100%; }
+      .beliefs { grid-template-columns: 1fr; border-top: 3px solid var(--fg); }
+      .belief { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 0; }
+      .belief:last-child { border-bottom: none; }
+      .belief:not(:first-child) { padding-left: 0; }
+      .press-grid { grid-template-columns: 1fr; }
+      .cta-block { padding: 3.5rem 1.5rem; }
+      .cta-btns { flex-direction: column; align-items: stretch; }
+      .cta-btns a { text-align: center; }
+      footer { padding: 3rem 1.5rem; }
+      .footer-inner { flex-direction: column; }
+      .f-bottom { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button id="theme-toggle">◐ dark</button>
+      <a href="/#offers" class="nav-cta">work with me →</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="ph-top">
+      <span>about</span>
+      <span>adrian m. peticila</span>
+    </div>
+    <div class="ph-words">
+      <span class="fit-line" id="line1">ADRIAN.</span>
+      <span class="fit-line outline" id="line2">MONSTER.</span>
+    </div>
+    <div class="ph-bottom">
+      <div class="ph-bottom-left">aah.monster<br><span style="opacity:0.5;">est. 2020</span></div>
+      <div class="ph-bottom-center"><em>20+ years. 22k linkedin followers. still no interest in being normal.</em></div>
+      <div style="text-align:right;">
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank" class="btn-red">follow on linkedin →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 01 — STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-cell">
+      <span class="stat-num">22K</span>
+      <span class="stat-label">linkedin followers</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">20+</span>
+      <span class="stat-label">years in marketing</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">100+</span>
+      <span class="stat-label">brands worked with</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">0</span>
+      <span class="stat-label">calls ever taken (async only)</span>
+    </div>
+  </div>
+
+  <!-- SECTION 02 — THE SHORT VERSION -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>02 — the short version</span><span>02</span></div>
+      <h2>the short version.<br><span class="red">i fix brands.</span></h2>
+      <div class="two-col-text">
+        <div>
+          <p>i've been in marketing for over 20 years. i've worked with brands from early-stage startups to publicly traded companies. i've run campaigns, built teams, managed agencies, written more briefs than i can count.</p>
+          <p>somewhere along the way i realised the most powerful marketing asset any founder or executive has is their own name. and most of them are wasting it.</p>
+        </div>
+        <div>
+          <p>i built aah, monster! because i was tired of watching talented people with genuine expertise get outpaced by people who were just better at packaging themselves.</p>
+          <p>your brand is not your logo. it's not your linkedin bio. it's the answer to the question: why should i care about you specifically?</p>
+          <p>i help you answer that question. in writing. without calls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — PHOTO + BIO -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>03 — the person</span><span>03</span></div>
+      <div class="photo-bio">
+        <div class="photo-bio-img">
+          <img src="/img/adrian-nobg2.png" alt="Adrian M. Peticila">
+        </div>
+        <div class="bio-text">
+          <div class="bio-label">about the monster</div>
+          <div class="bio-name">Adrian M. Peticila</div>
+          <p>marketing manager at mindit.io by day. personal branding consultant by choice. originally from romania. based wherever the work is good.</p>
+          <p>i started aah, monster! because "personal branding consultant" sounds like something a linkedin influencer made up in 2019. it is. i just happen to actually know what i'm doing.</p>
+          <p>no calls. no retainer traps. no three-hour workshops where i ask you to write your values on a post-it. written deliverables only. you get the document. you do the work. it works.</p>
+          <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank" class="btn-red" style="margin-top:1.5rem; display:inline-block;">→ connect on linkedin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — WHAT I BELIEVE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>04 — what i believe</span><span>04</span></div>
+      <h2>three things.<br><span class="red">non-negotiable.</span></h2>
+      <div class="beliefs">
+        <div class="belief">
+          <div class="belief-n">01</div>
+          <h3>your brand is a business asset.</h3>
+          <p>most people treat their personal brand like a vanity project. it's not. it's the reason clients choose you over someone cheaper. it's the reason investors take your call. treat it like one.</p>
+        </div>
+        <div class="belief">
+          <div class="belief-n">02</div>
+          <h3>nobody cares about your job title.</h3>
+          <p>"vp of marketing at [company]" is not a brand. it's a credential. credentials don't build trust. perspective does. voice does. having something interesting to say does.</p>
+        </div>
+        <div class="belief">
+          <div class="belief-n">03</div>
+          <h3>consistency beats cleverness.</h3>
+          <p>a mediocre message repeated consistently beats a brilliant message published once. most people get this backwards. they write one perfect post and wait for the world to notice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS / FEATURED IN -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>press + media</span><span>—</span></div>
+      <h2>featured<br><span class="red">in print.</span></h2>
+      <div class="press-grid">
+        <a href="https://fractionalinsider.com/from-full-time-exec-to-fractional-leader-how-adrian-peticila-delivers-fast-measurable-results/" target="_blank" class="press-item">
+          <div class="press-pub">Fractional Insider</div>
+          <div class="press-title">From Full-Time Exec to Fractional Leader: How Adrian Peticila Delivers Fast, Measurable Results</div>
+          <div class="press-cta">read the interview →</div>
+        </a>
+        <a href="https://bizstack.tech/adrian-m-peticila/" target="_blank" class="press-item">
+          <div class="press-pub">BizStack</div>
+          <div class="press-title">Adrian M. Peticila — featured profile</div>
+          <div class="press-cta">read the feature →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <div class="cta-block">
+    <div class="wrap">
+      <h2>tired of being<br><span class="red">invisible?</span></h2>
+      <p>start with the €199 audit. find out what's broken. fix it from there.</p>
+      <div class="cta-btns">
+        <a href="/brand-audit/" class="btn-cream">get the brand audit →</a>
+        <a href="/#offers" class="btn-outline">see all offers →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and C-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h4>offers</h4>
+        <ul>
+          <li><a href="/#offers">The Monster Job — €2,500</a></li>
+          <li><a href="/#offers">The Monster on Retainer — €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit — €199</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint — €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>pages</h4>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>books</h4>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer — €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual — €97</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 aah, monster! · adrian m. peticila</span>
+      <span>aah.monster</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ── FIT TEXT ── */
+    function fitLine(el) {
+      const container = el.closest('.ph-words');
+      const maxWidth = container.offsetWidth;
+      let lo = 10, hi = 800, mid;
+      el.style.fontSize = hi + 'px';
+      while (lo < hi - 1) {
+        mid = Math.floor((lo + hi) / 2);
+        el.style.fontSize = mid + 'px';
+        el.scrollWidth <= maxWidth ? (lo = mid) : (hi = mid);
+      }
+      el.style.fontSize = lo + 'px';
+    }
+    function fitAll() { document.querySelectorAll('.ph-words .fit-line').forEach(fitLine); }
+    document.fonts.ready.then(fitAll);
+    window.addEventListener('resize', fitAll);
+
+    /* ── DARK MODE ── */
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      btn.textContent = '◐ light';
+    }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aah, monster! — adrian m. peticila</title>
+  <meta name="description" content="personal branding for founders and c-suite who are done being forgettable.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #777777;
+      --red: #D42020;
+      --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1);
+      --display: 'Sprite Graffiti', sans-serif;
+      --body: 'Sono', monospace;
+      /* theme tokens */
+      --bg: #F2F1ED;
+      --fg: #111111;
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.09);
+      --mid-t: #777777;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --mid-t: #999999;
+      --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A;
+      --card-border: rgba(255,255,255,0.08);
+    }
+
+    body { background: var(--bg); color: var(--fg); transition: background 0.3s, color 0.3s; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--body);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-family: var(--body);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--red-deep); }
+
+    /* ── HERO — 1:1 Canva template ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      padding: 0 3rem;
+      padding-top: 58px;
+    }
+
+    /* Top row — corner labels */
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0 1rem;
+      flex-shrink: 0;
+    }
+
+    .hero-corner {
+      font-family: var(--body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* THE HEADLINE — full width display font */
+    .hero-words {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    /* Section display words — same fit-line system as hero */
+    .sec-words {
+      overflow: hidden;
+      margin: 1.5rem 0 2rem;
+    }
+
+    /* Section corner labels */
+    .sec-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sec-top span {
+      font-family: var(--body);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .sec-top.light span { color: rgba(255,255,255,0.25); border-bottom-color: rgba(255,255,255,0.08); }
+
+    /* Subtitle h2 under the big fit word */
+    .sec-sub {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      margin-bottom: 3rem;
+    }
+    .sec-sub .red { color: var(--red); }
+    .sec-sub .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+    .sec-sub.light { color: rgba(255,255,255,0.85); }
+    .sec-sub.light .outline { -webkit-text-stroke-color: rgba(255,255,255,0.25); }
+
+    .fit-line {
+      font-family: var(--display);
+      font-weight: 400; /* Sprite Graffiti is single weight */
+      line-height: 0.9;
+      white-space: nowrap;
+      display: block;
+      color: var(--red);
+      /* JS will set font-size to fill width */
+    }
+
+    .fit-line.outline {
+      color: transparent;
+      -webkit-text-stroke: 4px var(--red);
+    }
+
+    /* Bottom row — name + date */
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 1.5rem 0 2rem;
+      border-top: 1px solid var(--rule);
+      flex-shrink: 0;
+      gap: 2rem;
+    }
+
+    .hero-bottom-left {
+      font-family: var(--body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .hero-bottom-center {
+      font-family: var(--body);
+      font-size: 0.78rem;
+      color: var(--mid);
+      font-style: italic;
+      text-align: center;
+      max-width: 340px;
+      line-height: 1.55;
+    }
+
+    .hero-bottom-right {
+      font-family: var(--body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-align: right;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .btn-red {
+      font-family: var(--body);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.6rem;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-red:hover { background: var(--red-deep); }
+
+    .btn-txt {
+      font-family: var(--body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--mid);
+      padding-bottom: 1px;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--red);
+      padding: 0.8rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      animation: tick 26s linear infinite;
+    }
+
+    .ticker-track span {
+      font-family: var(--body);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: white;
+      padding: 0 2rem;
+    }
+
+    .ticker-track .sep { color: rgba(255,255,255,0.3); padding: 0 0.2rem; }
+
+    @keyframes tick {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+
+    section { padding: 7rem 0; border-top: 1px solid var(--rule); }
+
+    .sec-tag {
+      font-size: 0.63rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      margin-bottom: 4rem;
+      color: var(--ink);
+    }
+
+    h2 .outline {
+      color: transparent;
+      -webkit-text-stroke: 3px var(--ink);
+    }
+
+    h2 .red { color: var(--red); }
+
+    /* ── PROBLEM ── */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 3px solid var(--ink);
+    }
+
+    .pi {
+      padding: 2.5rem 2.5rem 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+    }
+
+    .pi:nth-child(even) { padding-left: 2.5rem; padding-right: 0; border-right: none; }
+    .pi:nth-child(3), .pi:nth-child(4) { border-bottom: none; }
+
+    .pi-n {
+      font-family: var(--display);
+      font-size: 5rem;
+      color: #E5E4E0;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .pi h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .pi p { font-size: 0.85rem; color: var(--mid); line-height: 1.65; }
+
+    /* ── OFFERS ── */
+    .offers-bg { background: var(--bg); border-top: 1px solid var(--rule); }
+    .offers-wrap { max-width: 1100px; margin: 0 auto; padding: 7rem 3rem; }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+    }
+
+    .oc {
+      background: var(--card);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .oc.flagship { background: var(--red); grid-column: 1 / -1; }
+
+    .oc-tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-t);
+      margin-bottom: 1.5rem;
+    }
+    .oc.flagship .oc-tag { color: rgba(255,255,255,0.5); }
+
+    .oc h3 {
+      font-family: var(--display);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--fg);
+      margin-bottom: 1rem;
+    }
+
+    .oc.flagship h3 { font-size: 2.8rem; color: white; }
+
+    .oc-price {
+      font-family: var(--display);
+      font-size: 3.5rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .oc.flagship .oc-price { color: white; font-size: 4.5rem; }
+
+    .oc-per {
+      font-size: 0.7rem;
+      color: var(--mid-t);
+      margin-bottom: 1.8rem;
+    }
+
+    .oc.flagship .oc-per { color: rgba(255,255,255,0.6); }
+
+    .oc-desc {
+      font-size: 0.86rem;
+      color: var(--mid-t);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .oc.flagship .oc-desc { color: rgba(255,255,255,0.8); max-width: 580px; }
+
+    .oc-list { list-style: none; margin-bottom: 2.5rem; flex: 1; }
+
+    .oc-list li {
+      font-size: 0.8rem;
+      color: var(--mid-t);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .oc-list li::before { content: '→'; flex-shrink: 0; color: var(--red); }
+    .oc.flagship .oc-list { display: grid; grid-template-columns: 1fr 1fr; }
+    .oc.flagship .oc-list li { color: rgba(255,255,255,0.75); border-bottom-color: rgba(255,255,255,0.15); }
+    .oc.flagship .oc-list li::before { color: rgba(255,255,255,0.5); }
+
+    .oc-btn {
+      display: inline-block;
+      align-self: flex-start;
+      font-family: var(--body);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 1.8rem;
+      transition: all 0.2s;
+    }
+
+    .oc-btn.cream { background: var(--fg); color: var(--bg); }
+    .oc-btn.cream:hover { opacity: 0.85; }
+    .oc-btn.red { background: var(--red); color: white; }
+    .oc-btn.red:hover { background: var(--red-deep); }
+
+    .oc-note { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-top: 0.7rem; }
+
+    .entry-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      margin-top: 1px;
+    }
+
+    .ec {
+      background: var(--card);
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ec h4 { font-size: 0.88rem; font-weight: 800; color: var(--fg); margin-bottom: 0.2rem; }
+    .ec p { font-size: 0.72rem; color: var(--mid-t); }
+    .ec-price { font-family: var(--display); font-size: 1.8rem; color: var(--red); white-space: nowrap; }
+    .ec-free { color: var(--mid-t); opacity: 0.4; font-size: 1.3rem; }
+
+    /* ── STEPS ── */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); }
+    .step { padding: 3rem 2.5rem 3rem 0; border-right: 1px solid var(--rule); }
+    .step:last-child { border-right: none; padding-right: 0; }
+    .step:not(:first-child) { padding-left: 2.5rem; }
+    .step-n { font-family: var(--display); font-size: 5rem; color: #E5E4E0; line-height: 1; margin-bottom: 2rem; }
+    .step h3 { font-size: 0.93rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.84rem; color: var(--mid); line-height: 1.65; }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .about-text p { font-size: 0.9rem; color: var(--mid); line-height: 1.75; margin-bottom: 1rem; }
+    .about-text a.more {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 2px;
+    }
+
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--rule); }
+    .stat { padding: 2rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .stat:nth-child(even) { border-right: none; }
+    .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+    .stat-n { font-family: var(--display); font-size: 3.5rem; line-height: 1; margin-bottom: 0.3rem; }
+    .stat-n .r { color: var(--red); }
+    .stat p { font-size: 0.77rem; color: var(--mid); line-height: 1.4; }
+
+    /* ── CTA ── */
+    .cta-sec { padding: 10rem 0; text-align: center; border-top: 1px solid var(--rule); position: relative; overflow: hidden; }
+    .cta-ghost {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--display);
+      font-size: clamp(8rem, 26vw, 22rem);
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(212,32,32,0.07);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-inner h2 { margin-bottom: 1.2rem; }
+    .cta-inner p { font-size: 0.9rem; color: var(--mid); max-width: 400px; margin: 0 auto 3rem; line-height: 1.65; }
+    .cta-sub { margin-top: 1.2rem; font-size: 0.67rem; letter-spacing: 0.08em; text-transform: uppercase; color: #BBBBBB; }
+    .cta-sub a { color: #AAAAAA; text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg); padding: 4rem 3rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h4 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 0 1.5rem; padding-top: 55px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .wrap { padding: 0 1.5rem; }
+      section { padding: 4rem 0; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .pi { border-right: none; padding-right: 0; padding-left: 0 !important; }
+      .offers-wrap { padding: 4rem 1.5rem; }
+      .offers-grid { grid-template-columns: 1fr; }
+      .oc.flagship { grid-column: auto; }
+      .oc.flagship .oc-list { grid-template-columns: 1fr; }
+      .entry-row { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .cta-sec { padding: 5rem 0; }
+      .footer-inner { flex-direction: column; }
+      .f-bottom { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1.8rem;">
+      <a href="/about/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">about</a>
+      <a href="/free-checklist/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">free checklist</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode" style="background:none;border:1px solid var(--rule);color:var(--fg);font-family:var(--body);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 0.9rem;cursor:pointer;transition:all 0.2s;">◐ dark</button>
+      <a href="/brand-audit/" class="nav-cta">get audited →</a>
+    </div>
+  </nav>
+
+  <!-- HERO — 1:1 template structure -->
+  <div class="hero">
+
+    <!-- Corner labels — exactly like template -->
+    <div class="hero-top">
+      <span class="hero-corner">personal branding</span>
+      <span class="hero-corner">01</span>
+    </div>
+
+    <!-- THE WORDS — fill full width like "PORTFOLIO" in template -->
+    <div class="hero-words">
+      <span class="fit-line" id="line1">AAH,</span>
+      <span class="fit-line outline" id="line2">MONSTER!</span>
+    </div>
+
+    <!-- Bottom — name + claim + CTA, like template bottom corners -->
+    <div class="hero-bottom">
+      <div class="hero-bottom-left">
+        aah.monster<br>
+        <span style="opacity:0.5;">est. 2020</span>
+      </div>
+      <div class="hero-bottom-center">
+        the guy founders and c-suite call<br>when they're done being forgettable.
+        <div class="hero-ctas">
+          <a href="/brand-audit/" class="btn-red">audit — €199 →</a>
+          <a href="#offers" class="btn-txt">all offers</a>
+        </div>
+      </div>
+      <div class="hero-bottom-right">
+        Adrian M. Peticila<br>
+        <span style="opacity:0.5;">Bucharest · Global</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>your brand is either working for you</span><span class="sep">·</span>
+      <span>or against you</span><span class="sep">·</span>
+      <span>no calls</span><span class="sep">·</span>
+      <span>no zoom</span><span class="sep">·</span>
+      <span>100% async</span><span class="sep">·</span>
+      <span>48–72h delivery</span><span class="sep">·</span>
+      <span>c-suite &amp; founders</span><span class="sep">·</span>
+      <span>20+ years</span><span class="sep">·</span>
+      <span>your brand is either working for you</span><span class="sep">·</span>
+      <span>or against you</span><span class="sep">·</span>
+      <span>no calls</span><span class="sep">·</span>
+      <span>no zoom</span><span class="sep">·</span>
+      <span>100% async</span><span class="sep">·</span>
+      <span>48–72h delivery</span><span class="sep">·</span>
+      <span>c-suite &amp; founders</span><span class="sep">·</span>
+      <span>20+ years</span><span class="sep">·</span>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>01 — the problem</span><span>01</span></div>
+      <div class="sec-words"><span class="fit-line">INVISIBLE.</span></div>
+      <h2 class="sec-sub">most personal brands are <span class="outline">quietly</span> <span class="red">forgettable.</span></h2>
+      <div class="problem-grid">
+        <div class="pi">
+          <div class="pi-n">01</div>
+          <h3>invisible positioning</h3>
+          <p>your profile could belong to fifty other people. nothing sticks. nobody remembers you after the scroll. not their fault. yours.</p>
+        </div>
+        <div class="pi">
+          <div class="pi-n">02</div>
+          <h3>content without a spine</h3>
+          <p>you post. it doesn't convert. because content without positioning is just noise dressed up as strategy. the calendar is full. the brand is empty.</p>
+        </div>
+        <div class="pi">
+          <div class="pi-n">03</div>
+          <h3>reputation lag</h3>
+          <p>what you've built doesn't show online. your brand undersells you by a decade. that gap costs deals, partnerships, the right introductions.</p>
+        </div>
+        <div class="pi">
+          <div class="pi-n">04</div>
+          <h3>no time to fix it</h3>
+          <p>it stays at the bottom of the list. meanwhile people with half your experience are outranking you. on linkedin. in the room. everywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <div id="offers" class="offers-bg">
+    <div class="offers-wrap">
+      <div class="sec-top"><span>02 — the work</span><span>02</span></div>
+      <div class="sec-words"><span class="fit-line">THE WORK.</span></div>
+      <h2 class="sec-sub" style="margin-bottom:3rem;">four ways to work with the <span class="outline">monster.</span></h2>
+
+      <div class="offers-grid">
+        <div class="oc flagship">
+          <p class="oc-tag">flagship · full transformation</p>
+          <h3>The Monster Job.</h3>
+          <div class="oc-price">€2,500</div>
+          <p class="oc-per">one-time · 4 weeks · async · no calls</p>
+          <p class="oc-desc">the full thing. positioning, voice, linkedin rewritten from scratch, 30 posts ready to publish, messaging framework, visual identity brief. four weeks. in writing. nothing held back.</p>
+          <ul class="oc-list">
+            <li>full positioning document</li>
+            <li>linkedin — complete rewrite</li>
+            <li>30 ready-to-publish posts</li>
+            <li>messaging framework</li>
+            <li>voice & tone guide</li>
+            <li>visual identity brief</li>
+            <li>3-month content strategy</li>
+            <li>final brand OS PDF</li>
+          </ul>
+          <a href="https://buy.stripe.com/00w7sL8bn9We5Mc2RjaIM02" class="oc-btn cream">apply for The Monster Job →</a>
+          <p class="oc-note">4-week sprint · fully async</p>
+        </div>
+
+        <div class="oc">
+          <p class="oc-tag">ongoing · monthly</p>
+          <h3>The Monster<br>on Retainer.</h3>
+          <div class="oc-price">€2,000</div>
+          <p class="oc-per">per month · cancel anytime</p>
+          <p class="oc-desc">keep the monster close. 16 posts/month in your voice, monthly brand strategy, positioning refinement, linkedin optimization.</p>
+          <ul class="oc-list">
+            <li>16 posts/month in your voice</li>
+            <li>monthly async brand strategy</li>
+            <li>positioning refinement</li>
+            <li>linkedin optimization</li>
+          </ul>
+          <a href="https://buy.stripe.com/eVq6oHbnzfgyb6wgI9aIM03" class="oc-btn red">keep the monster close →</a>
+          <p class="oc-note">monthly rolling · cancel anytime</p>
+        </div>
+
+        <div class="oc">
+          <p class="oc-tag">quick entry · 5 days</p>
+          <h3>Brand Positioning<br>Sprint.</h3>
+          <div class="oc-price">€499</div>
+          <p class="oc-per">one-time · 5 days · async</p>
+          <p class="oc-desc">positioning written from scratch. headline, bio, messaging, voice, 3 ready-to-publish posts. done in 5 days.</p>
+          <ul class="oc-list">
+            <li>full positioning document</li>
+            <li>linkedin headline + about</li>
+            <li>messaging framework</li>
+            <li>3 ready-to-publish posts</li>
+          </ul>
+          <a href="/positioning-sprint/" class="oc-btn red">start the sprint →</a>
+          <p class="oc-note">5-day sprint · async</p>
+        </div>
+      </div>
+
+      <div class="entry-row">
+        <div class="ec">
+          <div>
+            <h4>personal brand audit</h4>
+            <p>10–15 page diagnosis · 48–72h</p>
+          </div>
+          <div style="text-align:right;">
+            <div class="ec-price">€199</div>
+            <a href="/brand-audit/" style="font-size:0.63rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);text-decoration:none;">start here →</a>
+          </div>
+        </div>
+        <div class="ec">
+          <div>
+            <h4>free brand checklist</h4>
+            <p>10 questions · find where it breaks</p>
+          </div>
+          <div style="text-align:right;">
+            <div class="ec-price ec-free">free</div>
+            <a href="/free-checklist/" style="font-size:0.63rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.25);text-decoration:none;">get it →</a>
+          </div>
+        </div>
+        <div class="ec" style="background:rgba(255,255,255,0.03);">
+          <div>
+            <h4>not sure where to start?</h4>
+            <p>audit first. find what's broken.</p>
+          </div>
+          <a href="/brand-audit/" class="btn-red" style="flex-shrink:0;">audit →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>03 — process</span><span>03</span></div>
+      <div class="sec-words"><span class="fit-line outline">SIMPLE.</span></div>
+      <h2 class="sec-sub">async. <span class="outline">no calls.</span> <span class="red">no surprises.</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <h3>you pay & submit</h3>
+          <p>short intake form. 10 minutes. no discovery calls. no "let's hop on a quick zoom." not now, not ever.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <h3>i do the work</h3>
+          <p>deep on your brand, your market, your positioning. built around you specifically. not a template. not a checklist.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <h3>you get the deliverable</h3>
+          <p>on time. in writing. concrete and prioritised. you know exactly what to do on monday morning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-top"><span>04 — about</span><span>04</span></div>
+      <div class="sec-words"><span class="fit-line outline">WHO I AM.</span></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="sec-sub">this isn't <span class="outline">linkedin</span> <span class="red">coaching.</span></h2>
+          <p>most personal branding advice is tactical. "post 3x a week with a hook." i have nothing against bullet points. i have everything against advice that could apply to literally anyone.</p>
+          <p>i apply brand architecture thinking to individuals. same rigor used on companies for 20 years. applied to your positioning, your voice, your reputation.</p>
+          <p>i'm also the branding monster who built 22k linkedin followers by being deliberately inconvenient. make of that what you will.</p>
+          <a href="/about/" class="more">full story →</a>
+        </div>
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-n">20<span class="r">+</span></div>
+            <p>years brand strategy</p>
+          </div>
+          <div class="stat">
+            <div class="stat-n">22<span class="r">k</span></div>
+            <p>linkedin followers</p>
+          </div>
+          <div class="stat">
+            <div class="stat-n">0</div>
+            <p>generic templates</p>
+          </div>
+          <div class="stat">
+            <div class="stat-n">0</div>
+            <p>calls. ever. by design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-sec">
+    <div class="cta-ghost">MONSTER.</div>
+    <div class="wrap cta-inner">
+      <div class="sec-top" style="margin-bottom:0;"><span>ready?</span><span>05</span></div>
+      <div class="sec-words"><span class="fit-line">START HERE.</span></div>
+      <h2 class="sec-sub">your brand, <span class="red">diagnosed.</span></h2>
+      <p>start with the audit. find out exactly what's broken. 48 hours. €199. no calls.</p>
+      <a href="https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00" class="btn-red" style="font-size:0.85rem;padding:1.1rem 2.8rem;">get the brand audit — €199 →</a>
+      <p class="cta-sub">or <a href="#offers">see all offers</a> if you're ready for The Monster Job.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and C-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h4>offers</h4>
+        <ul>
+          <li><a href="/#offers">The Monster Job — €2,500</a></li>
+          <li><a href="/#offers">The Monster on Retainer — €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit — €199</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint — €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>pages</h4>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>books</h4>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer — €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual — €97</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 aah, monster! · adrian m. peticila</span>
+      <span>aah.monster</span>
+    </div>
+  </footer>
+
+  <!-- FitText: makes each line fill full container width, exactly like template -->
+  <script>
+    function fitLine(el) {
+      const container = el.closest('.hero-words, .sec-words');
+      const maxWidth = container.offsetWidth;
+      let lo = 10, hi = 600, mid;
+      el.style.fontSize = hi + 'px';
+      while (lo < hi - 1) {
+        mid = Math.floor((lo + hi) / 2);
+        el.style.fontSize = mid + 'px';
+        el.scrollWidth <= maxWidth ? (lo = mid) : (hi = mid);
+      }
+      el.style.fontSize = lo + 'px';
+    }
+
+    function fitAll() {
+      document.querySelectorAll('.fit-line').forEach(fitLine);
+    }
+
+    document.fonts.ready.then(fitAll);
+    window.addEventListener('resize', fitAll);
+
+    // Dark mode toggle
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  </script>
+
+</body>
+</html>
