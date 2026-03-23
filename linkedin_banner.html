@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    background: #F2F1ED;
+  }
+
+  .banner {
+    width: 1584px;
+    height: 396px;
+    background: #F2F1ED;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    position: relative;
+  }
+
+  /* Red left bar accent */
+  .accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background: #D42020;
+  }
+
+  /* Left: the big name */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .name-line {
+    font-family: 'Sprite Graffiti', sans-serif;
+    font-weight: 400;
+    font-size: 148px;
+    line-height: 0.88;
+    color: #111111;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .name-line span.red {
+    color: #D42020;
+  }
+
+  /* Right: tagline block */
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .tagline {
+    font-family: 'DM Mono', monospace;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888880;
+    text-align: right;
+    line-height: 2;
+    max-width: 340px;
+  }
+
+  .tagline strong {
+    color: #111111;
+    font-weight: 500;
+  }
+
+  .url {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #D42020;
+  }
+
+  /* Bottom rule */
+  .bottom-rule {
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    right: 0;
+    height: 3px;
+    background: #D42020;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="accent-bar"></div>
+  <div class="bottom-rule"></div>
+
+  <div class="left">
+    <div class="name-line"><span class="red">aah,</span> monster<span class="red">!</span></div>
+  </div>
+
+</div>
+</body>
+</html>
