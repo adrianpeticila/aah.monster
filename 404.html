@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — aah, monster!</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://aah.monster/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #777777;
+      --red: #D42020;
+    }
+    html, body { height: 100%; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Sono', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .wrap {
+      text-align: center;
+      max-width: 480px;
+    }
+    .code {
+      font-family: 'Sprite Graffiti', sans-serif;
+      font-size: clamp(5rem, 20vw, 9rem);
+      color: var(--red);
+      line-height: 1;
+    }
+    h1 {
+      font-family: 'Sprite Graffiti', sans-serif;
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      color: var(--ink);
+      margin-top: 0.75rem;
+    }
+    p {
+      color: var(--mid);
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+    a.btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Sono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    a.btn:hover { background: #b81c1c; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">404</div>
+    <h1>page not found.</h1>
+    <p>this url doesn't exist.<br>your brand problem probably does though.</p>
+    <a href="/" class="btn">back to home</a>
+  </div>
+</body>
+</html>
