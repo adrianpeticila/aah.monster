@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Brand Positioning — aah, monster!</title>
+  <meta name="description" content="B2B brand positioning for founders and C-suite. The work that makes you the obvious choice in your category — not just another vendor with a good LinkedIn headline.">
+  <link rel="canonical" href="https://aah.monster/b2b-brand-positioning/">
+  <meta property="og:title" content="B2B Brand Positioning — aah, monster!">
+  <meta property="og:description" content="B2B brand positioning for founders and C-suite. The work that makes you the obvious choice in your category.">
+  <meta property="og:url" content="https://aah.monster/b2b-brand-positioning/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#F2F1ED; --fg:#111111; --mid:#777777; --red:#D42020; --red-deep:#A80E0E; --rule:rgba(17,17,17,0.1); --card:#FFFFFF; --display:'Sprite Graffiti',sans-serif; --body:'Sono',monospace; }
+    [data-theme="dark"] { --bg:#0F0F0F; --fg:#F0EFEB; --mid:#999; --rule:rgba(255,255,255,0.09); --card:#1A1A1A; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); line-height: 1.65; overflow-x: hidden; transition: background 0.3s, color 0.3s; }
+    a { color: inherit; text-decoration: none; }
+    nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; background: var(--bg); border-bottom: 1px solid var(--rule); transition: background 0.3s; }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; color: var(--fg); }
+    .nav-cta { background: var(--red); color: white; font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; }
+    .nav-cta:hover { background: var(--red-deep); }
+    #theme-toggle { background: none; border: 1px solid var(--rule); color: var(--fg); font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0.9rem; cursor: pointer; }
+
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 4rem 3rem 6rem; }
+    .bc { font-family: var(--body); font-size: 0.62rem; color: var(--mid); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2.5rem; }
+    .bc a { color: var(--red); }
+    .label { font-family: var(--body); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.8rem; }
+    .page-h1 { font-family: var(--display); font-size: 4.5rem; color: var(--fg); line-height: 0.95; margin-bottom: 1.5rem; }
+    .page-lead { font-size: 1.05rem; color: var(--mid); line-height: 1.8; margin-bottom: 2.5rem; max-width: 620px; }
+    .page-lead strong { color: var(--fg); }
+
+    .answer-box { border-left: 4px solid var(--red); padding: 1.2rem 1.5rem; background: var(--card); margin-bottom: 3rem; }
+    .answer-label { font-size: 0.57rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--red); margin-bottom: 0.5rem; font-weight: 700; }
+    .answer-box p { font-size: 0.93rem; color: var(--mid); line-height: 1.75; }
+    .answer-box p strong { color: var(--fg); }
+
+    .section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--rule); }
+    .section:last-of-type { border-bottom: none; }
+    .section h2 { font-family: var(--display); font-size: 2.5rem; color: var(--fg); margin-bottom: 1.2rem; }
+    .section p { font-size: 0.95rem; color: var(--mid); line-height: 1.82; margin-bottom: 0.9rem; }
+    .section p strong { color: var(--fg); }
+
+    .faq-wrap { margin-bottom: 3rem; }
+    .faq-wrap h2 { font-family: var(--display); font-size: 2.5rem; color: var(--fg); margin-bottom: 1.5rem; }
+    .faq-item { border-bottom: 1px solid var(--rule); padding: 1.4rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--body); font-weight: 800; font-size: 0.92rem; color: var(--fg); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.88rem; color: var(--mid); line-height: 1.72; }
+
+    .cta-block { background: var(--red); padding: 3rem; margin-top: 3rem; }
+    .cta-block h3 { font-family: var(--display); font-size: 2.5rem; color: white; margin-bottom: 0.8rem; }
+    .cta-block p { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; line-height: 1.65; max-width: 480px; }
+    .btn-white { display: inline-flex; align-items: center; background: white; color: var(--red); font-family: var(--body); font-size: 0.78rem; font-weight: 800; padding: 0.85rem 1.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    .also { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+    .also p { font-family: var(--body); font-size: 0.58rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.8rem; }
+    .also-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .also-links a { font-family: var(--body); font-size: 0.68rem; color: var(--red); border: 1px solid rgba(212,32,32,0.3); padding: 0.35rem 0.8rem; }
+
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .page-wrap { padding: 3rem 1.5rem 5rem; } .page-h1 { font-size: 3rem; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://aah.monster/b2b-brand-positioning/",
+        "url": "https://aah.monster/b2b-brand-positioning/",
+        "name": "B2B Brand Positioning — aah, monster!",
+        "description": "B2B brand positioning for founders and C-suite. The work that makes you the obvious choice in your category.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://aah.monster/#website" },
+        "dateModified": "2026-05-31"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "aah, monster!", "item": "https://aah.monster/" },
+          { "@type": "ListItem", "position": 2, "name": "B2B Brand Positioning", "item": "https://aah.monster/b2b-brand-positioning/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button id="theme-toggle">◐ dark</button>
+      <a href="/brand-audit/" class="nav-cta">get audited →</a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <p class="bc"><a href="/">aah.monster</a> / b2b-brand-positioning</p>
+    <p class="label">Specialty</p>
+    <h1 class="page-h1">B2B brand<br>positioning</h1>
+    <p class="page-lead">B2B brand positioning answers one question: <strong>why should a specific buyer choose you over the obvious alternatives?</strong> Not in theory — in the first 10 seconds of your LinkedIn headline, your pitch, your cold email, your website. Before the demo.</p>
+
+    <div class="answer-box">
+      <p class="answer-label">What positioning actually means in B2B</p>
+      <p>Positioning is the decision about what corner of the market you own and who you own it for. <strong>Strong B2B positioning means you're the obvious choice for a specific buyer with a specific problem</strong> — not the "also worth considering" option. Most companies settle for the second category because positioning requires saying no to buyers that don't fit. That's harder than it sounds.</p>
+    </div>
+
+    <div class="section">
+      <h2>why B2B positioning fails</h2>
+      <p>The most common failure: a company tries to position itself for everyone who might buy. The messaging becomes broad ("we help businesses grow"), the ideal customer profile stays fuzzy, and the sales team fills the gap with their own words. Every rep pitches differently. Every deck tells a different story. The brand is whatever the last salesperson said it was.</p>
+      <p><strong>According to a 2023 Gartner research on B2B buying decisions, 77% of B2B buyers describe their last purchase as "very complex or difficult."</strong> In that context, the company with the clearest, most specific positioning wins — not because they're better, but because they're easier to buy.</p>
+    </div>
+
+    <div class="section">
+      <h2>what the work looks like</h2>
+      <p>Positioning work at aah, monster! starts with the founder or the executive, not the marketing team. The personal brand and the company positioning are different things — but for founders and C-suite, they're intertwined. How you show up personally affects how your company is perceived, and vice versa.</p>
+      <p>The process: define the category you want to own, identify the specific buyer you're best for, articulate the problem you solve better than anyone else, and build a messaging framework that travels — from your LinkedIn headline to your sales deck to your cold email first line. All telling the same story, differently.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <h2>questions</h2>
+      <div class="faq-item">
+        <h3 class="faq-q">Is B2B brand positioning the same as company positioning?</h3>
+        <p class="faq-a">Related but different. Company positioning is about the product or service and its place in the market. B2B brand positioning for an executive or founder includes that, plus how their personal credibility and visibility supports or undermines the company's position. For founders especially, the two are inseparable.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How long does positioning work take?</h3>
+        <p class="faq-a">The Positioning Sprint at aah, monster! takes 2-3 weeks. A full repositioning engagement — where the company has drifted or is entering a new market — can take 6-8 weeks to get right. Speed depends on how clear the competitive landscape is and how much the founders agree on who they're for.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Can positioning work help with inbound from LinkedIn?</h3>
+        <p class="faq-a">Yes, and it's usually the fastest ROI. A clear positioning statement in your LinkedIn headline attracts the right people and repels the wrong ones. That's not a bug — it's the feature. Every inbound message from the wrong person is time you'll never get back.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Where does the Brand Audit fit?</h3>
+        <p class="faq-a">The Brand Audit (€199) is the right starting point if you're not sure what's broken. It diagnoses your current positioning and tells you specifically what needs to change. The Positioning Sprint (€499) is what comes next — implementing the new positioning across your key surfaces.</p>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h3>become the obvious choice</h3>
+      <p>Start with the Brand Audit — €199, 48-72 hour turnaround. Tells you exactly what's broken before you invest in fixing it.</p>
+      <a href="/brand-audit/" class="btn-white">start with the audit →</a>
+    </div>
+
+    <div class="also">
+      <p>related</p>
+      <div class="also-links">
+        <a href="/brand-audit/">Personal Brand Audit — €199</a>
+        <a href="/positioning-sprint/">Positioning Sprint — €499</a>
+        <a href="/marketing-strategy-consultant/">Marketing Strategy</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
