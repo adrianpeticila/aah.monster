@@ -649,8 +649,8 @@
         <span style="opacity:0.5;">est. 2020</span>
       </div>
       <div class="hero-bottom-center">
-        the guy founders and c-suite call<br>when they're done being forgettable.
-        <div style="font-size:0.75rem; opacity:0.45; margin-top:0.6rem; letter-spacing:0.01em;">your name is on the brand. so is mine.</div>
+        <span id="dyn-hero-claim">the guy founders and c-suite call<br>when they're done being forgettable.</span>
+        <div style="font-size:0.75rem; opacity:0.45; margin-top:0.6rem; letter-spacing:0.01em;" id="dyn-hero-sub">your name is on the brand. so is mine.</div>
         <div class="hero-ctas">
           <a href="/brand-audit/" class="btn-red">audit — €199 →</a>
           <a href="#offers" class="btn-txt">all offers</a>
@@ -1012,6 +1012,31 @@
       btn.textContent = isDark ? '◐ dark' : '◐ light';
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
+
+    // Dynamic hero — visitor-aware
+    (function() {
+      const claim = document.getElementById('dyn-hero-claim');
+      const sub   = document.getElementById('dyn-hero-sub');
+      if (!claim || !sub) return;
+      const ref = document.referrer || '';
+      const returning = localStorage.getItem('aah-visited');
+      localStorage.setItem('aah-visited', '1');
+      const isComparison = ref.includes('/vs-') || window.location.pathname.includes('/vs-');
+
+      if (isComparison) {
+        claim.innerHTML = "you've compared enough.<br>time to decide.";
+        sub.textContent = "pick the audit. find what's broken.";
+      } else if (returning === '1') {
+        claim.innerHTML = "you were here before.<br>still thinking about it?";
+        sub.textContent = "good. that's usually when it's serious.";
+      } else if (ref.includes('linkedin.com')) {
+        claim.innerHTML = "linkedin sent you.<br>let's not waste the momentum.";
+        sub.textContent = "your name is on the brand. so is mine.";
+      } else if (/google\.[a-z]{2,3}/.test(ref)) {
+        claim.innerHTML = "you searched for something.<br>you found it.";
+        sub.textContent = "start with the audit. €199. 48-72h.";
+      }
+    })();
   </script>
 
 </body>
