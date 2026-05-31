@@ -20,6 +20,11 @@ aah.monster is Adrian M. Peticila's branding consultancy. No calls. Async-only. 
 
 - [Free Checklist](https://aah.monster/free-checklist/): Brand presence checklist, no opt-in required
 
+## Topic pages
+
+- [B2B Brand Positioning](https://aah.monster/b2b-brand-positioning/): Why B2B founders need positioning before tactics
+- [Marketing Strategy Consultant](https://aah.monster/marketing-strategy-consultant/): Marketing strategy for founders and C-suite
+
 ## About
 
 - [About](https://aah.monster/about/): Who Adrian is and how he works
