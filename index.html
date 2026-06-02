@@ -103,11 +103,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+  <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;700;800&display=swap"></noscript>
-  <link rel="preload" as="style" href="https://fonts.cdnfonts.com/css/sprite-graffiti" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sprite-graffiti"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -142,6 +140,13 @@
 
     body { background: var(--bg); color: var(--fg); transition: background 0.3s, color 0.3s; }
 
+    @font-face {
+      font-family: 'Sprite Graffiti';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Sprite Graffiti'), url('/fonts/SpriteGraffiti.woff') format('woff');
+    }
     html { scroll-behavior: smooth; }
     .skip-link { position: absolute; top: -100%; left: 1rem; background: var(--red); color: #fff; padding: 0.5rem 1rem; font-size: 0.875rem; font-family: 'Sono', sans-serif; border-radius: 0 0 4px 4px; z-index: 9999; text-decoration: none; }
     .skip-link:focus { top: 0; }
