@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "name": "Aah, Monster!",
+  "description": "Personal branding consultancy for C-suite executives and founders. Brand audits, positioning sprints, and ongoing strategy. Async only, written deliverables.",
+  "url": "https://aah.monster/",
+  "contact": "hello@aah.monster",
+  "capabilities": [
+    {
+      "name": "personal_branding",
+      "description": "Executive brand audits (€199), positioning sprints (€499), and full brand builds (€2500)",
+      "endpoint": "https://aah.monster/llms.txt"
+    }
+  ],
+  "content_index": "https://aah.monster/llms.txt",
+  "sitemap": "https://aah.monster/sitemap.xml"
+}

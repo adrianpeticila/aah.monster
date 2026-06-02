@@ -1,0 +1,17 @@
+{
+  "name": "aah, monster!",
+  "short_name": "aah monster",
+  "description": "Personal branding for founders and C-suite who are done being forgettable.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2F1ED",
+  "theme_color": "#D42020",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}
