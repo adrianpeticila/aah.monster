@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesto — Personal Branding for Executives · aah, monster!</title>
+  <meta name="description" content="Most personal branding advice is designed for people who want to feel productive. Not people who want results. Here's what actually matters — and why positioning always beats posting.">
+  <link rel="canonical" href="https://aah.monster/manifesto/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aah.monster/manifesto/">
+  <meta property="og:title" content="Manifesto — Personal Branding for Executives · aah, monster!">
+  <meta property="og:description" content="Most personal branding advice is designed for people who want to feel productive. Not people who want results. Here's what we believe.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="aah, monster!">
+  <meta property="og:image" content="https://aah.monster/og-image.png">
+  <meta property="og:image:alt" content="Aah, Monster! Manifesto — Personal Branding for C-Suite and Founders">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@adrianmpeticila">
+  <meta name="twitter:title" content="Manifesto — aah, monster!">
+  <meta name="twitter:description" content="Most personal branding advice is designed for people who want to feel productive. Not people who want results.">
+  <meta name="twitter:image" content="https://aah.monster/og-image.png">
+  <meta name="author" content="Adrian M. Peticila">
+  <meta name="date" content="2026-06-03">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F1ED">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+  <link rel="manifest" href="/manifest.json">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://aah.monster/manifesto/",
+        "url": "https://aah.monster/manifesto/",
+        "name": "Manifesto — Personal Branding for Executives · aah, monster!",
+        "description": "Most personal branding advice is designed for people who want to feel productive, not people who want results. Here is what actually works in executive personal brand strategy.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://aah.monster/#website" },
+        "author": { "@id": "https://aah.monster/#person" },
+        "dateModified": "2026-06-03",
+        "about": {
+          "@type": "Thing",
+          "name": "Personal branding strategy for C-suite executives and founders"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aah.monster/" },
+          { "@type": "ListItem", "position": 2, "name": "Manifesto", "item": "https://aah.monster/manifesto/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
+  <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #595959;
+      --red: #D42020;
+      --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1);
+      --display: 'Sprite Graffiti', sans-serif;
+      --body: 'Sono', monospace;
+      --bg: #F2F1ED;
+      --fg: #111111;
+    }
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --rule: rgba(255,255,255,0.09);
+    }
+
+    @font-face {
+      font-family: 'Sprite Graffiti';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Sprite Graffiti'), url('/fonts/SpriteGraffiti.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Sono';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('/fonts/sono-latin.woff2') format('woff2');
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .skip-link { position: absolute; top: -100%; left: 1rem; background: var(--red); color: #fff; padding: 0.5rem 1rem; font-size: 0.875rem; font-family: var(--body); border-radius: 0 0 4px 4px; z-index: 9999; text-decoration: none; }
+    .skip-link:focus { top: 0; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--bg); border-bottom: 1px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background 0.3s;
+    }
+    .nav-logo { font-family: var(--body); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-link { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: var(--fg); }
+    .nav-cta { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.6rem 1.2rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--red-deep); }
+
+    /* MAIN */
+    main { max-width: 760px; margin: 0 auto; padding: 0 3rem; padding-top: 120px; padding-bottom: 6rem; }
+
+    /* PAGE HEADER */
+    .page-label {
+      font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid);
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .page-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--red); }
+
+    .page-headline {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.92;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-deck {
+      font-family: var(--body);
+      font-size: 1.05rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 4rem;
+      border-left: 2px solid var(--red);
+      padding-left: 1.25rem;
+    }
+
+    /* CONTENT SECTIONS */
+    .m-section { margin-bottom: 3.5rem; }
+
+    .m-title {
+      font-family: var(--body);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .m-title::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    .m-body p {
+      font-family: var(--body);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--fg);
+      margin-bottom: 1rem;
+    }
+    .m-body p:last-child { margin-bottom: 0; }
+
+    .m-pull {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 2rem 0;
+    }
+    [data-theme="dark"] .m-pull { color: var(--fg); }
+
+    /* CTA BLOCK */
+    .cta-block {
+      background: var(--red);
+      padding: 3rem;
+      margin-top: 5rem;
+    }
+    .cta-block h2 {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: white;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .cta-block p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 2rem; }
+    .btn-cream {
+      display: inline-block;
+      font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--cream); color: var(--red);
+      text-decoration: none; padding: 0.85rem 2rem;
+      transition: opacity 0.2s;
+    }
+    .btn-cream:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer { background: var(--bg); padding: 4rem 3rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--body); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; }
+    .f-brand p { font-size: 0.8rem; color: var(--mid); line-height: 1.55; margin-bottom: 0.75rem; }
+    .f-brand a { font-size: 0.75rem; color: var(--mid); text-decoration: none; }
+    .f-brand a:hover { color: var(--fg); }
+    .f-col h4 { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.75rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.4rem; }
+    .f-col ul li a { font-size: 0.82rem; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .f-col ul li a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 0 auto; padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    .f-bottom span { font-size: 0.72rem; color: var(--mid); }
+    .f-bottom a { color: var(--mid); }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      .nav-link { display: none; }
+      main { padding: 0 1.5rem; padding-top: 100px; padding-bottom: 4rem; }
+      .cta-block { padding: 2rem 1.5rem; }
+      footer { padding: 2.5rem 1.5rem; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div class="nav-links">
+      <a href="/about/" class="nav-link">about</a>
+      <a href="/manifesto/" class="nav-link active">manifesto</a>
+      <a href="/free-checklist/" class="nav-link">free checklist</a>
+      <button id="theme-toggle" style="background:none;border:1px solid var(--rule);color:var(--mid);font-family:var(--body);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.8rem;cursor:pointer;">◐ dark</button>
+      <a href="/brand-audit/" class="nav-cta">get audited →</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <div class="page-label">manifesto</div>
+
+    <h1 class="page-headline">what we<br>stand for.</h1>
+
+    <p class="page-deck">
+      most personal branding advice is designed for people who want to feel productive.<br>
+      not people who want results.<br>
+      here's what we actually believe — about positioning, brand, and why the content calendar is usually the wrong place to start.
+    </p>
+
+    <article>
+
+      <section class="m-section">
+        <h2 class="m-title">why this exists</h2>
+        <div class="m-body">
+          <p>posting three times a week won't fix a positioning problem. it'll just help more people notice the problem faster.</p>
+          <p>i've spent 20+ years in marketing. i've watched executives with 50k followers lose deals to competitors no one has heard of. i've watched founders spend six months building a "content presence" and then wonder why nobody calls.</p>
+          <p>the problem was never the content. it was always the strategy underneath it.</p>
+        </div>
+        <p class="m-pull">"you're not invisible because you're not posting enough. you're invisible because you're saying nothing worth finding."</p>
+      </section>
+
+      <section class="m-section">
+        <h2 class="m-title">what we believe about personal brand</h2>
+        <div class="m-body">
+          <p>a personal brand is not a social media presence. it's not a linkedin profile. it's not a tagline or a content calendar.</p>
+          <p>it's the answer to one question: when someone who matters to your business hears your name, what do they think you stand for?</p>
+          <p>if you don't know the answer, you don't have a brand. you have a cv with better fonts.</p>
+          <p>c-suite executives and founders with strong personal brands don't have them by accident. they have them because someone made deliberate choices about positioning, messaging, and proof — then built everything else around that foundation.</p>
+          <p>"authenticity" without that architecture is just therapy. expensive, public, inconclusive therapy. a ceo with 500 followers who closes €2m in deals has a stronger personal brand than one with 50k who gets conference invitations.</p>
+        </div>
+      </section>
+
+      <section class="m-section">
+        <h2 class="m-title">what we do</h2>
+        <div class="m-body">
+          <p>we fix positioning. we diagnose what's broken and tell you exactly what broke it.</p>
+          <p>we don't manage your linkedin. we don't write your captions. we don't coach you to "be more yourself on camera." we don't sell you a 12-week program with a private community.</p>
+          <p>we work with c-suite executives and founders who are invisible outside their own organizations — or visible for the wrong reasons — or credible in the room but unknown everywhere else.</p>
+          <p>everything is async. written documents, clear frameworks, no calls, no zoom, no "let's circle back." if you need someone to hold your hand through a content calendar, we're not it.</p>
+          <p>if you need someone to tell you the truth about why your brand isn't working and build the architecture to fix it — that's exactly what we do.</p>
+        </div>
+      </section>
+
+      <section class="m-section">
+        <h2 class="m-title">what we're not</h2>
+        <div class="m-body">
+          <p>we don't compete with social media coaches. we don't offer ghostwriting at scale. we don't help you grow followers.</p>
+          <p>we cede the influencer brand market entirely. our clients want business outcomes, not follower counts.</p>
+          <p>the executives with the strongest personal brands didn't get there by posting more. they got there by standing for something specific that the right people actually needed.</p>
+        </div>
+        <p class="m-pull">"a personal brand without a point of view is just a resume with better fonts."</p>
+      </section>
+
+    </article>
+
+    <div class="cta-block">
+      <h2>start with the audit.</h2>
+      <p>48–72 hours. written diagnosis of what's broken in your personal brand and exactly what needs to change. €199. no calls.</p>
+      <a href="/brand-audit/" class="btn-cream">get the brand audit — €199 →</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and c-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h4>offers</h4>
+        <ul>
+          <li><a href="/#offers">The Monster Job — €2,500</a></li>
+          <li><a href="/#offers">The Monster on Retainer — €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit — €199</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint — €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>pages</h4>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="/manifesto/">manifesto</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>books</h4>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer — €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual — €97</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>Published by <a rel="author" href="/about/" style="color:inherit;text-decoration:underline;">Adrian M. Peticila</a> · © 2026 aah, monster!</span>
+      <span>Contact: <a href="mailto:hello@aah.monster" style="color:inherit;text-decoration:none;">hello@aah.monster</a> · <time datetime="2026-06-03">Updated June 2026</time></span>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
