@@ -31,14 +31,30 @@
         "name": "Brand Positioning Sprint",
         "description": "Your positioning built from scratch in 5 days. Deliverables: positioning document, LinkedIn rewrite, messaging framework, brand voice guide. Fully async, no calls.",
         "url": "https://aah.monster/positioning-sprint/",
+        "image": "https://aah.monster/og-image.png",
         "provider": { "@id": "https://aah.monster/#organization" },
-        "brand": { "@id": "https://aah.monster/#organization" },
+        "brand": { "@type": "Brand", "name": "Aah, Monster!" },
         "offers": {
           "@type": "Offer",
           "price": "499",
           "priceCurrency": "EUR",
           "url": "https://aah.monster/positioning-sprint/",
-          "availability": "https://schema.org/InStock"
+          "availability": "https://schema.org/InStock",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": ["RO", "DE", "AT", "CH", "GB", "US"],
+            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": "EUR" },
+            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": ["RO", "DE", "AT", "CH", "GB", "US"] },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": { "@type": "QuantitativeValue", "minValue": 5, "maxValue": 5, "unitCode": "DAY" },
+              "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+            }
+          }
         }
       },
       {

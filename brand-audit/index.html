@@ -31,14 +31,30 @@
         "name": "Personal Brand Audit",
         "description": "A 10–15 page written diagnosis of your personal brand covering positioning, LinkedIn, messaging, and content strategy. Delivered in 48–72 hours. No calls.",
         "url": "https://aah.monster/brand-audit/",
+        "image": "https://aah.monster/og-image.png",
         "provider": { "@id": "https://aah.monster/#organization" },
-        "brand": { "@id": "https://aah.monster/#organization" },
+        "brand": { "@type": "Brand", "name": "Aah, Monster!" },
         "offers": {
           "@type": "Offer",
           "price": "199",
           "priceCurrency": "EUR",
           "url": "https://aah.monster/brand-audit/",
-          "availability": "https://schema.org/InStock"
+          "availability": "https://schema.org/InStock",
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": ["RO", "DE", "AT", "CH", "GB", "US"],
+            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": "EUR" },
+            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": ["RO", "DE", "AT", "CH", "GB", "US"] },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "DAY" },
+              "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+            }
+          }
         }
       },
       {
