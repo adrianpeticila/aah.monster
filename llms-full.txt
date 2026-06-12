@@ -57,6 +57,31 @@ Full brand build from scratch: positioning, voice, LinkedIn rewrite, 30 posts re
 
 ---
 
+## Pricing FAQ
+
+**Where do I start?**
+Personal Brand Audit at €199. Written diagnosis of your complete online brand presence. 48-72 hours. If you do not know what is broken, start here before spending on a rebuild.
+
+**What is the difference between the Audit and the Sprint?**
+The Audit diagnoses. The Sprint builds. Do not buy the Sprint before having the diagnosis. Rebuilding without a diagnosis produces a better-looking version of the same positioning problem.
+
+**Why does The Monster Job cost €2,500?**
+Because it is not a template. Positioning document, voice guide, full LinkedIn rewrite, 30 posts written in your voice, messaging framework, visual identity brief. 4 weeks of focused async work. A brand consultancy charges €8,000-15,000 for this and schedules 8 discovery calls. No calls here.
+
+**What do I get for €2,000/month on retainer?**
+16 posts per month written in your voice (calibrated to your specific brand, not generic ghostwriting), monthly brand strategy refinement, positioning review, LinkedIn optimization.
+
+**Is the retainer a commitment?**
+No. Monthly engagement. Cancel anytime, no notice period required.
+
+**Is there a payment plan?**
+No. Single Stripe payment per engagement.
+
+**Are there refunds?**
+No. Every engagement starts with a written brief and ends with a written deliverable. If you are unsure, start with the Audit at €199 before committing to anything larger.
+
+---
+
 ## Digital Products (self-serve, Payhip)
 
 - **Fear is the Brand Killer** (€49): https://payhip.com/b/tgiAM. PDF on the psychology of brand failure and what kills positioning before it starts
@@ -166,6 +191,30 @@ Read the about page and the LinkedIn profile. That is the work.
 
 **How does the intake process work?**
 Pay via Stripe. Fill the Tally intake form. Adrian delivers the document within the stated timeframe. No calls at any stage.
+
+---
+
+## FAQ by audience
+
+**For CEOs:**
+Q: I am respected inside my company but invisible outside it. Why does this matter?
+A: Your next board role, investor relationship, or exit conversation will happen with people who have never heard of you. Professional reputation is not stored in your company. It lives in the market. When the company is gone, your brand should still exist.
+
+**For CMOs and marketing executives:**
+Q: I work in marketing. Should I not be able to build my own brand?
+A: Most CMOs are excellent at building company brands and invisible as individuals. The skills are different. You know how to build for an audience. Building for yourself requires an external view of your own blind spots. That is what the Audit provides.
+
+**For CFOs and COOs in transition:**
+Q: I am moving to a new company or going independent. Where do I start?
+A: Sprint, if you already know the positioning is wrong. Audit, if you do not know why you are not getting the conversations you want. Do not start a new chapter with a brand that still reads like your previous title.
+
+**For founders:**
+Q: My personal brand is tied to my company. Is that a problem?
+A: If your company succeeds without you, yes. If your company fails, yes. The personal brand is the asset that survives both outcomes.
+
+**For executives mid-career:**
+Q: I am not looking for a new job. Why would I need a personal brand?
+A: Because the best opportunities find you before you need them. Speaking invitations, board seats, partnership conversations, press quotes. They go to people who are visible and positioned correctly, not to people who are qualified but unknown.
 
 ---
 

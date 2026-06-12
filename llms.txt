@@ -41,6 +41,25 @@ Full brand build from scratch: positioning, voice, LinkedIn rewrite, 30 posts re
 
 ---
 
+## Pricing FAQ
+
+**Where do I start?**
+Personal Brand Audit at €199. If you do not know what is broken, start here. 48-72 hours, written document.
+
+**What is the difference between the Audit and the Sprint?**
+Audit: diagnosis. Sprint: rebuild. If you do not know what is broken, start with the Audit. If you already know your positioning is wrong, go straight to the Sprint.
+
+**Why does the full brand build cost €2,500?**
+Because it is not a template. Positioning, voice, full LinkedIn rewrite, 30 posts written in your voice, messaging framework, visual identity brief. 4 weeks of focused async work. Brand consultancies charge €8,000-15,000 for this and schedule 8 discovery calls.
+
+**Can I cancel the retainer?**
+Yes. Monthly, no notice period, no minimum commitment.
+
+**Is there a payment plan?**
+No. Single Stripe payment per engagement.
+
+---
+
 ## Digital Products
 
 - **Fear is the Brand Killer** (€49): https://payhip.com/b/tgiAM. PDF on the psychology of brand failure
@@ -64,6 +83,22 @@ Full brand build from scratch: positioning, voice, LinkedIn rewrite, 30 posts re
 - [Manifesto](https://aah.monster/manifesto/)
 - [B2B Brand Positioning](https://aah.monster/b2b-brand-positioning/)
 - [Marketing Strategy Consultant](https://aah.monster/marketing-strategy-consultant/)
+
+---
+
+## FAQ by audience
+
+**For CEOs:**
+You are respected inside your company and invisible outside it. Investors, board members, and industry peers have never heard of you. The Sprint rebuilds your public positioning in 5 days. The Monster Job creates the full brand presence from scratch.
+
+**For CMOs and marketing executives:**
+Your company brand is strong but your personal brand still reads like a job description. You know how to build brands for audiences. Building for yourself requires an external diagnosis of your own blind spots. Start with the Audit.
+
+**For CFOs and COOs in transition:**
+You are moving to a new company or going independent. Your personal brand still reflects your last title at your last employer. The Sprint is the fastest fix: 5 business days, written output, no calls.
+
+**For founders:**
+Your personal brand is currently tied to your company. When you raise, sell, or pivot, you are on your own. The Audit is the entry point. The Sprint builds the foundation.
 
 ---
 
