@@ -44,6 +44,12 @@
         "disambiguatingDescription": "Aah, Monster! is a personal branding consultancy founded by Adrian M. Peticila — not a retail store, entertainment brand, or product. The domain aah.monster is a branding consultancy at the .monster TLD. Services: brand audit, positioning sprint, full brand build for executives and founders.",
         "knowsAbout": ["personal branding", "executive positioning", "LinkedIn strategy", "brand architecture", "thought leadership", "B2B marketing", "C-suite communications"],
         "founder": { "@id": "https://aah.monster/#person" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bucharest",
+          "addressCountry": "RO"
+        },
+        "areaServed": "Worldwide",
         "logo": {
           "@type": "ImageObject",
           "url": "https://aah.monster/favicon.svg"
@@ -83,6 +89,8 @@
         "jobTitle": "Personal Branding Consultant",
         "description": "20+ years in marketing. Works with C-suite executives and founders to build recognizable personal brands. Async only, no calls.",
         "worksFor": { "@id": "https://aah.monster/#organization" },
+        "homeLocation": { "@type": "Place", "name": "Bucharest, Romania" },
+        "nationality": { "@type": "Country", "name": "Romania" },
         "knowsAbout": ["personal branding", "brand positioning", "LinkedIn strategy", "executive branding", "brand architecture", "content strategy"],
         "sameAs": [
           "https://www.linkedin.com/in/adrian-peticila/",
@@ -711,7 +719,7 @@
     .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
     .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
     .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
-    .f-col h4 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col h3 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
     .f-col ul { list-style: none; }
     .f-col ul li { margin-bottom: 0.55rem; }
     .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
@@ -766,7 +774,7 @@
       <span class="hero-corner">01</span>
     </div>
 
-    <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Aah, Monster! — Personal Branding for C-Suite Executives and Founders</h1>
+    <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Aah, Monster. Brand strategy for invisible C-suite. One document. No calls.</h1>
     <!-- THE WORDS — fill full width like "PORTFOLIO" in template -->
     <div class="hero-words">
       <span class="fit-line" id="line1">AAH,</span>
@@ -1105,7 +1113,7 @@
         <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
       </div>
       <div class="f-col">
-        <h4>offers</h4>
+        <h3>offers</h3>
         <ul>
           <li><a href="/#offers">The Monster Job — €2,500</a></li>
           <li><a href="/#offers">The Monster on Retainer — €2k/mo</a></li>
@@ -1115,7 +1123,7 @@
         </ul>
       </div>
       <div class="f-col">
-        <h4>pages</h4>
+        <h3>pages</h3>
         <ul>
           <li><a href="/about/">about</a></li>
           <li><a href="/manifesto/">manifesto</a></li>
@@ -1126,7 +1134,7 @@
         </ul>
       </div>
       <div class="f-col">
-        <h4>books</h4>
+        <h3>books</h3>
         <ul>
           <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer — €49</a></li>
           <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual — €97</a></li>
