@@ -26,4 +26,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://aah.monster/sitemap.xml
+Sitemap: https://aah.monster/sitemap2.xml
