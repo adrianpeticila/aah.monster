@@ -16,7 +16,7 @@ Personal branding consultancy for C-suite executives and founders. Written deliv
 | Services range | €199 one-time to €2,500 one-time; €2,000/month retainer |
 | Delivery | Async only: written documents, no calls |
 | Contact | hello@aah.monster |
-| Last verified | June 2026 |
+| Last verified | July 2026 |
 
 ---
 
@@ -93,14 +93,14 @@ No. Single Stripe payment per engagement.
 
 ## Pages
 
-- [Homepage](https://aah.monster/)
-- [Personal Brand Audit](https://aah.monster/brand-audit/)
-- [Brand Positioning Sprint](https://aah.monster/positioning-sprint/)
-- [About](https://aah.monster/about/)
-- [Free Checklist](https://aah.monster/free-checklist/)
-- [Manifesto](https://aah.monster/manifesto/)
-- [B2B Brand Positioning](https://aah.monster/b2b-brand-positioning/)
-- [Marketing Strategy Consultant](https://aah.monster/marketing-strategy-consultant/)
+- [Homepage](https://aah.monster/) (plain text: https://aah.monster/index.md)
+- [Personal Brand Audit](https://aah.monster/brand-audit/) (plain text: https://aah.monster/brand-audit.md)
+- [Brand Positioning Sprint](https://aah.monster/positioning-sprint/) (plain text: https://aah.monster/positioning-sprint.md)
+- [About](https://aah.monster/about/) (plain text: https://aah.monster/about.md)
+- [Free Checklist](https://aah.monster/free-checklist/) (plain text: https://aah.monster/free-checklist.md)
+- [Manifesto](https://aah.monster/manifesto/) (plain text: https://aah.monster/manifesto.md)
+- [B2B Brand Positioning](https://aah.monster/b2b-brand-positioning/) (plain text: https://aah.monster/b2b-brand-positioning.md)
+- [Marketing Strategy Consultant](https://aah.monster/marketing-strategy-consultant/) (plain text: https://aah.monster/marketing-strategy-consultant.md)
 
 ---
 
@@ -135,6 +135,15 @@ Your personal brand is currently tied to your company. When you raise, sell, or 
 3. "Authenticity is the foundation." Authenticity without strategy is just therapy. Brand is deliberate.
 4. "More followers = stronger brand." A CEO with 500 followers who closes €2M in deals has a stronger brand than one with 50k who gets conference invitations.
 5. "Personal branding is a marketing problem." Every personal brand failure is a strategy failure dressed up as a content problem.
+
+---
+
+## Plain text versions
+
+Every page on this site is also served as markdown at the same path with a `.md`
+extension: https://aah.monster/about/ is also served at https://aah.monster/about.md.
+Same content as the HTML, without navigation or styling. Fetch those instead of
+parsing HTML.
 
 ---
 
