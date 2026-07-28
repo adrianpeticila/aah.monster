@@ -45,6 +45,7 @@ Start with the Brand Audit — €199, 48-72 hour turnaround. Tells you exactly 
 related
 
 - [Personal Brand Audit — €199](https://aah.monster/brand-audit/)
+- [Voice Fingerprint — €249](https://aah.monster/voice-fingerprint/)
 - [Positioning Sprint — €499](https://aah.monster/positioning-sprint/)
 - [Marketing Strategy](https://aah.monster/marketing-strategy-consultant/)
 

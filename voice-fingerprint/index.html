@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>voice fingerprint · aah, monster!</title>
+<meta name="description" content="Your writing does not sound like AI. It sounds like nobody. A written record of how you actually write, in 48 hours. €249.">
+<link rel="canonical" href="https://aah.monster/voice-fingerprint/">
+<meta name="description" content="A written record of how you write. 15 to 20 samples in, one document out: your habits, your never-list, and a brief you hand to anyone who writes for you. 48 hours, €249, no calls.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Voice Fingerprint · aah, monster!">
+<meta property="og:description" content="A written record of how you write. 48 hours, €249, no calls.">
+<meta property="og:url" content="https://aah.monster/voice-fingerprint/">
+<meta property="og:image" content="https://aah.monster/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Service", "Product"],
+      "@id": "https://aah.monster/voice-fingerprint/#service",
+      "name": "Voice Fingerprint",
+      "description": "A written record of how you write, built from 15 to 20 samples of your own writing: sentence rhythm, the words you never use, how you open and how you land, plus a never-list, a gap analysis, three rewrites and a one-page brief for anyone who writes for you. Delivered in 48 hours. No calls.",
+      "url": "https://aah.monster/voice-fingerprint/",
+      "image": "https://aah.monster/og-image.png",
+      "provider": { "@id": "https://aah.monster/#organization" },
+      "brand": { "@type": "Brand", "name": "Aah, Monster!" },
+      "offers": {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "EUR",
+        "url": "https://aah.monster/voice-fingerprint/",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aah.monster/" },
+        { "@type": "ListItem", "position": 2, "name": "Voice Fingerprint", "item": "https://aah.monster/voice-fingerprint/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0f0e11; --fg:#f2efe9; --dim:#8a8378; --line:#26242b;
+  --card:#17161b; --hot:#ff5c38;
+}
+:root[data-theme="light"]{--bg:#f7f5f1;--fg:#14130f;--dim:#6f6a5f;--line:#e0dcd3;--card:#fff;--hot:#c0341a}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#f7f5f1;--fg:#14130f;--dim:#6f6a5f;--line:#e0dcd3;--card:#fff;--hot:#c0341a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);overflow-x:hidden;
+  font:16px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Inter,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,"Space Mono",monospace}
+.wrap{max-width:760px;margin:0 auto;padding:52px 20px 90px}
+.eyebrow{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin:0 0 16px}
+h1{font-size:clamp(30px,6.6vw,54px);line-height:1.02;letter-spacing:-.035em;margin:0 0 18px;font-weight:700}
+h1 em{font-style:normal;color:var(--hot)}
+h2{font-size:clamp(21px,3.6vw,28px);line-height:1.12;letter-spacing:-.02em;margin:56px 0 14px;font-weight:700}
+h3{font-size:16px;margin:0 0 6px;font-weight:650}
+p{margin:0 0 16px;max-width:60ch}
+.lead{font-size:18px;color:var(--dim);max-width:52ch}
+strong{color:var(--fg)}
+a{color:var(--hot)}
+hr{border:0;border-top:1px solid var(--line);margin:0}
+ul{padding-left:19px;margin:0 0 16px;max-width:60ch}
+li{margin:0 0 8px}
+
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:11px 0;margin:30px 0 44px;overflow:hidden;white-space:nowrap}
+.ticker span{font-size:11.5px;letter-spacing:.13em;text-transform:lowercase;color:var(--dim);
+  display:inline-block;animation:sl 34s linear infinite;font-family:ui-monospace,Menlo,monospace}
+@keyframes sl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker span{animation:none}}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+@media(max-width:620px){.split{grid-template-columns:1fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.box p{margin:0;font-size:14.5px;color:var(--dim)}
+.box h3{color:var(--fg)}
+
+.deliver{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:0 0 20px}
+.deliver ul{margin:0;list-style:none;padding:0}
+.deliver li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:14px}
+.deliver li:last-child{border-bottom:none}
+.deliver li b{color:var(--hot);font-family:ui-monospace,Menlo,monospace;font-size:12px;
+  min-width:22px;padding-top:3px}
+
+.buy{border:1px solid var(--hot);border-radius:14px;padding:28px;margin:34px 0 0;background:var(--card)}
+.price{font-size:clamp(38px,8vw,58px);line-height:1;letter-spacing:-.04em;margin:0 0 6px;font-weight:700}
+.price small{font-size:14px;color:var(--dim);letter-spacing:0;font-weight:400;margin-left:10px}
+.buy p{margin:0 0 20px;color:var(--dim);font-size:14.5px}
+.cta{display:inline-block;background:var(--fg);color:var(--bg);text-decoration:none;
+  padding:14px 28px;border-radius:999px;font-weight:650;font-size:15px}
+.cta:hover{background:var(--hot);color:#fff}
+.fine{font-size:12.5px;color:var(--dim);margin:16px 0 0}
+
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
+th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+
+footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);
+  color:var(--dim);font-size:13px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--hot);border-color:var(--hot)}
+.theme{margin-left:auto;background:none;border:1px solid var(--line);color:var(--dim);
+  padding:5px 12px;font-size:11px;border-radius:999px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow mono">aah, monster! · voice fingerprint</p>
+<h1>your writing does not sound like AI.<br>it sounds like <em>nobody</em>.</h1>
+<p class="lead">That is the actual problem, and it was true before anyone had an assistant. A written record of how you write, so the next thousand words come out yours. 48 hours. €249.</p>
+
+<div class="ticker"><span class="mono">no calls · no zoom · 100% async · 48h delivery · one document · you own it forever · hand it to any ghostwriter · c-suite and founders · 20+ years · no calls · no zoom · 100% async · 48h delivery · one document · you own it forever · hand it to any ghostwriter · c-suite and founders · 20+ years · </span></div>
+
+<h2>two people read this page</h2>
+<div class="split">
+  <div class="box">
+    <h3>you ran your own writing</h3>
+    <p>And something told you it reads like a machine. Uncomfortable, because you wrote every word yourself. The verdict was not wrong. You have been writing the way you think writing is supposed to sound, which is how everyone sounds.</p>
+  </div>
+  <div class="box">
+    <h3>you ran what your agency sent</h3>
+    <p>And now you have proof of what you suspected. You are paying every month for words that make you invisible. The problem is not that they used a machine. It is that nobody ever wrote down what you sound like, so there was nothing to aim at.</p>
+  </div>
+</div>
+<p>Both problems have the same missing piece.</p>
+
+<h2>voice is a document, not a talent</h2>
+<p>People treat their writing voice as something mystical. It is not. It is a set of measurable habits: how long your sentences run before you cut them, which words you never use, how you open, whether you land the ending or leave it hanging. All of it can be written down.</p>
+<p>Once it is written down, it stops being yours alone. You can hand it to a ghostwriter, an assistant, a head of comms, or a machine, and get back something that sounds like you instead of like everyone.</p>
+<p><strong>Nobody can write in your voice if nobody has ever described it.</strong> Most executives have paid for years of content without anyone doing that once.</p>
+
+<h2>what you get</h2>
+<div class="deliver">
+  <ul>
+    <li><b>01</b><span><strong>The fingerprint.</strong> Your measurable habits on paper. Sentence rhythm, where you cut, punctuation you avoid, how you open and how you land, register, recurring images.</span></li>
+    <li><b>02</b><span><strong>The never list.</strong> Words, structures and moves that are not yours. The most useful page, and the one nobody writes.</span></li>
+    <li><b>03</b><span><strong>The gap.</strong> Where your published writing already drifts off your own voice, with the specific lines and why.</span></li>
+    <li><b>04</b><span><strong>Three rewrites.</strong> Your own recent posts, put back into your voice, so you can see the difference rather than read about it.</span></li>
+    <li><b>05</b><span><strong>The brief.</strong> One page you forward to anyone who writes for you. They stop guessing on day one.</span></li>
+  </ul>
+</div>
+<p class="fine">Delivered as a written document. No calls, no check-ins, no scheduling.</p>
+
+<h2>where this sits</h2>
+<div class="tw">
+<table>
+<thead><tr><th>service</th><th>what it does</th><th>price</th><th>time</th></tr></thead>
+<tbody>
+<tr><td>Personal Brand Audit</td><td>diagnoses what is broken</td><td>€199</td><td>48-72h</td></tr>
+<tr><td><strong>Voice Fingerprint</strong></td><td><strong>gives you an asset you keep and hand out</strong></td><td><strong>€249</strong></td><td><strong>48h</strong></td></tr>
+<tr><td>Brand Positioning Sprint</td><td>rebuilds the positioning from scratch</td><td>€499</td><td>5 days</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:14px">The audit tells you what is wrong. The fingerprint hands you something durable that keeps working after the document is read, every time anyone writes anything with your name on it. That is why it costs more than the diagnosis.</p>
+
+<h2>how it works</h2>
+<ul>
+  <li><strong>You send 15 to 20 samples.</strong> Posts, emails, memos, voice notes transcribed, anything with your fingerprints on it. Written by you, not for you.</li>
+  <li><strong>48 hours pass.</strong> You do nothing.</li>
+  <li><strong>You get the document.</strong> If it does not read like an accurate description of you, tell me and I redo it once, or you get your money back.</li>
+</ul>
+
+<div class="buy">
+  <p class="price">€249<small>48 hours · one document</small></p>
+  <p>Written record of how you write, plus the page you forward to anyone writing for you.</p>
+  <a class="cta" href="mailto:hello@aah.monster?subject=Voice%20Fingerprint&amp;body=Attaching%2015-20%20samples%20of%20my%20writing.">get the fingerprint</a>
+  <p class="fine">Send the samples and you get an invoice back. Payment before delivery, refund if the document misses.</p>
+</div>
+
+<h2>if you are not sure yet</h2>
+<p>Run something you wrote through <a href="https://hydra.peticila.ro/slop/">the detector</a>. It is free, it takes ten seconds, and it tells you which habits are giving you away. If it comes back clean, you do not need this page.</p>
+
+<footer>
+  <span>aah, monster! · brand strategy for invisible c-suite</span>
+  <a href="https://aah.monster/">aah.monster</a>
+  <a href="mailto:hello@aah.monster">hello@aah.monster</a>
+  <button class="theme mono" id="th">theme</button>
+</footer>
+
+</div>
+<script>
+document.getElementById('th').onclick=()=>{const r=document.documentElement;
+const c=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+r.setAttribute('data-theme',c==='dark'?'light':'dark');};
+</script>
+</body>
+</html>

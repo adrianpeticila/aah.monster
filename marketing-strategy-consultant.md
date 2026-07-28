@@ -45,6 +45,7 @@ The Brand Audit tells you exactly what's broken. €199, delivered in 48-72 hour
 related
 
 - [Brand Audit — €199](https://aah.monster/brand-audit/)
+- [Voice Fingerprint — €249](https://aah.monster/voice-fingerprint/)
 - [B2B Brand Positioning](https://aah.monster/b2b-brand-positioning/)
 - [Positioning Sprint — €499](https://aah.monster/positioning-sprint/)
 
