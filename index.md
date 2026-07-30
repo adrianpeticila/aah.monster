@@ -77,9 +77,9 @@ Deliverables:
 ---
 
 ### Personal Brand Audit, €199
-*entry level · 48–72h delivery*
+*entry level · 48-72h delivery*
 
-10–15 page diagnosis of your personal brand online presence. Concrete priorities. No fluff.
+10-15 page diagnosis of your personal brand online presence. Concrete priorities. No fluff.
 
 → [Start here](https://aah.monster/brand-audit/) · [Intake form](https://tally.so/r/xXZRVv)
 

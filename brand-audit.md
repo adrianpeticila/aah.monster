@@ -2,7 +2,7 @@
 
 most personal branding advice is tactical. post more. engage more. use this framework. none of it works without knowing what's actually broken first.
 
-the personal brand audit is a 10–15 page document that tells you exactly where your positioning fails, why your content doesn't convert, and what your linkedin profile is signalling to the wrong people. specific. written. actionable.
+the personal brand audit is a 10-15 page document that tells you exactly where your positioning fails, why your content doesn't convert, and what your linkedin profile is signalling to the wrong people. specific. written. actionable.
 
 most advisors give you a recommendation and bill for the hour. i give you one i'd put my name on.\
 **your name is on the brand. so is mine.**
@@ -45,7 +45,7 @@ a prioritised action plan. what to fix first, what to fix second, what to ignore
 
 €199
 
-one-time · 48–72h turnaround
+one-time · 48-72h turnaround
 
 [start the audit →](https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00)
 
@@ -65,13 +65,13 @@ short intake form. 10 minutes max. your linkedin url, your target audience, what
 
 ### i do the deep work
 
-i audit your brand against your target audience and positioning goals. 48–72 hours. asynchronous. no status updates needed.
+i audit your brand against your target audience and positioning goals. 48-72 hours. asynchronous. no status updates needed.
 
 03
 
 ### you get the pdf
 
-10–15 pages. delivered to your email. concrete, specific, prioritised. you know exactly what to fix on monday morning.
+10-15 pages. delivered to your email. concrete, specific, prioritised. you know exactly what to fix on monday morning.
 
 04 — who it's for 04
 
@@ -119,7 +119,7 @@ your brand,\
 diagnosed.
 ------------
 
-10–15 pages. 48 hours. €199. find out exactly what's broken before spending thousands on a fix.
+10-15 pages. 48 hours. €199. find out exactly what's broken before spending thousands on a fix.
 
 [get the brand audit, €199 →](https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00)
 

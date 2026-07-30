@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — welcome
+# AI crawlers, welcome
 User-agent: GPTBot
 Allow: /
 

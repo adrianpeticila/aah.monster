@@ -50,7 +50,7 @@ the executives with the strongest personal brands didn't get there by posting mo
 
 ## start with the audit.
 
-48–72 hours. written diagnosis of what's broken in your personal brand and exactly what needs to change. €199. no calls.
+48-72 hours. written diagnosis of what's broken in your personal brand and exactly what needs to change. €199. no calls.
 
 [get the brand audit, €199 →](https://aah.monster/brand-audit/)
 

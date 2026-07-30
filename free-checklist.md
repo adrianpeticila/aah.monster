@@ -68,7 +68,7 @@ then what?
 
 ### you score yourself
 
-answer the 10 questions honestly. add up your nos. most people get 6–8. that's normal. it means there's work to do.
+answer the 10 questions honestly. add up your nos. most people get 6-8. that's normal. it means there's work to do.
 
 02
 
