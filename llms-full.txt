@@ -592,9 +592,9 @@ The audit tells you what is wrong. The fingerprint hands you something durable t
 
 #### how it works
 
-- **You send 15 to 20 samples.** Posts, emails, memos, voice notes transcribed, anything with your fingerprints on it. Written by you, not for you.
+- **Send 15 to 20 samples.** Posts, emails, memos, voice notes transcribed, anything with your fingerprints on it. Written by you, not for you.
 - **48 hours pass.** You do nothing.
-- **You get the document.** If it does not read like an accurate description of you, tell me and I redo it once, or you get your money back.
+- **The document arrives.** If it does not read like an accurate description of you, tell me and I redo it once, or you get your money back.
 
 €24948 hours · one document
 
