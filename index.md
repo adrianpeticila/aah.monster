@@ -8,7 +8,7 @@ Adrian M. Peticila · Bucharest · Global · [aah.monster](https://aah.monster) 
 
 ## What this is
 
-Aah, Monster! is a personal branding consultancy. No calls. No Zoom. No Meet. 100% async delivery — everything in writing, as documents.
+Aah, Monster! is a personal branding consultancy. No calls. No Zoom. No Meet. 100% async delivery: everything in writing, as documents.
 
 Target: C-suite executives and founders who need real positioning, not templates.
 
@@ -18,23 +18,23 @@ Target: C-suite executives and founders who need real positioning, not templates
 
 ## The problem with most personal brands
 
-1. **Invisible positioning** — your profile could belong to fifty other people. Nothing sticks. Nobody remembers you after the scroll.
-2. **Content without a spine** — you post. It doesn't convert. Because content without positioning is just noise dressed up as strategy.
-3. **Reputation lag** — what you've built doesn't show online. Your brand undersells you by a decade. That gap costs deals, partnerships, the right introductions.
-4. **No time to fix it** — it stays at the bottom of the list. Meanwhile people with half your experience are outranking you on LinkedIn, in the room, everywhere.
+1. **Invisible positioning**: your profile could belong to fifty other people. Nothing sticks. Nobody remembers you after the scroll.
+2. **Content without a spine**: you post. It doesn't convert. Because content without positioning is just noise dressed up as strategy.
+3. **Reputation lag**: what you've built doesn't show online. Your brand undersells you by a decade. That gap costs deals, partnerships, the right introductions.
+4. **No time to fix it**: it stays at the bottom of the list. Meanwhile people with half your experience are outranking you on LinkedIn, in the room, everywhere.
 
 ---
 
 ## Services
 
-### The Monster Job — €2,500
+### The Monster Job, €2,500
 *flagship · full transformation · 4 weeks · one-time*
 
 The full thing. Positioning, voice, LinkedIn rewritten from scratch, 30 posts ready to publish, messaging framework, visual identity brief. Four weeks. In writing. Nothing held back.
 
 Deliverables:
 - Full positioning document
-- LinkedIn — complete rewrite
+- LinkedIn: complete rewrite
 - 30 ready-to-publish posts
 - Messaging framework
 - Voice & tone guide
@@ -46,7 +46,7 @@ Deliverables:
 
 ---
 
-### The Monster on Retainer — €2,000/month
+### The Monster on Retainer, €2,000/month
 *ongoing · cancel anytime*
 
 Keep the monster close. 16 posts/month in your voice, monthly brand strategy, positioning refinement, LinkedIn optimization.
@@ -61,7 +61,7 @@ Deliverables:
 
 ---
 
-### Brand Positioning Sprint — €499
+### Brand Positioning Sprint, €499
 *quick entry · 5 days · one-time*
 
 Positioning written from scratch. Headline, bio, messaging, voice, 3 ready-to-publish posts. Done in 5 days.
@@ -76,7 +76,7 @@ Deliverables:
 
 ---
 
-### Personal Brand Audit — €199
+### Personal Brand Audit, €199
 *entry level · 48–72h delivery*
 
 10–15 page diagnosis of your personal brand online presence. Concrete priorities. No fluff.
@@ -87,26 +87,26 @@ Deliverables:
 
 ## Digital products
 
-- **Fear is the Brand Killer** — €49 · [payhip.com/b/tgiAM](https://payhip.com/b/tgiAM)
-- **The Ultimate Personal Branding Manual** — €97 · [payhip.com/b/mKgTI](https://payhip.com/b/mKgTI)
+- **Fear is the Brand Killer**, €49 · [payhip.com/b/tgiAM](https://payhip.com/b/tgiAM)
+- **The Ultimate Personal Branding Manual**, €97 · [payhip.com/b/mKgTI](https://payhip.com/b/mKgTI)
 
 ## Free
 
-- **Brand Killer Checklist** — free, no opt-in · [aah.monster/free-checklist/](https://aah.monster/free-checklist/)
+- **Brand Killer Checklist**: free, no opt-in · [aah.monster/free-checklist/](https://aah.monster/free-checklist/)
 
 ---
 
 ## Process
 
-1. **You pay & submit** — short intake form, 10 minutes. No discovery calls. Not now, not ever.
-2. **The work gets done** — deep on your brand, your market, your positioning. Built around you specifically. Not a template.
-3. **You get the deliverable** — on time, in writing, concrete and prioritised. You know exactly what to do on Monday morning.
+1. **You pay & submit**: short intake form, 10 minutes. No discovery calls. Not now, not ever.
+2. **The work gets done**: deep on your brand, your market, your positioning. Built around you specifically. Not a template.
+3. **You get the deliverable**: on time, in writing, concrete and prioritised. You know exactly what to do on Monday morning.
 
 ---
 
 ## About
 
-Adrian M. Peticila applies brand architecture thinking to individuals — the same rigor used on companies for 20 years, applied to personal positioning, voice, and reputation.
+Adrian M. Peticila applies brand architecture thinking to individuals, the same rigor used on companies for 20 years, applied to personal positioning, voice, and reputation.
 
 - 20+ years brand strategy
 - 22k LinkedIn followers (built by being deliberately inconvenient)
@@ -120,7 +120,7 @@ Adrian M. Peticila applies brand architecture thinking to individuals — the sa
 ## Press
 
 - Fractional Insider: [From Full-Time Exec to Fractional Leader: How Adrian Peticila Delivers Fast, Measurable Results](https://fractionalinsider.com/from-full-time-exec-to-fractional-leader-how-adrian-peticila-delivers-fast-measurable-results/)
-- BizStack: [Adrian M. Peticila — CMO, Brand Strategist & Founder of Aah, Monster!](https://bizstack.tech/adrian-m-peticila/)
+- BizStack: [Adrian M. Peticila: CMO, Brand Strategist & Founder of Aah, Monster!](https://bizstack.tech/adrian-m-peticila/)
 - Authority Magazine: [Adrian M Peticila Of Aah! Monster On How to Build Your Brand as an Executive and Why it Matters](https://medium.com/authority-magazine/adrian-m-peticila-of-aah-monster-on-how-to-build-your-brand-as-an-executive-and-why-it-matters-1f9ebf5c0485)
 - The CMO: [CMO Building An AI-Native Marketing Organization Says Marketing Leaders Are Focused On The Wrong AI Risks](https://thecmo.com/career/adrian-peticila-2/)
 

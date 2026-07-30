@@ -1,4 +1,4 @@
-# Personal Brand Audit — €199 · aah, monster!
+# Personal Brand Audit, €199 · aah, monster!
 
 most personal branding advice is tactical. post more. engage more. use this framework. none of it works without knowing what's actually broken first.
 
@@ -85,7 +85,7 @@ you've been meaning to "fix your linkedin" for six months and keep not doing it.
 
 →
 
-you're active on linkedin but the wrong people are reaching out — or nobody is.
+you're active on linkedin but the wrong people are reaching out, or nobody is.
 
 →
 
@@ -103,7 +103,7 @@ people with half your experience are outranking you online. you want to know why
 
 you want proof of concept before investing in a full brand rebuild. smart.
 
-why this matters —
+why this matters
 
 the cost of\
 an invisible brand.
@@ -111,9 +111,9 @@ an invisible brand.
 
 Weber Shandwick's CEO Reputation Premium study (2020) found that 44% of a company's market value is directly attributable to CEO reputation. Executives who don't manage their personal brand are leaving nearly half their company's perceived value undefended.
 
-The 2024 Edelman B2B Thought Leadership Impact Report found that 63% of B2B decision-makers say a senior executive's personal credibility is a primary factor in their purchase decision — ranking above company reputation and product features.
+The 2024 Edelman B2B Thought Leadership Impact Report found that 63% of B2B decision-makers say a senior executive's personal credibility is a primary factor in their purchase decision, ranking above company reputation and product features.
 
-Most executives know something is wrong. A brand audit tells you exactly what — before you waste months and thousands on the wrong fix.
+Most executives know something is wrong. A brand audit tells you exactly what, before you waste months and thousands on the wrong fix.
 
 your brand,\
 diagnosed.
@@ -121,7 +121,7 @@ diagnosed.
 
 10–15 pages. 48 hours. €199. find out exactly what's broken before spending thousands on a fix.
 
-[get the brand audit — €199 →](https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00)
+[get the brand audit, €199 →](https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00)
 
 or [see all offers](https://aah.monster/#offers) if you're ready for the full rebuild.
 
@@ -141,11 +141,11 @@ your linkedin url, a short description of who you're trying to reach and why, an
 
 will there be a call to discuss the audit?
 
-no. the audit is written. everything you need is in the document — diagnosis, reasoning, priorities. if you have follow-up questions, send them by email.
+no. the audit is written. everything you need is in the document: diagnosis, reasoning, priorities. if you have follow-up questions, send them by email.
 
 what if i want to act on it?
 
-the audit tells you what. the [brand positioning sprint (€499)](https://aah.monster/positioning-sprint/) and [the monster job (€2,500)](https://aah.monster/#offers) tell you how — and do it for you. many clients start here.
+the audit tells you what. the [brand positioning sprint (€499)](https://aah.monster/positioning-sprint/) and [the monster job (€2,500)](https://aah.monster/#offers) tell you how, and do it for you. many clients start here.
 
 is there a refund policy?
 

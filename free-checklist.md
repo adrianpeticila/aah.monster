@@ -1,4 +1,4 @@
-# The Brand Killer Checklist — free · aah, monster!
+# The Brand Killer Checklist, free · aah, monster!
 
 most personal brands die of the same five things. invisible positioning. a linkedin profile that sounds like a job description. content with no point of view. zero audience specificity. and fear of being wrong in public.
 
@@ -16,7 +16,7 @@ can a stranger tell who you help and why in under 10 seconds from your linkedin 
 
 02
 
-does your linkedin about section have a point of view — or is it a cv in paragraph form?
+does your linkedin about section have a point of view, or is it a cv in paragraph form?
 
 03
 
@@ -24,7 +24,7 @@ have you posted on linkedin in the last 14 days?
 
 04
 
-does your content attract the audience you want — or the audience you already have?
+does your content attract the audience you want, or the audience you already have?
 
 05
 
@@ -32,7 +32,7 @@ do you have one topic you're known for, or do you post about everything?
 
 06
 
-when someone googles your name, do they find something useful — or nothing?
+when someone googles your name, do they find something useful, or nothing?
 
 07
 
@@ -40,11 +40,11 @@ is your brand consistent across linkedin, your website, and how you introduce yo
 
 08
 
-does your content ask people to think differently — or does it just confirm what they already believe?
+does your content ask people to think differently, or does it just confirm what they already believe?
 
 09
 
-are you the most credible person in your category online — or is someone with half your experience outranking you?
+are you the most credible person in your category online, or is someone with half your experience outranking you?
 
 10
 
@@ -88,7 +88,7 @@ fixing it?
 
 the checklist shows you what's broken. the brand audit tells you exactly how. €199. 48 hours.
 
-- [get the brand audit — €199 →](https://aah.monster/brand-audit/)
+- [get the brand audit, €199 →](https://aah.monster/brand-audit/)
 - [see all offers →](https://aah.monster/#offers)
 
 ---

@@ -1,4 +1,4 @@
-# Brand Positioning Sprint — €499 · 5 Days · aah, monster!
+# Brand Positioning Sprint, €499 · 5 Days · aah, monster!
 
 most founders have a brand that describes what they do. not who they are, not who they're for, not why anyone should care.
 
@@ -82,7 +82,7 @@ you're rebranding. new role, new company, new market. you need the foundation ri
 
 →
 
-you've been posting on linkedin for months. nothing sticks. the content isn't the problem — the positioning is.
+you've been posting on linkedin for months. nothing sticks. the content isn't the problem. the positioning is.
 
 →
 
@@ -106,7 +106,7 @@ finally.
 
 5 days. one document package. €499. everything you need to stop blending in.
 
-[start the sprint — €499 →](https://buy.stripe.com/9B6cN58bnb0ieiIeA1aIM01)
+[start the sprint, €499 →](https://buy.stripe.com/9B6cN58bnb0ieiIeA1aIM01)
 
 or start with the [brand audit (€199)](https://aah.monster/brand-audit/) if you're not sure yet.
 
@@ -118,7 +118,7 @@ answered.
 
 how is this different from the brand audit?
 
-the audit diagnoses. the sprint fixes. the audit tells you what's broken. the sprint rebuilds the foundation. many clients do both — audit first, sprint second.
+the audit diagnoses. the sprint fixes. the audit tells you what's broken. the sprint rebuilds the foundation. many clients do both: audit first, sprint second.
 
 what do i need to provide?
 

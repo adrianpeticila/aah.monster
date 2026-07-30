@@ -1,6 +1,6 @@
-# About — Adrian M. Peticila · aah, monster!
+# About · Adrian M. Peticila · aah, monster!
 
-you have 20 years of hard-won expertise. your linkedin has a job title and two posts from 2022. that gap doesn't happen because you're bad at your job. it happens because nobody told you that a professional reputation needs to be actively built — or it quietly deflates.
+you have 20 years of hard-won expertise. your linkedin has a job title and two posts from 2022. that gap doesn't happen because you're bad at your job. it happens because nobody told you that a professional reputation needs to be actively built, or it quietly deflates.
 
 most people who come here aren't invisible because they're mediocre. they're invisible because they've been too busy doing the work to talk about it. the wrong people are winning the room. that's a fixable problem.
 
@@ -48,7 +48,7 @@ most people treat their personal brand like a vanity project. it's not. it's the
 
 a mediocre message repeated consistently beats a brilliant message published once. most people get this backwards. they write one perfect post and wait for the world to notice.
 
-press + media —
+press + media
 
 featured\
 in print.
@@ -66,7 +66,7 @@ read the interview →
 
 BizStack
 
-Adrian M. Peticila — featured profile
+Adrian M. Peticila, featured profile
 
 read the feature →
 
@@ -86,7 +86,7 @@ Marketing Leaders Are Focused On The Wrong AI Risks
 
 read the interview →
 
-by the numbers —
+by the numbers
 
 the data\
 on invisible executives.
@@ -116,7 +116,7 @@ more profile views for executives who publish consistently on LinkedIn
 
 LinkedIn internal data, 2024
 
-elsewhere —
+elsewhere
 
 find me\
 across the web.
