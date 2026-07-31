@@ -10,7 +10,7 @@ Positioning is the decision about what corner of the market you own and who you 
 
 The most common failure: a company tries to position itself for everyone who might buy. The messaging becomes broad ("we help businesses grow"), the ideal customer profile stays fuzzy, and the sales team fills the gap with their own words. Every rep pitches differently. Every deck tells a different story. The brand is whatever the last salesperson said it was.
 
-**According to a 2023 Gartner research on B2B buying decisions, 77% of B2B buyers describe their last purchase as "very complex or difficult."** In that context, the company with the clearest, most specific positioning wins, not because they're better, but because they're easier to buy.
+**According to Gartner, 77% of B2B buyers describe their last purchase as "very complex or difficult."** In that context, the company with the clearest, most specific positioning wins, not because they're better, but because they're easier to buy.
 
 ## what the work looks like
 

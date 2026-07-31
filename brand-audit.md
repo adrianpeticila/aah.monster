@@ -109,7 +109,7 @@ the cost of\
 an invisible brand.
 -------------------
 
-Weber Shandwick's CEO Reputation Premium study (2020) found that 44% of a company's market value is directly attributable to CEO reputation. Executives who don't manage their personal brand are leaving nearly half their company's perceived value undefended.
+Weber Shandwick's CEO Reputation Premium study (2020) found that executives attribute 44% of their company's market value to the CEO's reputation. Executives who don't manage their personal brand are leaving nearly half their company's perceived value undefended.
 
 The 2024 Edelman-LinkedIn B2B Thought Leadership Impact Report found that 73% of B2B decision-makers trust an organization's thought leadership as a basis for judging its capabilities more than they trust its marketing materials and product sheets.
 

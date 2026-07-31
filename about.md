@@ -94,7 +94,7 @@ on invisible executives.
 
 44%
 
-of company market value is directly attributable to CEO reputation
+of company market value, attributed by executives to CEO reputation
 
 Weber Shandwick, The CEO Reputation Premium, 2020
 
