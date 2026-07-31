@@ -98,9 +98,9 @@ of company market value is directly attributable to CEO reputation
 
 Weber Shandwick, The CEO Reputation Premium, 2020
 
-63%
+73%
 
-of B2B buyers cite senior executive credibility as a primary purchase factor
+of B2B decision-makers trust thought leadership over marketing materials
 
 Edelman B2B Thought Leadership Impact Report, 2024
 

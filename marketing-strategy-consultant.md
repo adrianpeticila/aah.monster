@@ -4,7 +4,7 @@ Most marketing strategy advice is about channels and tactics. aah, monster! work
 
 The core problem
 
-Founders and C-suite are the most credible marketing asset their company has. **A 2024 Edelman B2B Thought Leadership report found that 63% of B2B buyers say a senior executive's personal credibility is a primary factor in their purchase decision.** Most executives have no strategy for that credibility. They have a LinkedIn profile and a vague sense that they should post more often.
+Founders and C-suite are the most credible marketing asset their company has. **The 2024 Edelman-LinkedIn B2B Thought Leadership Impact Report found that 73% of B2B decision-makers trust an organization's thought leadership over its marketing materials when judging what it can actually do.** Most executives have no strategy for that credibility. They have a LinkedIn profile and a vague sense that they should post more often.
 
 ## what marketing strategy means at the executive level
 

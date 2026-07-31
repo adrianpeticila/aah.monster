@@ -111,7 +111,7 @@ an invisible brand.
 
 Weber Shandwick's CEO Reputation Premium study (2020) found that 44% of a company's market value is directly attributable to CEO reputation. Executives who don't manage their personal brand are leaving nearly half their company's perceived value undefended.
 
-The 2024 Edelman B2B Thought Leadership Impact Report found that 63% of B2B decision-makers say a senior executive's personal credibility is a primary factor in their purchase decision, ranking above company reputation and product features.
+The 2024 Edelman-LinkedIn B2B Thought Leadership Impact Report found that 73% of B2B decision-makers trust an organization's thought leadership as a basis for judging its capabilities more than they trust its marketing materials and product sheets.
 
 Most executives know something is wrong. A brand audit tells you exactly what, before you waste months and thousands on the wrong fix.
 
