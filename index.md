@@ -76,6 +76,22 @@ Deliverables:
 
 ---
 
+### Voice Fingerprint, €249
+*entry level · 48h delivery*
+
+A written record of how you write. 15 to 20 samples in, one document out: your measurable habits, your never-list, and a brief you hand to anyone who writes for you.
+
+Deliverables:
+- The fingerprint: sentence rhythm, punctuation, how you open and land
+- The never list: words and structures that are not yours
+- The gap: where your published writing drifts off your own voice
+- Three rewrites of your own recent posts
+- The brief: one page for anyone who writes for you
+
+→ [See the fingerprint](https://aah.monster/voice-fingerprint/) · [hello@aah.monster](mailto:hello@aah.monster?subject=Voice%20Fingerprint)
+
+---
+
 ### Personal Brand Audit, €199
 *entry level · 48-72h delivery*
 
