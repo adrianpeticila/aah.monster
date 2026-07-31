@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# Repo readme, served by GitHub Pages but not a page.
+Disallow: /README.md
 
 # AI crawlers, welcome
 User-agent: GPTBot
