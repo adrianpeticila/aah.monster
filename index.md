@@ -88,7 +88,7 @@ Deliverables:
 - Three rewrites of your own recent posts
 - The brief: one page for anyone who writes for you
 
-→ [See the fingerprint](https://aah.monster/voice-fingerprint/) · [hello@aah.monster](mailto:hello@aah.monster?subject=Voice%20Fingerprint)
+→ [See the fingerprint](https://aah.monster/voice-fingerprint/) · [Pay €249](https://buy.stripe.com/7sY4gzajvb0i8YogI9aIM04)
 
 ---
 
