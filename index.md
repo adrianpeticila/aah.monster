@@ -42,7 +42,7 @@ Deliverables:
 - 3-month content strategy
 - Final brand OS PDF
 
-→ [Apply for The Monster Job](https://buy.stripe.com/00w7sL8bn9We5Mc2RjaIM02)
+→ [See The Monster Job](https://aah.monster/the-monster-job/) · [Apply for The Monster Job](https://buy.stripe.com/00w7sL8bn9We5Mc2RjaIM02)
 
 ---
 
@@ -57,7 +57,7 @@ Deliverables:
 - Positioning refinement
 - LinkedIn optimization
 
-→ [Keep the monster close](https://buy.stripe.com/eVq6oHbnzfgyb6wgI9aIM03)
+→ [See The Monster on Retainer](https://aah.monster/monster-retainer/) · [Keep the monster close](https://buy.stripe.com/eVq6oHbnzfgyb6wgI9aIM03)
 
 ---
 

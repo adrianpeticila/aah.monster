@@ -55,11 +55,11 @@ A written record of how you write, built from 15 to 20 samples of your own writi
 Positioning document, LinkedIn headline + about rewrite, messaging framework, brand voice guide. 5 business days. Async.
 
 ### The Monster Job (€2,500)
-**URL:** https://aah.monster/
+**URL:** https://aah.monster/the-monster-job/
 Full brand build from scratch: positioning, voice, LinkedIn rewrite, 30 posts ready to publish, messaging framework, visual identity brief. 4 weeks. Fully async.
 
 ### The Monster on Retainer (€2,000/month)
-**URL:** https://aah.monster/
+**URL:** https://aah.monster/monster-retainer/
 16 posts per month in your voice, monthly brand strategy, positioning refinement, LinkedIn optimization. Ongoing monthly engagement.
 
 ---
@@ -99,6 +99,8 @@ No. Single Stripe payment per engagement.
 ## Pages
 
 - [Homepage](https://aah.monster/) (plain text: https://aah.monster/index.md)
+- [The Monster Job](https://aah.monster/the-monster-job/) (plain text: https://aah.monster/the-monster-job.md)
+- [The Monster on Retainer](https://aah.monster/monster-retainer/) (plain text: https://aah.monster/monster-retainer.md)
 - [Personal Brand Audit](https://aah.monster/brand-audit/) (plain text: https://aah.monster/brand-audit.md)
 - [Voice Fingerprint](https://aah.monster/voice-fingerprint/) (plain text: https://aah.monster/voice-fingerprint.md)
 - [Brand Positioning Sprint](https://aah.monster/positioning-sprint/) (plain text: https://aah.monster/positioning-sprint.md)
