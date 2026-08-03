@@ -26,7 +26,7 @@ Related but different. Company positioning is about the product or service and i
 
 ### How long does positioning work take?
 
-The Positioning Sprint at aah, monster! takes 2-3 weeks. A full repositioning engagement, where the company has drifted or is entering a new market, can take 6-8 weeks to get right. Speed depends on how clear the competitive landscape is and how much the founders agree on who they're for.
+The Positioning Sprint at aah, monster! takes 5 days. A full repositioning engagement, where the company has drifted or is entering a new market, can take 6-8 weeks to get right. Speed depends on how clear the competitive landscape is and how much the founders agree on who they're for.
 
 ### Can positioning work help with inbound from LinkedIn?
 

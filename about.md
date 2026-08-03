@@ -1,6 +1,6 @@
 # About · Adrian M. Peticila · aah, monster!
 
-you have 20 years of hard-won expertise. your linkedin has a job title and two posts from 2022. that gap doesn't happen because you're bad at your job. it happens because nobody told you that a professional reputation needs to be actively built, or it quietly deflates.
+you have 20+ years of hard-won expertise. your linkedin has a job title and two posts from 2022. that gap doesn't happen because you're bad at your job. it happens because nobody told you that a professional reputation needs to be actively built, or it quietly deflates.
 
 most people who come here aren't invisible because they're mediocre. they're invisible because they've been too busy doing the work to talk about it. the wrong people are winning the room. that's a fixable problem.
 

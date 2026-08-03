@@ -50,7 +50,7 @@ The audit tells you what is wrong. The fingerprint hands you something durable t
 - **48 hours pass.** You do nothing.
 - **The document arrives.** If it does not read like an accurate description of you, tell me and I redo it once, or you get your money back.
 
-€24948 hours · one document
+€249 48 hours · one document
 
 Written record of how you write, plus the page you forward to anyone writing for you.
 

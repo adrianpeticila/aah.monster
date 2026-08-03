@@ -122,7 +122,7 @@ Deliverables:
 
 ## About
 
-Adrian M. Peticila applies brand architecture thinking to individuals, the same rigor used on companies for 20 years, applied to personal positioning, voice, and reputation.
+Adrian M. Peticila applies brand architecture thinking to individuals, the same rigor used on companies for 20+ years, applied to personal positioning, voice, and reputation.
 
 - 20+ years brand strategy
 - 22k LinkedIn followers (built by being deliberately inconvenient)
