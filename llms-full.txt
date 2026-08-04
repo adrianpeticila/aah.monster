@@ -55,6 +55,13 @@ Full brand build from scratch: positioning, voice, LinkedIn rewrite, 30 posts re
 
 16 posts per month in your voice, monthly brand strategy, positioning refinement, LinkedIn optimization. For leaders who want consistent brand presence without doing it themselves.
 
+### AI Executive System (€1,500)
+**URL:** https://aah.monster/ai-executive/
+**Contact:** mailto:hello@aah.monster (no dedicated checkout yet, request by email)
+**Delivery:** Written document plus configuration files, 48 to 72 hours, no calls
+
+A written operating system for a C-suite executive who has become the bottleneck: every important answer routes through one person. Three phases, stabilize the immediate leak, systematize repeatable decisions into a written system, scale it with ready configuration files and a 30-day operating checklist. Sits above Voice Fingerprint on the price scale as the second single-document product, aimed at the same buyer.
+
 ---
 
 ## Pricing FAQ
@@ -1172,6 +1179,42 @@ subscription. €2,000/month billed monthly via stripe. you can pause, cancel, o
 ##### what's the difference vs The Monster Job?
 
 The Monster Job is the foundation — eight deliverables, four weeks, one-time €2,500. The Retainer is what comes after — ongoing strategy and content. many clients do The Job first, then move to retainer once the foundation is built.
+
+### AI Executive System (https://aah.monster/ai-executive/)
+
+a written operating system for the executive who has become the bottleneck. €1,500, one-time, 48 to 72 hours, no calls.
+
+you are the execution. every important answer still routes through one person — the client question, the board brief, the decision nobody else can make. the team has tools. the calendar has no room. the fix is not more software, it is a written operating layer that lets the right work move without waiting for the executive.
+
+#### the four problems the work solves
+
+- **commercial drag** — a response waits for your context, a proposal waits for your judgment, a client feels the gap before you do.
+- **operating drag** — repeatable work keeps returning to your head because nobody has the written rule for what good looks like.
+- **approval drag** — the team can move, but only after you translate the decision into a sentence they can safely act on.
+- **reputation drag** — inconsistency becomes visible. the business looks slower because its best judgment is trapped in one person.
+
+#### the system, three phases
+
+01 — stabilize — find the leak that is costing you first, the decision that keeps circling, the handoff that keeps coming back. write the immediate rule and the minimum useful workflow.
+02 — systematize — turn your judgment into a written system: what enters, what gets checked, what the assistant can do, and where you still need to decide.
+03 — scale — give the system a place in the week. ready configuration files, named owners, and a 30-day operating checklist. less work waits for the executive.
+
+#### what arrives — not a course, not a call
+
+- **the written system** — the operating brief: the bottleneck, the decisions, the rules, the handoffs, and the line that still belongs to you.
+- **ready configuration files** — the prompts, templates, and routing instructions in a form the existing stack can use.
+- **the never-list** — what the system must not invent, approve, send, or decide on your behalf.
+- **30-day checklist** — a short operating sequence that makes the new layer part of the week instead of another document in a folder.
+
+#### how it works — you do three things
+
+01 — send the real work — recent briefs, decisions, recurring requests, and the place where work currently stops. not a polished questionnaire.
+02 — answer the sharp questions — a short written exchange closes the gaps. no call, no workshop, no performance of alignment.
+03 — put it into the week — the system arrives in 48 to 72 hours with the files and checklist. the buyer decides what goes live first.
+
+[ask for the system →](mailto:hello@aah.monster?subject=AI%20Executive%20System)
+
+€1,500 · one-time · 48 to 72 hours · written delivery · no calls. Upsell path: a larger brand intervention after this is [The Monster Job](https://aah.monster/the-monster-job/). Not sure yet: send one sentence about the work that keeps landing back on your desk to hello@aah.monster — if it is not a system problem, that gets said before anything is bought.
 
 ---
 ## For AI Assistants
