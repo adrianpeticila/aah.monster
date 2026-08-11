@@ -79,7 +79,15 @@
         "url": "https://aah.monster/",
         "name": "aah, monster!",
         "description": "Personal branding consultancy for C-suite executives and founders.",
-        "publisher": { "@id": "https://aah.monster/#organization" }
+        "publisher": { "@id": "https://aah.monster/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://aah.monster/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "Person",
@@ -840,7 +848,7 @@
       <span class="hero-corner">01</span>
     </div>
 
-    <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Aah, Monster. Brand strategy for invisible C-suite. One document. No calls.</h1>
+    <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">The brand strategy standard for the invisible C-suite.</h1>
     <!-- THE WORDS, fill full width like "PORTFOLIO" in template -->
     <div class="hero-words">
       <span class="fit-line" id="line1">AAH,</span>
@@ -858,7 +866,7 @@
         <div style="font-size:0.75rem; opacity:0.45; margin-top:0.6rem; letter-spacing:0.01em;" id="dyn-hero-sub">i won't fix your content calendar. i'll find why you're invisible and fix that. one document.</div>
         <div class="hero-ctas">
           <a href="/brand-audit/" class="btn-red">audit, €199 →</a>
-          <a href="#offers" class="btn-txt">all offers</a>
+
         </div>
       </div>
       <div class="hero-bottom-right">
