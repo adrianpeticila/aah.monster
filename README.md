@@ -11,3 +11,7 @@ The name is the brief. A brand should make you feel something. Most make you fee
 Built and maintained with an AI pair, supervised by [Gorgona](https://github.com/adrianpeticila/gorgona), the operating system that runs all my brands.
 
 Live: [aah.monster](https://aah.monster)
+
+## Tools
+
+- [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents.
