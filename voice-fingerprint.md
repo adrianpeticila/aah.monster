@@ -54,9 +54,9 @@ The audit tells you what is wrong. The fingerprint hands you something durable t
 
 Written record of how you write, plus the page you forward to anyone writing for you.
 
-[get the fingerprint](mailto:hello@aah.monster?subject=Voice%20Fingerprint&body=Attaching%2015-20%20samples%20of%20my%20writing.)
+[pay €249 →](https://buy.stripe.com/7sY4gzajvb0i8YogI9aIM04)
 
-Send the samples and you get an invoice back. Payment before delivery, refund if the document misses.
+Pay, then the receipt tells you where to send the samples. 48 hours from the samples landing, not from the payment. Refund if the document misses. Questions first? [hello@aah.monster](mailto:hello@aah.monster?subject=Voice%20Fingerprint).
 
 ## if you are not sure yet
 
