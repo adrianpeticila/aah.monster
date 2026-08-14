@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aah.monster mcp · positioning audit workbench</title>
+  <meta name="description" content="Interactive test workbench for the aah.monster Model Context Protocol (MCP) server.">
+  <link rel="canonical" href="https://aah.monster/mcp/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Sprite Graffiti';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Sprite Graffiti'), url('/fonts/SpriteGraffiti.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Sono';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('/fonts/sono-latin.woff2') format('woff2');
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #595959;
+      --red: #D42020;
+      --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1);
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.09);
+      --display: 'Sprite Graffiti', sans-serif;
+      --body: 'Sono', monospace;
+    }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      padding-bottom: 5rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-brand { font-family: var(--display); font-size: 1.5rem; font-weight: 400; }
+    .nav-brand span { color: var(--red); }
+    .badge { font-size: 0.75rem; font-weight: 700; background: var(--ink); color: var(--cream); padding: 0.3rem 0.7rem; border-radius: 2px; }
+
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 3.5rem 1.5rem 0; }
+    .eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.8rem; }
+    h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1rem; }
+    .lead { color: var(--mid); font-size: 1.15rem; max-width: 65ch; margin-bottom: 3rem; }
+
+    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2rem; border-radius: 4px; margin-bottom: 2rem; }
+    .wb-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 1.25rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.75rem; }
+    
+    label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+    input, textarea { width: 100%; padding: 0.85rem; font-family: var(--body); font-size: 0.95rem; border: 1px solid var(--rule); border-radius: 3px; background: var(--cream); margin-bottom: 1.25rem; outline: none; }
+    input:focus, textarea:focus { border-color: var(--red); }
+    
+    .btn-action { background: var(--ink); color: var(--cream); border: none; padding: 0.85rem 1.8rem; font-family: var(--body); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: background .15s; }
+    .btn-action:hover { background: var(--red); }
+
+    .res-box { margin-top: 2rem; padding: 1.5rem; background: #060606; color: #F0EBE0; border-radius: 4px; font-size: 0.88rem; line-height: 1.6; white-space: pre-wrap; display: none; }
+    .res-box.active { display: block; }
+    .demo-note { font-size: 0.75rem; color: var(--mid); margin-top: 0.75rem; }
+
+    footer { max-width: 1040px; margin: 4rem auto 0; padding: 2rem 1.5rem 0; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--mid); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">aah, <span>monster!</span></a>
+  <div class="badge">MCP TESTER // PROTOCOL 2024-11-05</div>
+</nav>
+
+<div class="wrap">
+  <div class="eyebrow">// Model Context Protocol Diagnostic</div>
+  <h1>Positioning Audit Tester</h1>
+  <p class="lead">Test the MCP tools that AI assistants call when auditing B2B pitches and landing pages.</p>
+
+  <div class="workbench">
+    <div class="wb-title">Tool: audit_b2b_positioning</div>
+    <label for="headline">Hero Headline:</label>
+    <input type="text" id="headline" value="We empower and streamline all-in-one AI workflows for modern teams">
+
+    <label for="subhead">Subheadline / Value Prop:</label>
+    <textarea id="subhead" rows="2">Leverage our seamless platform to unlock breakthrough efficiency without friction.</textarea>
+
+    <button class="btn-action" id="run-audit-btn" type="button">Execute MCP Tool Call</button>
+
+    <div class="res-box" id="res-box"></div>
+    <p class="demo-note">// răspuns afișat = simulare demo. Serverul real returnează date din surse live.</p>
+  </div>
+</div>
+
+<footer>
+  <p>aah.monster MCP Protocol. Compatible with OpenAI Apps SDK & Claude Desktop.</p>
+</footer>
+
+<script>
+document.getElementById('run-audit-btn').addEventListener('click', () => {
+  const h = document.getElementById('headline').value;
+  const s = document.getElementById('subhead').value;
+  
+  const clichés = ["streamline", "leverage", "all-in-one", "game-changer", "empower", "unlock", "seamless", "friction"];
+  const found = clichés.filter(c => h.toLowerCase().includes(c) || s.toLowerCase().includes(c));
+
+  let grade = "A";
+  if (found.length > 2) grade = "F (Terminal Cliché Overdose)";
+  else if (found.length > 0) grade = "C (Weak Differentiation)";
+
+  const jsonRpcPayload = {
+    jsonrpc: "2.0",
+    id: 1,
+    result: {
+      content: [
+        {
+          type: "text",
+          text: `AAH.MONSTER POSITIONING AUDIT:\nGrade: ${grade}\nCliché Alert: ${found.length ? found.join(", ") : "None detected (Clean)"}\nVerdict: ${found.length ? "Rewrite with direct customer outcome and zero corporate padding." : "Strong, outcome-driven proposition."}\nFull Roast: https://aah.monster`
+        }
+      ]
+    }
+  };
+
+  const box = document.getElementById('res-box');
+  box.textContent = JSON.stringify(jsonRpcPayload, null, 2);
+  box.classList.add('active');
+});
+</script>
+</body>
+</html>
