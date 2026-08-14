@@ -96,9 +96,10 @@ No. Every engagement starts with a written brief and ends with a written deliver
 
 ---
 
-## Free Resource
+## Free Resources & Tools
 
 - **The Brand Killer Checklist**: https://aah.monster/free-checklist/. 10 yes/no questions that reveal exactly where your personal brand breaks. Free PDF. No email required. No opt-in.
+- **LLMs.txt Generator**: https://aah.monster/tools/llms-generator/. Generate standard llms.txt files for AI agents. Free.
 
 ---
 

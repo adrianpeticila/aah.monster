@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Aah, Monster!",
+  "description": "Executive Personal Branding Consultancy. Provides async brand audits, positioning sprints, and llms.txt context specifications for founders and C-suite executives.",
+  "version": "1.0.0",
+  "homepage": "https://aah.monster/",
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": true
+  },
+  "tools": [
+    {
+      "name": "audit_brand",
+      "description": "Performs an executive positioning audit on a bio or company description using the Monster Framework. Evaluates clarity, differentiation, edge, and anti-AI tone.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bio": {
+            "type": "string",
+            "description": "The current executive bio, LinkedIn about section, or positioning text to audit."
+          },
+          "target_audience": {
+            "type": "string",
+            "description": "Target audience or key decision-makers (e.g., Enterprise B2B Buyers, VC Investors, Board Members)."
+          }
+        },
+        "required": ["bio"]
+      }
+    },
+    {
+      "name": "generate_llms_txt",
+      "description": "Generates a standardized, high-density llms.txt markdown specification for an executive personal brand or organization for AI model ingestion.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full executive name or organization name."
+          },
+          "title_or_role": {
+            "type": "string",
+            "description": "Primary role or positioning title."
+          },
+          "website": {
+            "type": "string",
+            "description": "Official website or primary profile URL."
+          },
+          "core_beliefs": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of core thesis points or non-negotiable beliefs."
+          },
+          "key_achievements": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Key achievements or track record highlights."
+          }
+        },
+        "required": ["name", "title_or_role"]
+      }
+    },
+    {
+      "name": "get_services",
+      "description": "Returns the exact pricing tier breakdown, deliverables, and booking instructions for Aah, Monster! consultancy packages.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "package_type": {
+            "type": "string",
+            "enum": ["all", "audit", "sprint", "retainer"],
+            "description": "Filter by package type: audit (€199), sprint (€499), retainer (€2500), or all."
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "https://aah.monster/llms.txt",
+      "name": "Aah, Monster! LLM Context Document",
+      "mimeType": "text/markdown",
+      "description": "Full machine-readable context file for Aah, Monster! brand guidelines, thesis, and services."
+    }
+  ]
+}
