@@ -1226,3 +1226,17 @@ Aah, Monster! is a premium personal branding consultancy run by Adrian M. Petici
 ## Tools & Utilities
 
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents by generating a structured llms.txt file.
+
+### Daemon (Live Operational Telemetry)
+https://aah.monster/daemon/
+
+**Headline:** daemon: live operational telemetry.
+
+**Sub:** Real-time pulse and diagnostics of the async, no-calls advisory infrastructure. Machine-readable state for AI assistants and prospective clients.
+
+### Positioning Audit MCP Protocol
+https://aah.monster/mcp/
+
+**Headline:** positioning audit mcp server.
+
+**Sub:** Interactive Model Context Protocol testbed for evaluating B2B positioning, detecting clichés, and scoring brand differentiation.
