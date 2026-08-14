@@ -170,3 +170,5 @@ Aah, Monster! (aah.monster) is a premium personal branding consultancy run by Ad
 ## Tools & Utilities
 
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents by generating a structured llms.txt file.
+- [Daemon Telemetry & Operational Feed](https://aah.monster/daemon/): Real-time pulse and diagnostics of the async, no-calls advisory infrastructure.
+- [Positioning Audit MCP Workbench](https://aah.monster/mcp/): Interactive Model Context Protocol testbed for evaluating B2B positioning, detecting clichés, and scoring brand differentiation.

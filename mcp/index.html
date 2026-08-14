@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aah.monster mcp · positioning audit workbench</title>
-  <meta name="description" content="Interactive test workbench for the aah.monster Model Context Protocol (MCP) server.">
+  <title>aah, monster! · mcp positioning audit</title>
+  <meta name="description" content="Interactive test workbench for the aah.monster Model Context Protocol (MCP) server. Audit B2B headlines and value props for clichés.">
   <link rel="canonical" href="https://aah.monster/mcp/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
   <style>
     @font-face {
       font-family: 'Sprite Graffiti';
@@ -23,7 +24,7 @@
       font-display: swap;
       src: url('/fonts/sono-latin.woff2') format('woff2');
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --cream: #F2F1ED;
       --ink: #111111;
@@ -31,115 +32,229 @@
       --red: #D42020;
       --red-deep: #A80E0E;
       --rule: rgba(17,17,17,0.1);
-      --card: #FFFFFF;
-      --card-border: rgba(17,17,17,0.09);
       --display: 'Sprite Graffiti', sans-serif;
       --body: 'Sono', monospace;
+      --bg: #F2F1ED;
+      --fg: #111111;
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.09);
+      --mid-t: #777777;
     }
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--body);
-      font-size: 16px;
-      line-height: 1.6;
-      padding-bottom: 5rem;
+
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --mid-t: #999999;
+      --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A;
+      --card-border: rgba(255,255,255,0.08);
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+
     a { color: inherit; text-decoration: none; }
-    nav {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--rule);
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--red); color: white; padding: 0.6rem 1rem; font-family: var(--body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; z-index: 100; }
+    .skip-link:focus { left: 0; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .nav-logo { font-family: var(--display); font-size: 1.4rem; color: var(--fg); }
+    .nav-cta {
+      font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
+      padding: 0.6rem 1.2rem; transition: background 0.2s;
     }
-    .nav-brand { font-family: var(--display); font-size: 1.5rem; font-weight: 400; }
-    .nav-brand span { color: var(--red); }
-    .badge { font-size: 0.75rem; font-weight: 700; background: var(--ink); color: var(--cream); padding: 0.3rem 0.7rem; border-radius: 2px; }
+    .nav-cta:hover { background: var(--red-deep); }
 
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 3.5rem 1.5rem 0; }
-    .eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.8rem; }
-    h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1rem; }
-    .lead { color: var(--mid); font-size: 1.15rem; max-width: 65ch; margin-bottom: 3rem; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 5rem 3rem 2rem; }
 
-    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2rem; border-radius: 4px; margin-bottom: 2rem; }
-    .wb-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 1.25rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.75rem; }
-    
-    label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
-    input, textarea { width: 100%; padding: 0.85rem; font-family: var(--body); font-size: 0.95rem; border: 1px solid var(--rule); border-radius: 3px; background: var(--cream); margin-bottom: 1.25rem; outline: none; }
+    .sec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; margin-bottom: 1rem; }
+    .sec-tag { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+    .sec-index { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: var(--mid-t); }
+    .sec-words { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1.5rem; }
+    .sec-line { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.05; }
+    .sec-line.outline { color: transparent; -webkit-text-stroke: 1px var(--fg); }
+    .sec-sub { font-size: 0.9rem; color: var(--mid); max-width: 640px; line-height: 1.7; margin-bottom: 3rem; }
+    /* Workbench  consistent with aah offer tiles */
+    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2rem; margin-bottom: 2rem; }
+    .wb-title { font-family: var(--display); font-size: 1.3rem; color: var(--fg); border-bottom: 1px solid var(--rule); padding-bottom: 0.75rem; margin-bottom: 1.25rem; }
+
+    label { display: block; font-family: var(--body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.4rem; }
+    input, textarea { width: 100%; padding: 0.85rem; font-family: var(--body); font-size: 0.9rem; border: 1px solid var(--rule); border-radius: 2px; background: var(--bg); color: var(--fg); margin-bottom: 1.25rem; outline: none; transition: border-color 0.2s; }
     input:focus, textarea:focus { border-color: var(--red); }
-    
-    .btn-action { background: var(--ink); color: var(--cream); border: none; padding: 0.85rem 1.8rem; font-family: var(--body); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: background .15s; }
-    .btn-action:hover { background: var(--red); }
+    textarea { resize: vertical; }
 
-    .res-box { margin-top: 2rem; padding: 1.5rem; background: #060606; color: #F0EBE0; border-radius: 4px; font-size: 0.88rem; line-height: 1.6; white-space: pre-wrap; display: none; }
+    .btn-red {
+      display: inline-block; font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
+      padding: 0.7rem 1.5rem; border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-red:hover { background: var(--red-deep); }
+
+    .res-box { margin-top: 1.5rem; padding: 1.5rem; background: var(--ink); color: #F0EBE0; font-size: 0.82rem; line-height: 1.6; white-space: pre-wrap; display: none; border-radius: 2px; font-family: var(--body); }
     .res-box.active { display: block; }
-    .demo-note { font-size: 0.75rem; color: var(--mid); margin-top: 0.75rem; }
+    .demo-note { font-size: 0.72rem; color: var(--mid-t); margin-top: 0.75rem; font-style: italic; }
 
-    footer { max-width: 1040px; margin: 4rem auto 0; padding: 2rem 1.5rem 0; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--mid); }
+    /* Info card */
+    .info-card { background: var(--card); border: 1px solid var(--card-border); padding: 1.5rem 2rem; }
+    .info-card h3 { font-family: var(--display); font-size: 1.1rem; color: var(--fg); margin-bottom: 0.75rem; }
+    .info-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; max-width: 640px; }
+
+    footer { margin-top: 5rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h3 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .wrap, .footer-inner, .f-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .footer-inner { flex-direction: column; }
+      .f-bottom { flex-direction: column; gap: 0.3rem; }
+    }
   </style>
+  <link rel="model-context-protocol" type="application/json" href="/.well-known/mcp.json">
+  <script src="/webmcp.js" defer></script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav>
-  <a href="/" class="nav-brand">aah, <span>monster!</span></a>
-  <div class="badge">MCP TESTER // PROTOCOL 2024-11-05</div>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1.8rem;">
+      <a href="/about/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">about</a>
+      <a href="/manifesto/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">manifesto</a>
+      <a href="/free-checklist/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">free checklist</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode" style="background:none;border:1px solid var(--rule);color:var(--fg);font-family:var(--body);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 0.9rem;cursor:pointer;transition:all 0.2s;">◐ dark</button>
+      <a href="/brand-audit/" class="nav-cta">get audited →</a>
+    </div>
+  </nav>
 
-<div class="wrap">
-  <div class="eyebrow">// Model Context Protocol Diagnostic</div>
-  <h1>Positioning Audit Tester</h1>
-  <p class="lead">Test the MCP tools that AI assistants call when auditing B2B pitches and landing pages.</p>
+  <main id="main-content">
+    <div class="wrap" id="main">
+      <div class="sec-top">
+        <span class="sec-tag">// mcp // diagnostic</span>
+        <span class="sec-index">audit workbench</span>
+      </div>
+      <div class="sec-words">
+        <span class="sec-line outline">positioning</span>
+        <span class="sec-line">audit.</span>
+      </div>
+      <p class="sec-sub">Test the MCP tool that AI assistants call when auditing B2B headlines and value props. Paste a pitch, get a verdict.</p>
 
-  <div class="workbench">
-    <div class="wb-title">Tool: audit_b2b_positioning</div>
-    <label for="headline">Hero Headline:</label>
-    <input type="text" id="headline" value="We empower and streamline all-in-one AI workflows for modern teams">
+      <div class="workbench">
+        <div class="wb-title">the audit_b2b_positioning tool</div>
+        <label for="headline">Hero Headline</label>
+        <input type="text" id="headline" value="We empower and streamline all-in-one AI workflows for modern teams">
+        <label for="subhead">Subheadline / Value Prop</label>
+        <textarea id="subhead" rows="2">Leverage our seamless platform to unlock breakthrough efficiency without friction.</textarea>
+        <button class="btn-red" id="run-audit-btn" type="button">Execute MCP Tool Call</button>
+        <div class="res-box" id="res-box"></div>
+        <p class="demo-note">// demo response. The live server returns real data from live sources.</p>
+      </div>
 
-    <label for="subhead">Subheadline / Value Prop:</label>
-    <textarea id="subhead" rows="2">Leverage our seamless platform to unlock breakthrough efficiency without friction.</textarea>
+      <div class="info-card">
+        <h3>what this surfaces to AI agents</h3>
+        <p>when an assistant audits a pitch it calls the aah.monster MCP server, which grades the headline against saturated clichés and returns a rewrite signal instead of vague praise. one document, zero calls.</p>
+      </div>
+    </div>
+  </main>
 
-    <button class="btn-action" id="run-audit-btn" type="button">Execute MCP Tool Call</button>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and C-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h3>offers</h3>
+        <ul>
+          <li><a href="/the-monster-job/">The Monster Job, €2,500</a></li>
+          <li><a href="/monster-retainer/">The Monster on Retainer, €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit, €199</a></li>
+          <li><a href="/ai-executive/">AI Executive System, €1,500</a></li>
+          <li><a href="/voice-fingerprint/">Voice Fingerprint, €249</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint, €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>pages</h3>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="/manifesto/">manifesto</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>books</h3>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer, €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual, €97</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>tools</h3>
+        <ul>
+          <li><a href="/tools/llms-generator/" target="_blank">LLMs.txt Generator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>Published by <a rel="author" href="/about/" style="color:inherit;text-decoration:underline;">Adrian M. Peticila</a> · © 2026 aah, monster!</span>
+      <span>Contact: adrian@peticila.ro · <time datetime="2026-08-14">Updated August 2026</time></span>
+    </div>
+  </footer>
 
-    <div class="res-box" id="res-box"></div>
-    <p class="demo-note">// răspuns afișat = simulare demo. Serverul real returnează date din surse live.</p>
-  </div>
-</div>
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
 
-<footer>
-  <p>aah.monster MCP Protocol. Compatible with OpenAI Apps SDK & Claude Desktop.</p>
-</footer>
-
-<script>
-document.getElementById('run-audit-btn').addEventListener('click', () => {
-  const h = document.getElementById('headline').value;
-  const s = document.getElementById('subhead').value;
-  
-  const clichés = ["streamline", "leverage", "all-in-one", "game-changer", "empower", "unlock", "seamless", "friction"];
-  const found = clichés.filter(c => h.toLowerCase().includes(c) || s.toLowerCase().includes(c));
-
-  let grade = "A";
-  if (found.length > 2) grade = "F (Terminal Cliché Overdose)";
-  else if (found.length > 0) grade = "C (Weak Differentiation)";
-
-  const jsonRpcPayload = {
-    jsonrpc: "2.0",
-    id: 1,
-    result: {
-      content: [
-        {
+    document.getElementById('run-audit-btn').addEventListener('click', () => {
+      const h = document.getElementById('headline').value;
+      const s = document.getElementById('subhead').value;
+      const cliches = ["streamline", "leverage", "all-in-one", "game-changer", "empower", "unlock", "seamless", "friction"];
+      const found = cliches.filter(c => h.toLowerCase().includes(c) || s.toLowerCase().includes(c));
+      let grade = "A";
+      if (found.length > 2) grade = "F (Terminal Cliche Overdose)";
+      else if (found.length > 0) grade = "C (Weak Differentiation)";
+      const jsonRpcPayload = {
+        jsonrpc: "2.0", id: 1,
+        result: { content: [{
           type: "text",
-          text: `AAH.MONSTER POSITIONING AUDIT:\nGrade: ${grade}\nCliché Alert: ${found.length ? found.join(", ") : "None detected (Clean)"}\nVerdict: ${found.length ? "Rewrite with direct customer outcome and zero corporate padding." : "Strong, outcome-driven proposition."}\nFull Roast: https://aah.monster`
-        }
-      ]
-    }
-  };
-
-  const box = document.getElementById('res-box');
-  box.textContent = JSON.stringify(jsonRpcPayload, null, 2);
-  box.classList.add('active');
-});
-</script>
+          text: "AAH.MONSTER POSITIONING AUDIT:\nGrade: " + grade +
+            "\nCliche Alert: " + (found.length ? found.join(", ") : "None detected (Clean)") +
+            "\nVerdict: " + (found.length ? "Rewrite with direct customer outcome and zero corporate padding." : "Strong, outcome-driven proposition.") +
+            "\nFull Roast: https://aah.monster"
+        }]}
+      };
+      const box = document.getElementById('res-box');
+      box.textContent = JSON.stringify(jsonRpcPayload, null, 2);
+      box.classList.add('active');
+    });
+  </script>
 </body>
 </html>
+

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aah.monster daemon · positioning telemetry</title>
-  <meta name="description" content="live operational feed, positioning audit diagnostics, and telemetry for aah.monster.">
+  <title>aah, monster! · daemon</title>
+  <meta name="description" content="Live operational feed, positioning audit diagnostics, and telemetry for aah.monster. The async pulse of the no-calls advisory infrastructure.">
   <link rel="canonical" href="https://aah.monster/daemon/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
@@ -25,231 +25,242 @@
       src: url('/fonts/sono-latin.woff2') format('woff2');
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --cream: #F2F1ED;
       --ink: #111111;
       --mid: #595959;
-      --mid-t: #777777;
       --red: #D42020;
       --red-deep: #A80E0E;
       --rule: rgba(17,17,17,0.1);
-      --card: #FFFFFF;
-      --card-border: rgba(17,17,17,0.09);
       --display: 'Sprite Graffiti', sans-serif;
       --body: 'Sono', monospace;
+      --bg: #F2F1ED;
+      --fg: #111111;
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.09);
+      --mid-t: #777777;
     }
 
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: 5rem;
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --mid-t: #999999;
+      --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A;
+      --card-border: rgba(255,255,255,0.08);
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+
     a { color: inherit; text-decoration: none; }
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--red); color: white; padding: 0.6rem 1rem; font-family: var(--body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; z-index: 100; }
+    .skip-link:focus { left: 0; }
 
-    nav {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--rule);
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .nav-logo { font-family: var(--display); font-size: 1.4rem; color: var(--fg); }
+    .nav-cta {
+      font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
+      padding: 0.6rem 1.2rem; transition: background 0.2s;
     }
-    .nav-brand {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    .nav-brand span { color: var(--red); }
-    .badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      background: var(--ink);
-      color: var(--cream);
-      padding: 0.3rem 0.7rem;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-    }
+    .nav-cta:hover { background: var(--red-deep); }
 
-    .wrap {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 3.5rem 1.5rem 0;
-    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 5rem 3rem 2rem; }
 
-    .eyebrow {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.8rem;
-    }
+    .sec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; margin-bottom: 1rem; }
+    .sec-tag { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+    .sec-index { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: var(--mid-t); }
+    .sec-words { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1.5rem; }
+    .sec-line { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.05; }
+    .sec-line.outline { color: transparent; -webkit-text-stroke: 1px var(--fg); }
+    .sec-sub { font-size: 0.9rem; color: var(--mid); max-width: 640px; line-height: 1.7; margin-bottom: 3rem; }
+    /* Telemetry cards */
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border: 1px solid var(--rule); margin-bottom: 3rem; }
+    .pi { padding: 2rem; border-bottom: 1px solid var(--rule); }
+    .pi-label { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid-t); margin-bottom: 0.6rem; }
+    .pi-n { font-family: var(--display); font-size: 1.9rem; color: var(--fg); margin-bottom: 0.4rem; }
+    .pi-d { font-size: 0.78rem; color: var(--mid); line-height: 1.6; }
 
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.05;
-      margin-bottom: 1rem;
-    }
+    .demo-note { font-size: 0.72rem; color: var(--mid-t); margin: -2rem 0 3rem; font-style: italic; }
 
-    .lead {
-      color: var(--mid);
-      font-size: 1.15rem;
-      max-width: 60ch;
-      margin-bottom: 3rem;
-    }
+    /* Diagnostic log */
+    .log-wrap { border-top: 1px solid var(--rule); padding-top: 2rem; }
+    .log-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
+    .log-title { font-family: var(--display); font-size: 1.3rem; color: var(--fg); }
+    .log-sync { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-t); }
+    .entry-row { display: flex; justify-content: space-between; gap: 2rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); font-size: 0.85rem; line-height: 1.55; }
+    .entry-row:last-child { border-bottom: none; }
+    .tag-red { background: rgba(212,32,32,0.10); color: var(--red-deep); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.5rem; margin-right: 0.6rem; }
+    .entry-meta { font-size: 0.75rem; color: var(--mid-t); white-space: nowrap; }
+    code { font-size: 0.85em; }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3.5rem;
-    }
+    footer { margin-top: 5rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h3 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      padding: 1.75rem;
-      border-radius: 4px;
-    }
-    .card-label {
-      font-size: 0.75rem;
-      color: var(--mid);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .card-val {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--ink);
-    }
-    .card-sub {
-      font-size: 0.85rem;
-      color: var(--mid);
-      margin-top: 0.4rem;
-    }
-
-    .feed-panel {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      padding: 2rem;
-      border-radius: 4px;
-    }
-    .feed-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 1rem;
-      margin-bottom: 1.25rem;
-      font-weight: 800;
-      font-size: 1.1rem;
-    }
-    .feed-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-size: 0.92rem;
-    }
-    .feed-row:last-child { border-bottom: none; }
-    .tag-red {
-      background: #FFEAEA;
-      color: var(--red-deep);
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 0.2rem 0.5rem;
-      border-radius: 2px;
-      margin-right: 0.6rem;
-    }
-
-    footer {
-      max-width: 1040px;
-      margin: 4rem auto 0;
-      padding: 2rem 1.5rem 0;
-      border-top: 1px solid var(--rule);
-      font-size: 0.85rem;
-      color: var(--mid);
-      display: flex;
-      justify-content: space-between;
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .wrap, .footer-inner, .f-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .entry-row { flex-direction: column; gap: 0.4rem; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+      .f-bottom { flex-direction: column; gap: 0.3rem; }
     }
   </style>
+  <link rel="model-context-protocol" type="application/json" href="/.well-known/mcp.json">
+  <script src="/webmcp.js" defer></script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav>
-  <a href="/" class="nav-brand">aah, <span>monster!</span></a>
-  <div class="badge">DAEMON LIVE // ASYNC PULSE</div>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1.8rem;">
+      <a href="/about/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">about</a>
+      <a href="/manifesto/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">manifesto</a>
+      <a href="/free-checklist/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">free checklist</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode" style="background:none;border:1px solid var(--rule);color:var(--fg);font-family:var(--body);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 0.9rem;cursor:pointer;transition:all 0.2s;">◐ dark</button>
+      <a href="/brand-audit/" class="nav-cta">get audited →</a>
+    </div>
+  </nav>
 
-<div class="wrap">
-  <div class="eyebrow">// Positioning Telemetry</div>
-  <h1>Async Positioning Engine</h1>
-  <p class="lead">Real-time status of the no-calls advisory infrastructure, positioning audits, and MCP diagnostic endpoints.</p>
-
-  <div class="grid">
-    <div class="card">
-      <div class="card-label">Deliverable Cadence</div>
-      <div class="card-val">1 Doc. 0 Calls.</div>
-      <div class="card-sub">Written diagnosis for C-suite & founders</div>
-    </div>
-    <div class="card">
-      <div class="card-label">MCP Audit Protocol</div>
-      <div class="card-val">Live · 2024-11-05</div>
-      <div class="card-sub">Real-time positioning audit for AI agents</div>
-    </div>
-    <div class="card">
-      <div class="card-label">Cliché Filter Rate</div>
-      <div class="card-val">100% Zero-Slop</div>
-      <div class="card-sub">Mechanical jargon & padding elimination</div>
-    </div>
-  </div>
-  <p style="font-size: 0.75rem; color: var(--mid); margin: -2rem 0 2.5rem;">// metrici demo - se conectează la telemetrie reală la launch</p>
-
-  <div class="feed-panel">
-    <div class="feed-head">
-      <span>Positioning Diagnostic Log</span>
-      <span style="font-size: 0.8rem; font-weight: 400; color: var(--mid);">Sync: Active</span>
-    </div>
-    <div class="feed-row">
-      <div>
-        <span class="tag-red">MCP</span>
-        <strong>aahmonster-mcp-server</strong> deployed with <code>audit_b2b_positioning</code> and <code>calculate_differentiation_score</code>.
+  <main id="main-content">
+    <div class="wrap" id="main">
+      <div class="sec-top">
+        <span class="sec-tag">// daemon // telemetry</span>
+        <span class="sec-index">async pulse</span>
       </div>
-      <span style="color: var(--mid); font-size: 0.8rem;">14 Aug 2026</span>
-    </div>
-    <div class="feed-row">
-      <div>
-        <span class="tag-red">AUDIT</span>
-        <strong>Differentiation Scorer</strong> active on enterprise B2B software positioning set.
+      <div class="sec-words">
+        <span class="sec-line">async</span>
+        <span class="sec-line outline">positioning</span>
+        <span class="sec-line">engine.</span>
       </div>
-      <span style="color: var(--mid); font-size: 0.8rem;">14 Aug 2026</span>
-    </div>
-    <div class="feed-row">
-      <div>
-        <span class="tag-red">SECURITY</span>
-        <strong>De-watermarking active:</strong> all client deliverables mechanically stripped of synthetic markers.
+      <p class="sec-sub">Live status of the no-calls advisory infrastructure, positioning audits, and MCP diagnostic endpoints. One document, zero calls.</p>
+
+      <div class="problem-grid">
+        <div class="pi">
+          <div class="pi-label">Deliverable Cadence</div>
+          <div class="pi-n">1 Doc. 0 Calls.</div>
+          <div class="pi-d">Written diagnosis for C-suite and founders.</div>
+        </div>
+        <div class="pi">
+          <div class="pi-label">MCP Audit Protocol</div>
+          <div class="pi-n">Live · 2024-11-05</div>
+          <div class="pi-d">Real-time positioning audit surfaced to AI agents.</div>
+        </div>
+        <div class="pi">
+          <div class="pi-label">Cliché Filter Rate</div>
+          <div class="pi-n">100% Zero-Slop</div>
+          <div class="pi-d">Mechanical jargon and padding elimination.</div>
+        </div>
       </div>
-      <span style="color: var(--mid); font-size: 0.8rem;">14 Aug 2026</span>
+      <p class="demo-note">// demo metrics. Connect to live telemetry at launch.</p>
+
+      <div class="log-wrap">
+        <div class="log-head">
+          <span class="log-title">positioning diagnostic log</span>
+          <span class="log-sync">sync: active</span>
+        </div>
+        <div class="entry-row">
+          <div>
+            <span class="tag-red">MCP</span>
+            <strong>aahmonster-mcp-server</strong> exposed <code>audit_b2b_positioning</code> and <code>calculate_differentiation_score</code>.
+          </div>
+          <span class="entry-meta">14 Aug 2026</span>
+        </div>
+        <div class="entry-row">
+          <div>
+            <span class="tag-red">AUDIT</span>
+            <strong>Differentiation Scorer</strong> active on enterprise B2B software positioning set.
+          </div>
+          <span class="entry-meta">14 Aug 2026</span>
+        </div>
+        <div class="entry-row">
+          <div>
+            <span class="tag-red">SECURITY</span>
+            <strong>De-watermarking active:</strong> all client deliverables mechanically stripped of synthetic markers.
+          </div>
+          <span class="entry-meta">14 Aug 2026</span>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </main>
 
-<footer>
-  <div>aah.monster · Personal branding consultancy by Adrian M. Peticila</div>
-  <div><a href="/mcp">MCP Tester ↗</a></div>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and C-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h3>offers</h3>
+        <ul>
+          <li><a href="/the-monster-job/">The Monster Job, €2,500</a></li>
+          <li><a href="/monster-retainer/">The Monster on Retainer, €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit, €199</a></li>
+          <li><a href="/ai-executive/">AI Executive System, €1,500</a></li>
+          <li><a href="/voice-fingerprint/">Voice Fingerprint, €249</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint, €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>pages</h3>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="/manifesto/">manifesto</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>books</h3>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer, €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual, €97</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>tools</h3>
+        <ul>
+          <li><a href="/tools/llms-generator/" target="_blank">LLMs.txt Generator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>Published by <a rel="author" href="/about/" style="color:inherit;text-decoration:underline;">Adrian M. Peticila</a> · © 2026 aah, monster!</span>
+      <span>Contact: adrian@peticila.ro · <time datetime="2026-08-14">Updated August 2026</time></span>
+    </div>
+  </footer>
 
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
+
