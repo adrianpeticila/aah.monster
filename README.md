@@ -17,3 +17,5 @@ Live: [aah.monster](https://aah.monster)
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents.
 - [Daemon](https://aah.monster/daemon/): Live operational telemetry and practice runtime feed.
 - [MCP Workbench](https://aah.monster/mcp/): Interactive Model Context Protocol server for positioning audits and cliché detection.
+- [Gaia Code](https://aah.monster/gaia-code/): deterministic code grading for pasted snippets or entire GitHub repos. Score, grade, findings, optional security pass. Runs in your browser — no AI opinion, no upload.
+- [Eos MCP](https://aah.monster/eos-mcp/): drop-in MCP servers for AI agents. Hosted, scaled, MIT-licensed. Free tier, hosted Pro, Enterprise.
