@@ -1240,3 +1240,5 @@ https://aah.monster/mcp/
 **Headline:** positioning audit mcp server.
 
 **Sub:** Interactive Model Context Protocol testbed for evaluating B2B positioning, detecting clichés, and scoring brand differentiation.
+- [Gaia Code](https://aah.monster/gaia-code/): Deterministic code grading for pasted snippets or GitHub repos. Score, grade, findings. Optional security pass. Runs in the browser, no AI opinion.
+- [Eos MCP](https://aah.monster/eos-mcp/): Directory of hosted, scaled, MIT-licensed MCP servers for AI agents. Free tier, hosted Pro, Enterprise.

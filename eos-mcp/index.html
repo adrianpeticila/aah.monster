@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eos MCP · aah, monster!</title>
+  <meta name="description" content="Drop-in MCP servers for AI agents. Hosted, scaled, MIT-licensed. Free tier, hosted Pro, Enterprise.">
+  <link rel="canonical" href="https://aah.monster/eos-mcp/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" as="font" href="../fonts/sono-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="../fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Sprite Graffiti';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Sprite Graffiti'), url('../fonts/SpriteGraffiti.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Sono';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('../fonts/sono-latin.woff2') format('woff2');
+    }
+
+    :root {
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #595959;
+      --red: #D42020;
+      --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1);
+      --display: 'Sprite Graffiti', sans-serif;
+      --body: 'Sono', monospace;
+      --bg: #F2F1ED;
+      --fg: #111111;
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.09);
+      --mid-t: #777777;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --mid-t: #999999;
+      --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A;
+      --card-border: rgba(255,255,255,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+
+    a { color: inherit; text-decoration: none; }
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--red); color: white; padding: 0.6rem 1rem; font-family: var(--body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; z-index: 100; }
+    .skip-link:focus { left: 0; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .nav-logo { font-family: var(--display); font-size: 1.4rem; color: var(--fg); }
+    .nav-cta {
+      font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
+      padding: 0.6rem 1.2rem; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--red-deep); }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 5rem 3rem 2rem; }
+
+    .sec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; margin-bottom: 1rem; }
+    .sec-tag { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+    .sec-index { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: var(--mid-t); }
+    .sec-words { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1.5rem; }
+    .sec-line { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.05; }
+    .sec-line.outline { color: transparent; -webkit-text-stroke: 1px var(--fg); }
+    .sec-sub { font-size: 0.9rem; color: var(--mid); max-width: 640px; line-height: 1.7; margin-bottom: 3rem; }
+    /* Workbench  consistent with aah offer tiles */
+    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2rem; margin-bottom: 2rem; }
+    .wb-title { font-family: var(--display); font-size: 1.3rem; color: var(--fg); border-bottom: 1px solid var(--rule); padding-bottom: 0.75rem; margin-bottom: 1.25rem; }
+
+    label { display: block; font-family: var(--body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.4rem; }
+    input, textarea { width: 100%; padding: 0.85rem; font-family: var(--body); font-size: 0.9rem; border: 1px solid var(--rule); border-radius: 2px; background: var(--bg); color: var(--fg); margin-bottom: 1.25rem; outline: none; transition: border-color 0.2s; }
+    input:focus, textarea:focus { border-color: var(--red); }
+    textarea { resize: vertical; }
+
+    .btn-red {
+      display: inline-block; font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
+      padding: 0.7rem 1.5rem; border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-red:hover { background: var(--red-deep); }
+
+    .res-box { margin-top: 1.5rem; padding: 1.5rem; background: var(--ink); color: #F0EBE0; font-size: 0.82rem; line-height: 1.6; white-space: pre-wrap; display: none; border-radius: 2px; font-family: var(--body); }
+    .res-box.active { display: block; }
+    .demo-note { font-size: 0.72rem; color: var(--mid-t); margin-top: 0.75rem; font-style: italic; }
+
+    /* Info card */
+    .info-card { background: var(--card); border: 1px solid var(--card-border); padding: 1.5rem 2rem; }
+    .info-card h3 { font-family: var(--display); font-size: 1.1rem; color: var(--fg); margin-bottom: 0.75rem; }
+    .info-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; max-width: 640px; }
+
+    footer { margin-top: 5rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h3 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .wrap, .footer-inner, .f-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .footer-inner { flex-direction: column; }
+      .f-bottom { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+  <link rel="model-context-protocol" type="application/json" href="/.well-known/mcp.json">
+  <script src="/webmcp.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://aah.monster/eos-mcp/",
+  "url": "https://aah.monster/eos-mcp/",
+  "name": "Eos MCP",
+  "description": "Drop-in MCP servers for AI agents. Hosted, scaled, MIT-licensed.",
+  "inLanguage": "en"
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1.8rem;">
+      <a href="/about/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">about</a>
+      <a href="/manifesto/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">manifesto</a>
+      <a href="/free-checklist/" style="font-family:var(--body);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--mid)'">free checklist</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode" style="background:none;border:1px solid var(--rule);color:var(--fg);font-family:var(--body);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 0.9rem;cursor:pointer;transition:all 0.2s;">◐ dark</button>
+      <a href="/brand-audit/" class="nav-cta">get audited →</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="wrap" id="main">
+      <div class="sec-top"><span class="sec-tag">tool / eos mcp</span><span class="sec-index">002</span></div>
+      <h1 class="sec-line" style="font-size:clamp(3rem,8vw,6rem);line-height:1;letter-spacing:-.01em;">drop-in mcp servers<br><span style="color:var(--red);">for your ai agents.</span></h1>
+      <p class="sec-body">a directory of curated, hosted MCP servers for Claude Code, Cursor, Codex, and Gemini. free tier, hosted pro, enterprise. all MIT-licensed. plug-and-play, no infrastructure.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:3rem 0;" data-pricing>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:2rem;text-align:center;"><h3 style="font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.5rem;">free</h3><div style="font-family:var(--display);font-size:2rem;margin-bottom:.5rem;">$0</div><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">1 public server, 100 req/day, community support.</p></div>
+        <div style="background:var(--card);border:2px solid var(--red);padding:2rem;text-align:center;"><h3 style="font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.5rem;">pro</h3><div style="font-family:var(--display);font-size:2rem;margin-bottom:.5rem;">$29/mo</div><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">5 hosted, 10k req/day, email support.</p></div>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:2rem;text-align:center;"><h3 style="font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.5rem;">enterprise</h3><div style="font-family:var(--display);font-size:2rem;margin-bottom:.5rem;">$149/mo</div><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">20 hosted + private, unlimited, Slack + dedicated.</p></div>
+      </div>
+      <div id="servers">
+        <span class="sec-tag">featured servers</span>
+        <h2 class="sec-line" style="font-size:clamp(1.4rem,4vw,2rem);margin-top:1rem;">browse the directory.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:3rem 0;">
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:1.5rem;" data-link data-href="#"><h4 style="font-size:.85rem;margin-bottom:.5rem;">Web Scraper MCP</h4><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">Fetch and parse any URL. Clean HTML to markdown.</p><span style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.5rem;display:inline-block;">free</span></div>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:1.5rem;" data-link data-href="#"><h4 style="font-size:.85rem;margin-bottom:.5rem;">GRAFT Context Graph</h4><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">Code context graph for large repos.</p><span style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.5rem;display:inline-block;">pro</span></div>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:1.5rem;" data-link data-href="#"><h4 style="font-size:.85rem;margin-bottom:.5rem;">Email MCP</h4><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">Send and receive email. Templates, scheduling.</p><span style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.5rem;display:inline-block;">pro</span></div>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:1.5rem;" data-link data-href="#"><h4 style="font-size:.85rem;margin-bottom:.5rem;">PostgreSQL MCP</h4><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">Read-only database queries. Schema discovery.</p><span style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.5rem;display:inline-block;">pro</span></div>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:1.5rem;" data-link data-href="#"><h4 style="font-size:.85rem;margin-bottom:.5rem;">Memory MCP</h4><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">Persistent memory for agents.</p><span style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.5rem;display:inline-block;">free</span></div>
+        <div style="background:var(--card);border:1px solid var(--card-border);padding:1.5rem;" data-link data-href="#"><h4 style="font-size:.85rem;margin-bottom:.5rem;">Auth MCP</h4><p style="font-size:.8rem;color:var(--mid);line-height:1.5;">OAuth flows, session management.</p><span style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.5rem;display:inline-block;">enterprise</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:3rem 0;">
+        <div style="text-align:center;"><div style="font-family:var(--display);font-size:2rem;color:var(--red);margin-bottom:.5rem;">01</div><h4 style="font-size:.9rem;margin-bottom:.3rem;">Choose a server</h4><p style="font-size:.8rem;color:var(--mid);">Pick from the directory.</p></div>
+        <div style="text-align:center;"><div style="font-family:var(--display);font-size:2rem;color:var(--red);margin-bottom:.5rem;">02</div><h4 style="font-size:.9rem;margin-bottom:.3rem;">Connect your agent</h4><p style="font-size:.8rem;color:var(--mid);">Add the URL to .mcp.json.</p></div>
+        <div style="text-align:center;"><div style="font-family:var(--display);font-size:2rem;color:var(--red);margin-bottom:.5rem;">03</div><h4 style="font-size:.9rem;margin-bottom:.3rem;">Use as tool</h4><p style="font-size:.8rem;color:var(--mid);">Your agent has the tools.</p></div>
+      </div>
+      <div style="background:var(--red);color:white;padding:3rem;text-align:center;margin:3rem 0;">
+        <h2 style="font-family:var(--display);font-size:1.8rem;margin-bottom:.5rem;">have an mcp server to list?</h2>
+        <p style="font-size:.9rem;margin-bottom:1.5rem;">submit yours to the directory. we review, MIT-license it, and list it.</p>
+        <a href="mailto:hello@aah.monster?subject=MCP submission" style="font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:white;color:var(--red);padding:.7rem 1.5rem;text-decoration:none;">submit yours</a>
+      </div>
+    </div>
+</main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and C-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h3>offers</h3>
+        <ul>
+          <li><a href="/the-monster-job/">The Monster Job, €2,500</a></li>
+          <li><a href="/monster-retainer/">The Monster on Retainer, €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit, €199</a></li>
+          <li><a href="/ai-executive/">AI Executive System, €1,500</a></li>
+          <li><a href="/voice-fingerprint/">Voice Fingerprint, €249</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint, €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>pages</h3>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="/manifesto/">manifesto</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>books</h3>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer, €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual, €97</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>tools</h3>
+        <ul>
+          <li><a href="/tools/llms-generator/" target="_blank">LLMs.txt Generator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>Published by <a rel="author" href="/about/" style="color:inherit;text-decoration:underline;">Adrian M. Peticila</a> · © 2026 aah, monster!</span>
+      <span>Contact: adrian@peticila.ro · <time datetime="2026-08-14">Updated August 2026</time></span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".faq-item h4").forEach(function(h){h.addEventListener("click",function(){h.parentElement.classList.toggle("open");});});
+
+    
+
+document.querySelectorAll('[data-pricing]').forEach(function(grid){
+  Array.from(grid.children).forEach(function(card){
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(){
+      Array.from(grid.children).forEach(function(c){
+        c.style.borderColor='var(--border)'; c.style.borderWidth='1px'; c.style.boxShadow='none'; c.style.background='var(--card)';
+      });
+      card.style.borderColor='var(--red)'; card.style.borderWidth='2px';
+      card.style.boxShadow='0 0 0 3px rgba(212,32,32,0.18), 0 6px 20px rgba(212,32,32,0.12)';
+      card.style.background='#fff8f8';
+    });
+  });
+});
+document.querySelectorAll('[data-link]').forEach(function(card){
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function(){
+    var u=card.getAttribute('data-href');
+    if(u && u!=='#'){ window.location.href=u; }
+    else {
+      Array.from(card.parentElement.children).forEach(function(c){ c.style.boxShadow='none'; c.style.borderColor='var(--border)'; });
+      card.style.boxShadow='0 0 0 3px rgba(212,32,32,0.18)'; card.style.borderColor='var(--red)';
+    }
+  });
+});
+</script>
+</body>
+</html>
+
