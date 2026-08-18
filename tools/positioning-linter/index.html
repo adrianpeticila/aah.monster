@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B2B Positioning Linter · aah, monster!</title>
-  <meta name="description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnostic. Zero fluff.">
+  <meta name="description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnostic. Zero fluff. Free tool.">
   <link rel="canonical" href="https://aah.monster/tools/positioning-linter/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aah.monster/tools/positioning-linter/">
   <meta property="og:title" content="B2B Positioning Linter · aah, monster!">
-  <meta property="og:description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnostic.">
+  <meta property="og:description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnostic. Free tool.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="aah, monster!">
   <meta property="og:image" content="https://aah.monster/og-image.png">
+  <meta property="og:image:alt" content="B2B Positioning Linter · aah, monster!">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@adrianmpeticila">
+  <meta name="twitter:title" content="B2B Positioning Linter · aah, monster!">
+  <meta name="twitter:description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score. Free tool.">
+  <meta name="twitter:image" content="https://aah.monster/og-image.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
+  <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="woff" crossorigin>
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     @font-face {
       font-family: 'Sprite Graffiti';
       font-style: normal;
@@ -29,309 +39,122 @@
       font-weight: 400 800;
       font-display: swap;
       src: url('/fonts/sono-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
     :root {
-      --cream: #F2F1ED;
-      --ink: #111111;
-      --mid: #595959;
-      --mid-t: #777777;
-      --red: #D42020;
-      --red-deep: #A80E0E;
-      --rule: rgba(17,17,17,0.1);
-      --display: 'Sprite Graffiti', sans-serif;
-      --body: 'Sono', monospace;
-      --bg: #F2F1ED;
-      --fg: #111111;
-      --card: #FFFFFF;
-      --card-border: rgba(17,17,17,0.09);
+      --bg: #F2F1ED; --fg: #111111; --cream: #F2F1ED; --ink: #111111;
+      --mid: #777777; --mid-t: #777777; --red: #D42020; --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1); --card: #FFFFFF; --card-border: rgba(17,17,17,0.09);
+      --display: 'Sprite Graffiti', sans-serif; --body: 'Sono', monospace;
     }
-
     [data-theme="dark"] {
-      --bg: #0F0F0F;
-      --fg: #F0EFEb;
-      --cream: #0F0F0F;
-      --ink: #F0EFEb;
-      --mid: #999999;
-      --mid-t: #999999;
-      --rule: rgba(255,255,255,0.09);
-      --card: #1A1A1A;
-      --card-border: rgba(255,255,255,0.08);
+      --bg: #0F0F0F; --fg: #F0EFEB; --cream: #0F0F0F; --ink: #F0EFEB;
+      --mid: #999; --mid-t: #999; --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A; --card-border: rgba(255,255,255,0.08);
     }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
 
-    a { color: inherit; text-decoration: none; }
-    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--red); color: white; padding: 0.6rem 1rem; font-family: var(--body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; z-index: 100; }
-    .skip-link:focus { left: 0; }
-
-    /* NAV */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 1px solid var(--rule); }
-    .nav-logo { font-family: var(--display); font-size: 1.4rem; color: var(--fg); text-decoration: none; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 3rem; background: var(--bg); border-bottom: 1px solid var(--rule); transition: background 0.3s;
+    }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; color: var(--fg); text-decoration: none; }
     .nav-links { display: flex; align-items: center; gap: 1.5rem; }
     .nav-link { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); text-decoration: none; }
     .nav-link:hover { color: var(--red); }
-    .nav-cta {
-      font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
-      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
-      padding: 0.6rem 1.2rem; transition: background 0.2s;
-    }
+    .nav-cta { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.65rem 1.4rem; transition: background 0.2s; }
     .nav-cta:hover { background: var(--red-deep); }
+    #theme-toggle { background: none; border: 1px solid var(--rule); color: var(--fg); font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0.9rem; cursor: pointer; transition: all 0.2s; }
 
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem 3rem; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
 
-    /* HEADER */
-    .sec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; margin-bottom: 1rem; }
-    .sec-tag { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
-    .sec-index { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: var(--mid-t); }
-    .sec-words { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1.2rem; }
-    .sec-line { font-family: var(--display); font-size: clamp(1.8rem, 4.5vw, 3rem); line-height: 1.05; }
-    .sec-line.outline { color: transparent; -webkit-text-stroke: 1.2px var(--fg); }
-    .sec-sub { font-size: 0.9rem; color: var(--mid); max-width: 680px; line-height: 1.7; margin-bottom: 2.5rem; }
+    /* PAGE HEADER WITH FITTEXT GRAFFITI */
+    .page-header { padding-top: 80px; min-height: 65vh; display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+    .ph-top { display: flex; justify-content: space-between; padding: 1.5rem 3rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    .ph-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-top .price-label { color: var(--red); }
+    .ph-words { padding: 0 3rem; overflow: hidden; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .fit-line { font-family: var(--display); font-weight: 400; line-height: 0.88; white-space: nowrap; display: block; color: var(--red); }
+    .fit-line.outline { color: transparent; -webkit-text-stroke: 4px var(--red); }
+    .ph-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding: 1.5rem 3rem 2rem; border-top: 1px solid var(--rule); gap: 2rem; }
+    .ph-bottom-left { font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-bottom-center { font-family: var(--body); font-size: 0.85rem; color: var(--mid-t); font-style: italic; text-align: center; max-width: 420px; line-height: 1.55; }
+
+    .btn-red { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.9rem 2rem; display: inline-block; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn-red:hover { background: var(--red-deep); }
+    .btn-sub { display: block; margin-top: 0.5rem; font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid-t); opacity: 0.7; }
+
+    section { padding: 5rem 0; border-top: 1px solid var(--rule); }
+    .sec-top { display: flex; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .sec-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+
+    h2 { font-family: var(--display); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; color: var(--fg); margin-bottom: 2.5rem; }
+    h2 .red { color: var(--red); }
+    h2 .outline { color: transparent; -webkit-text-stroke: 2px var(--fg); }
 
     /* WORKBENCH */
-    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2rem; margin-bottom: 2.5rem; box-shadow: 2px 2px 0px var(--rule); }
-    .wb-title { font-family: var(--display); font-size: 1.3rem; color: var(--fg); border-bottom: 1px solid var(--rule); padding-bottom: 0.75rem; margin-bottom: 1.25rem; }
+    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2.5rem; box-shadow: 2px 2px 0px var(--rule); }
+    .wb-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .wb-header h3 { font-family: var(--display); font-size: 1.5rem; color: var(--fg); }
+    .wb-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
 
-    .examples-bar {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.2rem;
-      align-items: center;
-    }
-    .examples-bar span {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--mid-t);
-    }
-    .btn-eg {
-      background: var(--bg);
-      border: 1px solid var(--rule);
-      color: var(--fg);
-      font-family: var(--body);
-      font-size: 0.7rem;
-      padding: 0.35rem 0.7rem;
-      cursor: pointer;
-      border-radius: 2px;
-      transition: all 0.15s;
-    }
-    .btn-eg:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
+    .examples-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; align-items: center; }
+    .examples-bar span { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid-t); }
+    .btn-eg { background: var(--bg); border: 1px solid var(--rule); color: var(--fg); font-family: var(--body); font-size: 0.7rem; padding: 0.4rem 0.8rem; cursor: pointer; border-radius: 2px; transition: all 0.15s; }
+    .btn-eg:hover { border-color: var(--red); color: var(--red); }
 
     label { display: block; font-family: var(--body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
     textarea {
-      width: 100%;
-      min-height: 130px;
-      padding: 1rem;
-      font-family: var(--body);
-      font-size: 0.92rem;
-      line-height: 1.55;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      background: var(--bg);
-      color: var(--fg);
-      margin-bottom: 1.25rem;
-      outline: none;
-      resize: vertical;
-      transition: border-color 0.2s;
+      width: 100%; min-height: 140px; padding: 1.2rem; font-family: var(--body); font-size: 0.95rem; line-height: 1.55;
+      border: 1px solid var(--rule); border-radius: 2px; background: var(--bg); color: var(--fg); margin-bottom: 1.5rem;
+      outline: none; resize: vertical; transition: border-color 0.2s;
     }
     textarea:focus { border-color: var(--red); }
 
-    .action-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .btn-red {
-      display: inline-block;
-      font-family: var(--body);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: var(--red);
-      color: white;
-      text-decoration: none;
-      padding: 0.85rem 1.8rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-      border-radius: 2px;
-    }
-    .btn-red:hover { background: var(--red-deep); }
+    .action-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 
     /* RESULTS */
-    #results {
-      display: none;
-      margin-top: 2rem;
-      animation: fadeIn 0.3s ease-in;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .verdict-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-left: 5px solid var(--red);
-      box-shadow: 2px 2px 0px var(--rule);
-    }
-    .score-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 1rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .score-num {
-      font-family: var(--display);
-      font-size: 2.8rem;
-      line-height: 0.9;
-      color: var(--red);
-    }
-    .score-tag {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      background: var(--fg);
-      color: var(--bg);
-    }
-    .verdict-headline {
-      font-family: var(--display);
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      color: var(--fg);
-    }
-    .verdict-sub {
-      color: var(--mid);
-      font-size: 0.88rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    .findings-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      margin-top: 1.2rem;
-    }
-    .finding-item {
-      background: var(--bg);
-      border: 1px solid var(--rule);
-      padding: 0.9rem 1.1rem;
-      border-radius: 2px;
-    }
-    .finding-badge {
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.25rem;
-      display: block;
-    }
-    .finding-desc {
-      font-size: 0.84rem;
-      color: var(--fg);
-      line-height: 1.45;
-    }
+    #results { display: none; margin-top: 2.5rem; animation: fadeIn 0.3s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-    .shift-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    @media (max-width: 650px) {
-      .shift-grid { grid-template-columns: 1fr; }
-    }
-    .shift-box {
-      padding: 1.2rem;
-      border: 1px solid var(--rule);
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
-    .shift-box.bad { background: var(--bg); }
+    .verdict-card { background: var(--bg); border: 1px solid var(--rule); padding: 2rem; border-left: 5px solid var(--red); }
+    .score-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.2rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .score-num { font-family: var(--display); font-size: 3rem; line-height: 0.9; color: var(--red); }
+    .score-tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem; background: var(--fg); color: var(--bg); }
+    .verdict-headline { font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--fg); }
+    .verdict-sub { color: var(--mid); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
+
+    .findings-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.2rem; }
+    .finding-item { background: var(--card); border: 1px solid var(--card-border); padding: 1rem 1.2rem; border-radius: 2px; }
+    .finding-badge { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; display: block; }
+    .finding-desc { font-size: 0.85rem; color: var(--fg); line-height: 1.45; }
+
+    .shift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    @media (max-width: 650px) { .shift-grid { grid-template-columns: 1fr; } }
+    .shift-box { padding: 1.2rem; border: 1px solid var(--rule); font-size: 0.82rem; line-height: 1.5; }
+    .shift-box.bad { background: var(--card); }
     .shift-box.good { background: var(--fg); color: var(--bg); }
-    .shift-lbl {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
+    .shift-lbl { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; display: block; }
     .shift-box.bad .shift-lbl { color: var(--red); }
     .shift-box.good .shift-lbl { color: #FFFFFF; }
 
-    /* CTA BANNER */
-    .cta-banner {
-      background: var(--fg);
-      color: var(--bg);
-      padding: 2.2rem;
-      margin-top: 2.5rem;
-      border: 1px solid var(--fg);
-    }
-    .cta-banner h3 {
-      font-family: var(--display);
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      color: var(--bg);
-    }
-    .cta-banner p {
-      font-size: 0.85rem;
-      color: var(--mid-t);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      max-width: 620px;
-    }
-    .cta-btns {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .btn-buy {
-      background: var(--red);
-      color: white;
-      font-family: var(--body);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.85rem 1.8rem;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-buy:hover { background: var(--red-deep); }
-    .btn-pdf {
-      color: var(--bg);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+    /* CTA BLOCK */
+    .cta-block { background: var(--ink); color: var(--cream); padding: 5rem 0; }
+    .cta-block h2 { color: var(--cream); margin-bottom: 1rem; }
+    .cta-block p { font-size: 0.95rem; color: #999; margin-bottom: 2rem; max-width: 640px; line-height: 1.6; }
+    .btn-cream { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--cream); color: var(--ink); text-decoration: none; padding: 0.9rem 2rem; display: inline-block; transition: all 0.2s; }
+    .btn-cream:hover { background: var(--red); color: white; }
+    .cta-sub { margin-top: 1rem; font-size: 0.75rem; color: #666; }
+    .cta-sub a { color: #888; text-decoration: underline; }
 
-    /* FOOTER */
-    footer { margin-top: 5rem; border-top: 1px solid var(--rule); }
+    .faq-list { display: flex; flex-direction: column; border-top: 3px solid var(--fg); }
+    .faq-item { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+    .faq-q { font-family: var(--body); font-size: 0.88rem; font-weight: 800; color: var(--fg); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .faq-a { font-size: 0.85rem; color: var(--mid); line-height: 1.65; max-width: 680px; }
+
+    footer { border-top: 1px solid var(--rule); }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
     .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
     .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
@@ -346,101 +169,177 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .wrap, .footer-inner, .f-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .page-header { min-height: auto; padding-top: 60px; }
+      .ph-top, .ph-words, .ph-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .ph-bottom { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
-  <a href="#main" class="skip-link">skip to content</a>
 
   <!-- CANONICAL AAH NAV -->
   <nav>
     <a href="/" class="nav-logo">aah, monster!</a>
     <div class="nav-links">
       <a href="/brand-audit/" class="nav-link">audit (€199)</a>
+      <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" class="nav-link" style="color:var(--red);">sample audit (pdf) →</a>
+      <button id="theme-toggle" aria-label="Toggle theme">◐ dark</button>
       <a href="https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00" class="nav-cta">get the audit, €199 →</a>
     </div>
   </nav>
 
-  <main id="main" class="wrap">
-    <div class="sec-top">
-      <span class="sec-tag">01 · interactive tool · zero fluff</span>
-      <span class="sec-index">FREE TOOL</span>
+  <!-- CANONICAL PAGE HEADER -->
+  <header class="page-header">
+    <div class="ph-top">
+      <span>01 · positioning diagnostic</span>
+      <span class="price-label">interactive tool · zero fluff</span>
     </div>
-    <div class="sec-words">
-      <span class="sec-line">B2B POSITIONING</span>
-      <span class="sec-line outline">LINTER.</span>
+    <div class="ph-words">
+      <span class="fit-line">B2B POSITIONING</span>
+      <span class="fit-line outline">LINTER.</span>
     </div>
-    <p class="sec-sub">Paste your LinkedIn headline, bio, or landing page hero hook. Get an instant, cynical diagnostic showing exactly why high-value buyers view you as a commodity.</p>
-
-    <!-- WORKBENCH -->
-    <div class="workbench">
-      <div class="wb-title">Diagnostic Input</div>
-      
-      <div class="examples-bar">
-        <span>Try common traps:</span>
-        <button class="btn-eg" onclick="loadEg(1)">DevTool Resume Soup</button>
-        <button class="btn-eg" onclick="loadEg(2)">Corporate AI Slop</button>
-        <button class="btn-eg" onclick="loadEg(3)">Apologetic Freelancer</button>
-        <button class="btn-eg" onclick="loadEg(4)">Category Leader</button>
+    <div class="ph-bottom">
+      <div class="ph-bottom-left">instant score · 100% written · no calls</div>
+      <div class="ph-bottom-center">paste your headline or hook. get an instant diagnostic of why buyers bounce.</div>
+      <div>
+        <a href="#workbench" class="btn-red">test your positioning →</a>
+        <span class="btn-sub">free tool · instant results</span>
       </div>
+    </div>
+  </header>
 
-      <label for="inputText">Headline, Bio, or Hook Text</label>
-      <textarea id="inputText" placeholder="Paste your headline or hook here (e.g. 'Founder & CEO at SaaS | Building next-gen AI observability | Ex-Google | Cloud Enthusiast | Speaker')..."></textarea>
+  <!-- WORKBENCH SECTION -->
+  <section id="workbench">
+    <div class="wrap">
+      <div class="sec-top"><span>interactive workbench</span><span>02</span></div>
+      <h2>paste your copy.<br><span class="red">get diagnosed.</span></h2>
 
-      <div class="action-row">
-        <button class="btn-red" onclick="analyzePositioning()">Lint My Positioning →</button>
-        <span style="font-size:0.72rem; color:var(--mid-t);">100% Client-Side · Zero Data Stored</span>
-      </div>
+      <div class="workbench">
+        <div class="wb-header">
+          <h3>Input Text</h3>
+          <span class="wb-tag">Deterministic Linter</span>
+        </div>
 
-      <!-- RESULTS -->
-      <div id="results">
-        <div class="verdict-card">
-          <div class="score-row">
-            <div>
-              <div style="font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--mid);">Positioning Clarity Score</div>
-              <div class="score-num" id="scoreNum">3.2 / 10</div>
+        <div class="examples-bar">
+          <span>Try common traps:</span>
+          <button class="btn-eg" onclick="loadEg(1)">DevTool Resume Soup</button>
+          <button class="btn-eg" onclick="loadEg(2)">Corporate AI Slop</button>
+          <button class="btn-eg" onclick="loadEg(3)">Apologetic Freelancer</button>
+          <button class="btn-eg" onclick="loadEg(4)">Category Leader</button>
+        </div>
+
+        <label for="inputText">LinkedIn Headline, Bio, or Landing Page Hook</label>
+        <textarea id="inputText" placeholder="Paste your headline, bio, or hook here (e.g. 'Founder & CEO at SaaS | Building next-gen AI observability | Ex-Google | Cloud Enthusiast | Speaker')..."></textarea>
+
+        <div class="action-row">
+          <button class="btn-red" onclick="analyzePositioning()">Lint My Positioning →</button>
+          <span style="font-size:0.75rem; color:var(--mid-t);">100% Client-Side · Zero Data Saved</span>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="results">
+          <div class="verdict-card">
+            <div class="score-row">
+              <div>
+                <div style="font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--mid);">Positioning Clarity Score</div>
+                <div class="score-num" id="scoreNum">3.2 / 10</div>
+              </div>
+              <div class="score-tag" id="verdictBadge">COWARDLY RESUME SOUP</div>
             </div>
-            <div class="score-tag" id="verdictBadge">COWARDLY RESUME SOUP</div>
-          </div>
 
-          <div class="verdict-headline" id="verdictTitle">You Sound Like An Unpaid Product Catalog</div>
-          <div class="verdict-sub" id="verdictSummary">
-            Your positioning is cramming multiple identities into one line while hiding behind features. Enterprise buyers do not buy mission-critical solutions from polite tool-builders.
-          </div>
-
-          <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-top:1.5rem;">
-            Diagnostic Findings:
-          </div>
-
-          <div class="findings-list" id="findingsContainer">
-            <!-- Populated by JS -->
-          </div>
-
-          <div class="shift-grid">
-            <div class="shift-box bad">
-              <span class="shift-lbl">What You Signal Today (Commodity)</span>
-              <div id="shiftBad">Keyword laundry list. Waiting for prospects to guess your value.</div>
+            <div class="verdict-headline" id="verdictTitle">You Sound Like An Unpaid Product Catalog</div>
+            <div class="verdict-sub" id="verdictSummary">
+              Your positioning is cramming multiple identities into one line while hiding behind features. Enterprise buyers do not buy mission-critical solutions from polite tool-builders.
             </div>
-            <div class="shift-box good">
-              <span class="shift-lbl">How A Category Authority Frames It</span>
-              <div id="shiftGood">1 sharp commercial claim. Diagnosing the exact bleeding fire you extinguish.</div>
+
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-top:1.5rem;">
+              Diagnostic Findings:
+            </div>
+
+            <div class="findings-list" id="findingsContainer">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="shift-grid">
+              <div class="shift-box bad">
+                <span class="shift-lbl">What You Signal Today (Commodity)</span>
+                <div id="shiftBad">Keyword laundry list. Waiting for prospects to guess your value.</div>
+              </div>
+              <div class="shift-box good">
+                <span class="shift-lbl">How A Category Authority Frames It</span>
+                <div id="shiftGood">1 sharp commercial claim. Diagnosing the exact bleeding fire you extinguish.</div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- CTA BANNER -->
-        <div class="cta-banner">
-          <h3>Want this entire teardown written for your brand?</h3>
-          <p>The Positioning Linter catches surface cowardice. The Personal Brand Audit gives you the full 4-6 page strategic overhaul: your revised narrative spear, content engine, and word-for-word profile rewrites.</p>
-          <div class="cta-btns">
-            <a href="https://aah.monster/brand-audit/" class="btn-buy">Get The Brand Audit, €199 →</a>
-            <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" class="btn-pdf">📄 View sample 4-page audit (PDF)</a>
-          </div>
+  <!-- EXPLANATION SECTION -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>the difference</span><span>03</span></div>
+      <h2>surface check vs.<br><span class="red">full brand autopsy.</span></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;border-top:3px solid var(--fg);padding-top:2rem;">
+        <div>
+          <h3 style="font-family:var(--body);font-size:0.95rem;font-weight:800;margin-bottom:0.75rem;text-transform:uppercase;">The Free Positioning Linter</h3>
+          <p style="font-size:0.85rem;color:var(--mid-t);line-height:1.65;margin-bottom:1rem;">A 5-second sanity check. Flags generic buzzwords, title dumping, apologetic syntax, and lack of commercial stakes.</p>
+          <ul style="font-size:0.8rem;color:var(--mid);list-style:none;line-height:1.6;">
+            <li>✓ Instant client-side score</li>
+            <li>✓ Surface syntax penalty audit</li>
+            <li>✗ No rewritten narrative pillars</li>
+            <li>✗ No complete LinkedIn profile overhaul</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-family:var(--body);font-size:0.95rem;font-weight:800;margin-bottom:0.75rem;text-transform:uppercase;color:var(--red);">The Personal Brand Audit (€199)</h3>
+          <p style="font-size:0.85rem;color:var(--mid-t);line-height:1.65;margin-bottom:1rem;">A 4-6 page confidential executive teardown delivered entirely in writing in 48 hours. Zero Zoom discovery calls.</p>
+          <ul style="font-size:0.8rem;color:var(--fg);list-style:none;line-height:1.6;">
+            <li>✓ The 3 distinct failure points in your current positioning</li>
+            <li>✓ Your revised narrative angle that competitors cannot steal</li>
+            <li>✓ Word-for-word rewrites for your core LinkedIn sections</li>
+            <li>✓ 48-hour delivery straight to your inbox</li>
+          </ul>
         </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <div class="cta-block">
+    <div class="wrap">
+      <h2>your brand,<br><span style="color:var(--red);">diagnosed.</span></h2>
+      <p>4-6 pages. 48 hours. €199. Find out exactly what is broken in your positioning before spending thousands on ads and agencies.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+        <a href="https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00" class="btn-cream">get the brand audit, €199 →</a>
+        <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" style="color:var(--cream);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px;">📄 View sample 4-page audit (PDF)</a>
+      </div>
+      <p class="cta-sub">or <a href="/#offers">see all offers</a> if you want the full brand rebuild.</p>
+    </div>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>questions</span><span>04</span></div>
+      <h2>frequently<br><span class="outline">asked.</span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">what does this linter check?</div>
+          <div class="faq-a">It scans for the 5 most common positioning flaws: buzzword/slop density, multiple credential dumping, apologetic 'helping' phrasing, and missing quantifiable dollar/time stakes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">does this send my text to any server or AI?</div>
+          <div class="faq-a">No. The linter executes 100% client-side in your browser. Nothing is logged, transmitted, or stored.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">how do i get a complete rewrite?</div>
+          <div class="faq-a">Order the <a href="/brand-audit/">Personal Brand Audit (€199)</a>. In 48 hours, you receive a full written diagnostic document with custom-written narrative pillars and ready-to-deploy LinkedIn copy.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CANONICAL 4-COLUMN FOOTER -->
   <footer>
@@ -498,6 +397,33 @@
   </footer>
 
   <script>
+    function fitLine(el) {
+      const container = el.closest('.ph-words');
+      if (!container) return;
+      const maxWidth = container.offsetWidth;
+      let lo = 10, hi = 800, mid;
+      el.style.fontSize = hi + 'px';
+      while (lo < hi - 1) {
+        mid = Math.floor((lo + hi) / 2);
+        el.style.fontSize = mid + 'px';
+        el.scrollWidth <= maxWidth ? (lo = mid) : (hi = mid);
+      }
+      el.style.fontSize = lo + 'px';
+    }
+    function fitAll() { document.querySelectorAll('.ph-words .fit-line').forEach(fitLine); }
+    document.fonts.ready.then(fitAll);
+    window.addEventListener('resize', fitAll);
+
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { document.documentElement.setAttribute('data-theme','dark'); btn.textContent = '◐ light'; }
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
     const examples = {
       1: "Founder & CEO at TelemetryHQ | Building next-gen eBPF observability | Ex-Google | Cloud Native Enthusiast | Open Source Contributor | Speaker",
       2: "We empower modern enterprises with seamless, AI-driven customer intelligence and holistic data workflows to maximize revenue synergy.",
