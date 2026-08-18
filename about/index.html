@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Person", "ProfilePage"],
+        "@type": "Person",
         "@id": "https://aah.monster/#person",
         "name": "Adrian M. Peticila",
         "url": "https://aah.monster/about/",
@@ -84,12 +84,23 @@
             "author": { "@type": "Person", "name": "Breanna Lawlor" },
             "publisher": { "@type": "Organization", "name": "The CMO" }
           }
-        ],
-        "dateModified": "2026-07-24",
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://aah.monster/about/#page",
+        "url": "https://aah.monster/about/",
+        "name": "About · Adrian M. Peticila · aah, monster!",
+        "description": "20+ years in marketing. 22k LinkedIn followers. Personal branding for founders and C-suite who are tired of being invisible.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://aah.monster/#website" },
+        "mainEntity": { "@id": "https://aah.monster/#person" },
+        "author": { "@id": "https://aah.monster/#person" },
         "hasPart": [
           { "@id": "https://aah.monster/#book-ultimate-personal-branding-manual" },
           { "@id": "https://aah.monster/#book-getting-over-your-branding-fears" }
-        ]
+        ],
+        "dateModified": "2026-08-18T10:00:00+03:00"
       },
       {
         "@type": "Book",
