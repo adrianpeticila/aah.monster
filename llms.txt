@@ -96,6 +96,7 @@ No. Single Stripe payment per engagement.
 
 ## Free Resources & Tools
 
+- **B2B Positioning Linter**: https://aah.monster/tools/positioning-linter/. Instant interactive score on headline cowardice, buzzword density, and positioning leaks. Free.
 - **The Brand Killer Checklist**: https://aah.monster/free-checklist/. 10 yes/no questions revealing exactly where your personal brand breaks. Free. No email required.
 - **LLMs.txt Generator**: https://tools.aah.monster/. Generate standard llms.txt files for AI agents. Free.
 

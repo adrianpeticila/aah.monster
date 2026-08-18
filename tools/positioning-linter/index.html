@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Positioning Linter · aah, monster!</title>
+  <meta name="description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnosis. Zero fluff.">
+  <link rel="canonical" href="https://aah.monster/tools/positioning-linter/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aah.monster/tools/positioning-linter/">
+  <meta property="og:title" content="B2B Positioning Linter · aah, monster!">
+  <meta property="og:description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnosis.">
+  <meta property="og:image" content="https://aah.monster/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/fonts/sono-latin.woff2">
+  <style>
+    :root {
+      --bg: #F2F1ED;
+      --fg: #111111;
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #595959;
+      --mid-t: #777777;
+      --rule: rgba(17,17,17,0.1);
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.12);
+      --red: #D42020;
+      --red-deep: #A80E0E;
+      --display: 'Sprite Graffiti', Impact, sans-serif;
+      --body: 'Sono', monospace, sans-serif;
+      --font-mono: 'Sono', monospace, monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --mid-t: #999999;
+      --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A;
+      --card-border: rgba(255,255,255,0.08);
+    }
+    @font-face {
+      font-family: 'Sprite Graffiti';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Sprite Graffiti'), url('/fonts/SpriteGraffiti.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Sono';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('/fonts/sono-latin.woff2') format('woff2');
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 70px;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: var(--body);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .wrap {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .corner-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    h1.title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      color: var(--fg);
+    }
+    h1.title .outline {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--fg);
+    }
+    p.lead {
+      color: var(--mid);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      max-width: 680px;
+    }
+    .examples-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    .examples-bar span {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mid-t);
+    }
+    .btn-eg {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      color: var(--fg);
+      font-family: var(--body);
+      font-size: 0.7rem;
+      padding: 0.35rem 0.7rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.15s;
+    }
+    .btn-eg:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      background: var(--card);
+      color: var(--fg);
+      border: 1px solid var(--card-border);
+      padding: 1.2rem;
+      font-family: var(--body);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      resize: vertical;
+      outline: none;
+      border-radius: 3px;
+      box-shadow: 2px 2px 0px var(--rule);
+      transition: border-color 0.2s;
+    }
+    textarea:focus {
+      border-color: var(--red);
+    }
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .btn-audit {
+      background: var(--red);
+      color: white;
+      border: none;
+      font-family: var(--body);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.8rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 2px;
+    }
+    .btn-audit:hover {
+      background: var(--red-deep);
+    }
+    
+    /* RESULTS CONTAINER */
+    #results {
+      display: none;
+      animation: fadeIn 0.3s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .verdict-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 3px 3px 0px var(--rule);
+      border-left: 5px solid var(--red);
+    }
+    .score-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .score-num {
+      font-family: var(--display);
+      font-size: 2.8rem;
+      line-height: 0.9;
+      color: var(--red);
+    }
+    .score-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .verdict-headline {
+      font-family: var(--display);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      color: var(--fg);
+    }
+    .verdict-sub {
+      color: var(--mid);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    
+    .findings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .finding-item {
+      background: rgba(17,17,17,0.03);
+      border: 1px solid var(--rule);
+      padding: 1rem 1.2rem;
+      border-radius: 2px;
+    }
+    .finding-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    .finding-desc {
+      font-size: 0.85rem;
+      color: var(--fg);
+      line-height: 1.45;
+    }
+
+    /* REWRITE SHIFT */
+    .shift-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 650px) {
+      .shift-grid { grid-template-columns: 1fr; }
+    }
+    .shift-box {
+      padding: 1.2rem;
+      border: 1px solid var(--rule);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .shift-box.bad {
+      background: var(--card);
+    }
+    .shift-box.good {
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .shift-lbl {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .shift-box.bad .shift-lbl { color: var(--red); }
+    .shift-box.good .shift-lbl { color: #FFFFFF; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--fg);
+      color: var(--bg);
+      padding: 2rem;
+      margin-top: 2.5rem;
+      text-align: left;
+      border: 1px solid var(--fg);
+    }
+    .cta-banner h3 {
+      font-family: var(--display);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: var(--bg);
+    }
+    .cta-banner p {
+      font-size: 0.85rem;
+      color: var(--mid-t);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-buy {
+      background: var(--red);
+      color: white;
+      font-family: var(--body);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.8rem 1.6rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-buy:hover { background: var(--red-deep); }
+    .btn-pdf {
+      color: var(--bg);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 0;
+      margin-top: 4rem;
+      font-size: 0.75rem;
+      color: var(--mid);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="/brand-audit/" style="font-size:0.7rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;">audit (€199)</a>
+      <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" style="font-size:0.7rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);text-decoration:none;">mostră pdf →</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <span class="corner-tag">01 · interactive tool · zero fluff</span>
+    <h1 class="title">B2B POSITIONING <span class="outline">LINTER.</span></h1>
+    <p class="lead">Paste your LinkedIn headline, bio, or landing page hero. Get an instant, cynical diagnostic showing exactly why buyers bounce and view you as a commodity.</p>
+
+    <div class="examples-bar">
+      <span>Try common traps:</span>
+      <button class="btn-eg" onclick="loadEg(1)">DevTool Resume Soup</button>
+      <button class="btn-eg" onclick="loadEg(2)">Corporate AI Slop</button>
+      <button class="btn-eg" onclick="loadEg(3)">Apologetic Freelancer</button>
+      <button class="btn-eg" onclick="loadEg(4)">Category Leader</button>
+    </div>
+
+    <textarea id="inputText" placeholder="Paste your headline, bio, or hook here (e.g. 'Founder & CEO at SaaS | Building next-gen AI observability | Ex-Google | Cloud Enthusiast | Speaker')..."></textarea>
+
+    <div class="action-row">
+      <button class="btn-audit" onclick="analyzePositioning()">Lint My Positioning →</button>
+      <span style="font-size:0.75rem; color:var(--mid-t);">100% Client-Side · No Data Stored</span>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results">
+      <div class="verdict-card">
+        <div class="score-row">
+          <div>
+            <div style="font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--mid);">Positioning Clarity Score</div>
+            <div class="score-num" id="scoreNum">3.2 / 10</div>
+          </div>
+          <div class="score-tag" id="verdictBadge">COWARDLY RESUME SOUP</div>
+        </div>
+
+        <div class="verdict-headline" id="verdictTitle">You Sound Like An Unpaid Product Catalog</div>
+        <div class="verdict-sub" id="verdictSummary">
+          Your positioning is cramming multiple identities into one line while hiding behind features. Enterprise buyers do not buy mission-critical solutions from polite tool-builders.
+        </div>
+
+        <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-top:1.5rem;">
+          Specific Diagnostic Findings:
+        </div>
+
+        <div class="findings-list" id="findingsContainer">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="shift-grid">
+          <div class="shift-box bad">
+            <span class="shift-lbl">What You Signal Today (Commodity)</span>
+            <div id="shiftBad">Keyword laundry list. Waiting for prospects to guess your value.</div>
+          </div>
+          <div class="shift-box good">
+            <span class="shift-lbl">How A Category Authority Frames It</span>
+            <div id="shiftGood">1 sharp commercial claim. Diagnosing the exact bleeding fire you extinguish.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-banner">
+        <h3>Want this entire teardown written for your brand?</h3>
+        <p>The Positioning Linter catches surface cowardice. The Personal Brand Audit gives you the full 4-6 page strategic overhaul: your revised narrative spear, content engine, and line-by-line profile rewrites.</p>
+        <div class="cta-btns">
+          <a href="https://aah.monster/brand-audit/" class="btn-buy">Get The Brand Audit, €199 →</a>
+          <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" class="btn-pdf">📄 View sample 4-page audit (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>aah.monster · Personal Branding Consultancy by Adrian M. Peticila</div>
+      <div>Async Only · One Document · No Calls</div>
+    </footer>
+  </div>
+
+  <script>
+    const examples = {
+      1: "Founder & CEO at TelemetryHQ | Building next-gen eBPF observability | Ex-Google | Cloud Native Enthusiast | Open Source Contributor | Speaker",
+      2: "We empower modern enterprises with seamless, AI-driven customer intelligence and holistic data workflows to maximize revenue synergy.",
+      3: "Helping tech startups grow their business through custom design, branding strategy, and conversion marketing services. DM for inquiries.",
+      4: "Cutting 70% of cloud observability cost without dropping a single trace. Founder & CEO @ TelemetryHQ. Writing about the end of bloated APM bills."
+    };
+
+    function loadEg(id) {
+      document.getElementById('inputText').value = examples[id];
+      analyzePositioning();
+    }
+
+    const slopWords = [
+      "seamlessly", "seamless", "empower", "empowers", "empowering", "revolutionize", 
+      "revolutionizing", "leverage", "leveraging", "streamline", "streamlining", 
+      "next-gen", "next generation", "cutting-edge", "robust", "holistic", 
+      "all-in-one", "synergy", "game-changer", "disrupt", "disrupting", "innovative",
+      "passionate about", "enthusiast", "supercharge", "unlock", "effortless"
+    ];
+
+    function analyzePositioning() {
+      const text = document.getElementById('inputText').value.trim();
+      if (!text) return;
+
+      const lower = text.toLowerCase();
+      const findings = [];
+      let score = 7.5;
+
+      // 1. Slop & Buzzwords Check
+      const detectedSlop = slopWords.filter(w => lower.includes(w));
+      if (detectedSlop.length > 0) {
+        score -= (detectedSlop.length * 1.3);
+        findings.push({
+          badge: "Slop & Buzzword Penalty",
+          desc: "You used generic filler words: <strong>" + detectedSlop.join(", ") + "</strong>. These trigger instant banner blindness for enterprise buyers."
+        });
+      }
+
+      // 2. Title Soup / Separator Check
+      const separators = (text.match(/(\||·|\/|•|@)/g) || []).length;
+      if (separators >= 3) {
+        score -= 2.2;
+        findings.push({
+          badge: "Resume Title Dumping",
+          desc: "You crammed multiple titles separated by bars/slashes. When you claim to be 5 things, the buyer remembers none."
+        });
+      }
+
+      // 3. We/Help Cowardice
+      if (lower.startsWith("we ") || lower.includes("we help") || lower.includes("helping")) {
+        score -= 1.5;
+        findings.push({
+          badge: "Apologetic 'Helping' Syndrome",
+          desc: "'Helping startups grow' is the most commoditized sentence on the internet. State the exact operational pain you eliminate instead."
+        });
+      }
+
+      // 4. Concrete Metrics / Dollar Stakes Check
+      const hasMetrics = /(\d+%|\$\d+|€\d+|\d+h|\d+ days|\d+x)/i.test(text);
+      if (!hasMetrics && score > 4) {
+        score -= 1.0;
+        findings.push({
+          badge: "Missing Commercial Stakes",
+          desc: "No numbers, percentages, or dollar amounts detected. Unquantified claims blend into noise."
+        });
+      } else if (hasMetrics) {
+        score += 1.5;
+      }
+
+      // Clamp score
+      score = Math.max(1.8, Math.min(9.6, score)).toFixed(1);
+
+      // Determine Verdict
+      let badge = "COMMODITY RESUME SOUP";
+      let title = "You Sound Like An Unpaid Product Catalog";
+      let summary = "Your positioning hides behind credentials and generic features. Enterprise buyers buy from founders who clearly diagnose their bleeding operational fires.";
+
+      if (score >= 8.0) {
+        badge = "DANGEROUSLY SHARP CATEGORY LEADER";
+        title = "Positioning Has A Real Spine";
+        summary = "You state 1 sharp commercial claim with quantifiable impact. Your positioning weeds out tire-kickers and pulls serious buyers.";
+      } else if (score >= 5.0) {
+        badge = "POLITE COMMODITY TRAP";
+        title = "Too Safe To Be Remembered";
+        summary = "Your message is polite and technically correct, but completely devoid of tension. It triggers zero urgency.";
+      }
+
+      // Render
+      document.getElementById('scoreNum').innerText = score + " / 10";
+      document.getElementById('verdictBadge').innerText = badge;
+      document.getElementById('verdictTitle').innerText = title;
+      document.getElementById('verdictSummary').innerText = summary;
+
+      const container = document.getElementById('findingsContainer');
+      container.innerHTML = "";
+      if (findings.length === 0) {
+        findings.push({
+          badge: "High Signal Strength",
+          desc: "Zero generic slop detected. Clear commercial claim with direct syntax."
+        });
+      }
+
+      findings.forEach(f => {
+        const div = document.createElement('div');
+        div.className = 'finding-item';
+        div.innerHTML = `<span class="finding-badge">${f.badge}</span><div class="finding-desc">${f.desc}</div>`;
+        container.appendChild(div);
+      });
+
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
