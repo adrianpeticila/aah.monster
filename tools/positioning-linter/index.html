@@ -1,47 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B2B Positioning Linter · aah, monster!</title>
-  <meta name="description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnosis. Zero fluff.">
+  <meta name="description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnostic. Zero fluff.">
   <link rel="canonical" href="https://aah.monster/tools/positioning-linter/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aah.monster/tools/positioning-linter/">
   <meta property="og:title" content="B2B Positioning Linter · aah, monster!">
-  <meta property="og:description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnosis.">
+  <meta property="og:description" content="Paste your headline, bio, or landing page hook. Get an instant, cynical positioning score and diagnostic.">
   <meta property="og:image" content="https://aah.monster/og-image.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/fonts/sono-latin.woff2">
+  <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
   <style>
-    :root {
-      --bg: #F2F1ED;
-      --fg: #111111;
-      --cream: #F2F1ED;
-      --ink: #111111;
-      --mid: #595959;
-      --mid-t: #777777;
-      --rule: rgba(17,17,17,0.1);
-      --card: #FFFFFF;
-      --card-border: rgba(17,17,17,0.12);
-      --red: #D42020;
-      --red-deep: #A80E0E;
-      --display: 'Sprite Graffiti', Impact, sans-serif;
-      --body: 'Sono', monospace, sans-serif;
-      --font-mono: 'Sono', monospace, monospace;
-    }
-    [data-theme="dark"] {
-      --bg: #0F0F0F;
-      --fg: #F0EFEb;
-      --cream: #0F0F0F;
-      --ink: #F0EFEb;
-      --mid: #999999;
-      --mid-t: #999999;
-      --rule: rgba(255,255,255,0.09);
-      --card: #1A1A1A;
-      --card-border: rgba(255,255,255,0.08);
-    }
     @font-face {
       font-family: 'Sprite Graffiti';
       font-style: normal;
@@ -56,74 +30,75 @@
       font-display: swap;
       src: url('/fonts/sono-latin.woff2') format('woff2');
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--body);
-      font-size: 15px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      padding-top: 70px;
+
+    :root {
+      --cream: #F2F1ED;
+      --ink: #111111;
+      --mid: #595959;
+      --mid-t: #777777;
+      --red: #D42020;
+      --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1);
+      --display: 'Sprite Graffiti', sans-serif;
+      --body: 'Sono', monospace;
+      --bg: #F2F1ED;
+      --fg: #111111;
+      --card: #FFFFFF;
+      --card-border: rgba(17,17,17,0.09);
     }
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-      padding: 0.9rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    [data-theme="dark"] {
+      --bg: #0F0F0F;
+      --fg: #F0EFEb;
+      --cream: #0F0F0F;
+      --ink: #F0EFEb;
+      --mid: #999999;
+      --mid-t: #999999;
+      --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A;
+      --card-border: rgba(255,255,255,0.08);
     }
-    .nav-logo {
-      font-family: var(--body);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--fg);
-      text-decoration: none;
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+
+    a { color: inherit; text-decoration: none; }
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--red); color: white; padding: 0.6rem 1rem; font-family: var(--body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; z-index: 100; }
+    .skip-link:focus { left: 0; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .nav-logo { font-family: var(--display); font-size: 1.4rem; color: var(--fg); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); text-decoration: none; }
+    .nav-link:hover { color: var(--red); }
+    .nav-cta {
+      font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; background: var(--red); color: white; text-decoration: none;
+      padding: 0.6rem 1.2rem; transition: background 0.2s;
     }
-    .wrap {
-      max-width: 840px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 5rem;
-    }
-    .corner-tag {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    h1.title {
-      font-family: var(--display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 0.95;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-      color: var(--fg);
-    }
-    h1.title .outline {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--fg);
-    }
-    p.lead {
-      color: var(--mid);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      max-width: 680px;
-    }
+    .nav-cta:hover { background: var(--red-deep); }
+
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem 3rem; }
+
+    /* HEADER */
+    .sec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; margin-bottom: 1rem; }
+    .sec-tag { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+    .sec-index { font-family: var(--body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: var(--mid-t); }
+    .sec-words { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1.2rem; }
+    .sec-line { font-family: var(--display); font-size: clamp(1.8rem, 4.5vw, 3rem); line-height: 1.05; }
+    .sec-line.outline { color: transparent; -webkit-text-stroke: 1.2px var(--fg); }
+    .sec-sub { font-size: 0.9rem; color: var(--mid); max-width: 680px; line-height: 1.7; margin-bottom: 2.5rem; }
+
+    /* WORKBENCH */
+    .workbench { background: var(--card); border: 1px solid var(--card-border); padding: 2rem; margin-bottom: 2.5rem; box-shadow: 2px 2px 0px var(--rule); }
+    .wb-title { font-family: var(--display); font-size: 1.3rem; color: var(--fg); border-bottom: 1px solid var(--rule); padding-bottom: 0.75rem; margin-bottom: 1.25rem; }
+
     .examples-bar {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       align-items: center;
     }
     .examples-bar span {
@@ -134,8 +109,8 @@
       color: var(--mid-t);
     }
     .btn-eg {
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: var(--bg);
+      border: 1px solid var(--rule);
       color: var(--fg);
       font-family: var(--body);
       font-size: 0.7rem;
@@ -148,57 +123,59 @@
       border-color: var(--red);
       color: var(--red);
     }
+
+    label { display: block; font-family: var(--body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
     textarea {
       width: 100%;
       min-height: 130px;
-      background: var(--card);
-      color: var(--fg);
-      border: 1px solid var(--card-border);
-      padding: 1.2rem;
+      padding: 1rem;
       font-family: var(--body);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      resize: vertical;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      background: var(--bg);
+      color: var(--fg);
+      margin-bottom: 1.25rem;
       outline: none;
-      border-radius: 3px;
-      box-shadow: 2px 2px 0px var(--rule);
+      resize: vertical;
       transition: border-color 0.2s;
     }
-    textarea:focus {
-      border-color: var(--red);
-    }
+    textarea:focus { border-color: var(--red); }
+
     .action-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 1rem;
-      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .btn-audit {
-      background: var(--red);
-      color: white;
-      border: none;
+    .btn-red {
+      display: inline-block;
       font-family: var(--body);
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
       padding: 0.85rem 1.8rem;
+      border: none;
       cursor: pointer;
       transition: background 0.2s;
       border-radius: 2px;
     }
-    .btn-audit:hover {
-      background: var(--red-deep);
-    }
-    
-    /* RESULTS CONTAINER */
+    .btn-red:hover { background: var(--red-deep); }
+
+    /* RESULTS */
     #results {
       display: none;
+      margin-top: 2rem;
       animation: fadeIn 0.3s ease-in;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .verdict-card {
@@ -206,8 +183,8 @@
       border: 1px solid var(--card-border);
       padding: 2rem;
       margin-bottom: 2rem;
-      box-shadow: 3px 3px 0px var(--rule);
       border-left: 5px solid var(--red);
+      box-shadow: 2px 2px 0px var(--rule);
     }
     .score-row {
       display: flex;
@@ -226,11 +203,11 @@
       color: var(--red);
     }
     .score-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
+      padding: 0.35rem 0.8rem;
       background: var(--fg);
       color: var(--bg);
     }
@@ -238,26 +215,25 @@
       font-family: var(--display);
       font-size: 1.4rem;
       text-transform: uppercase;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       color: var(--fg);
     }
     .verdict-sub {
       color: var(--mid);
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.88rem;
+      line-height: 1.6;
       margin-bottom: 1.5rem;
     }
-    
     .findings-list {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
     }
     .finding-item {
-      background: rgba(17,17,17,0.03);
+      background: var(--bg);
       border: 1px solid var(--rule);
-      padding: 1rem 1.2rem;
+      padding: 0.9rem 1.1rem;
       border-radius: 2px;
     }
     .finding-badge {
@@ -266,16 +242,15 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
       display: block;
     }
     .finding-desc {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--fg);
       line-height: 1.45;
     }
 
-    /* REWRITE SHIFT */
     .shift-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -291,13 +266,8 @@
       font-size: 0.82rem;
       line-height: 1.5;
     }
-    .shift-box.bad {
-      background: var(--card);
-    }
-    .shift-box.good {
-      background: var(--fg);
-      color: var(--bg);
-    }
+    .shift-box.bad { background: var(--bg); }
+    .shift-box.good { background: var(--fg); color: var(--bg); }
     .shift-lbl {
       font-size: 0.68rem;
       font-weight: 800;
@@ -313,9 +283,8 @@
     .cta-banner {
       background: var(--fg);
       color: var(--bg);
-      padding: 2rem;
+      padding: 2.2rem;
       margin-top: 2.5rem;
-      text-align: left;
       border: 1px solid var(--fg);
     }
     .cta-banner h3 {
@@ -330,11 +299,11 @@
       color: var(--mid-t);
       line-height: 1.6;
       margin-bottom: 1.5rem;
-      max-width: 600px;
+      max-width: 620px;
     }
     .cta-btns {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -342,11 +311,11 @@
       background: var(--red);
       color: white;
       font-family: var(--body);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.8rem 1.6rem;
+      padding: 0.85rem 1.8rem;
       text-decoration: none;
       transition: background 0.2s;
     }
@@ -361,101 +330,172 @@
       text-underline-offset: 4px;
     }
 
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 2rem 0;
-      margin-top: 4rem;
-      font-size: 0.75rem;
-      color: var(--mid);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+    /* FOOTER */
+    footer { margin-top: 5rem; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 220px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h3 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; flex-wrap: wrap; gap: 1rem; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .wrap, .footer-inner, .f-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
+  <a href="#main" class="skip-link">skip to content</a>
+
+  <!-- CANONICAL AAH NAV -->
   <nav>
     <a href="/" class="nav-logo">aah, monster!</a>
-    <div style="display:flex;align-items:center;gap:1.5rem;">
-      <a href="/brand-audit/" style="font-size:0.7rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;">audit (€199)</a>
-      <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" style="font-size:0.7rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);text-decoration:none;">mostră pdf →</a>
+    <div class="nav-links">
+      <a href="/brand-audit/" class="nav-link">audit (€199)</a>
+      <a href="https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00" class="nav-cta">get the audit, €199 →</a>
     </div>
   </nav>
 
-  <div class="wrap">
-    <span class="corner-tag">01 · interactive tool · zero fluff</span>
-    <h1 class="title">B2B POSITIONING <span class="outline">LINTER.</span></h1>
-    <p class="lead">Paste your LinkedIn headline, bio, or landing page hero. Get an instant, cynical diagnostic showing exactly why buyers bounce and view you as a commodity.</p>
-
-    <div class="examples-bar">
-      <span>Try common traps:</span>
-      <button class="btn-eg" onclick="loadEg(1)">DevTool Resume Soup</button>
-      <button class="btn-eg" onclick="loadEg(2)">Corporate AI Slop</button>
-      <button class="btn-eg" onclick="loadEg(3)">Apologetic Freelancer</button>
-      <button class="btn-eg" onclick="loadEg(4)">Category Leader</button>
+  <main id="main" class="wrap">
+    <div class="sec-top">
+      <span class="sec-tag">01 · interactive tool · zero fluff</span>
+      <span class="sec-index">FREE TOOL</span>
     </div>
-
-    <textarea id="inputText" placeholder="Paste your headline, bio, or hook here (e.g. 'Founder & CEO at SaaS | Building next-gen AI observability | Ex-Google | Cloud Enthusiast | Speaker')..."></textarea>
-
-    <div class="action-row">
-      <button class="btn-audit" onclick="analyzePositioning()">Lint My Positioning →</button>
-      <span style="font-size:0.75rem; color:var(--mid-t);">100% Client-Side · No Data Stored</span>
+    <div class="sec-words">
+      <span class="sec-line">B2B POSITIONING</span>
+      <span class="sec-line outline">LINTER.</span>
     </div>
+    <p class="sec-sub">Paste your LinkedIn headline, bio, or landing page hero hook. Get an instant, cynical diagnostic showing exactly why high-value buyers view you as a commodity.</p>
 
-    <!-- RESULTS -->
-    <div id="results">
-      <div class="verdict-card">
-        <div class="score-row">
-          <div>
-            <div style="font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--mid);">Positioning Clarity Score</div>
-            <div class="score-num" id="scoreNum">3.2 / 10</div>
+    <!-- WORKBENCH -->
+    <div class="workbench">
+      <div class="wb-title">Diagnostic Input</div>
+      
+      <div class="examples-bar">
+        <span>Try common traps:</span>
+        <button class="btn-eg" onclick="loadEg(1)">DevTool Resume Soup</button>
+        <button class="btn-eg" onclick="loadEg(2)">Corporate AI Slop</button>
+        <button class="btn-eg" onclick="loadEg(3)">Apologetic Freelancer</button>
+        <button class="btn-eg" onclick="loadEg(4)">Category Leader</button>
+      </div>
+
+      <label for="inputText">Headline, Bio, or Hook Text</label>
+      <textarea id="inputText" placeholder="Paste your headline or hook here (e.g. 'Founder & CEO at SaaS | Building next-gen AI observability | Ex-Google | Cloud Enthusiast | Speaker')..."></textarea>
+
+      <div class="action-row">
+        <button class="btn-red" onclick="analyzePositioning()">Lint My Positioning →</button>
+        <span style="font-size:0.72rem; color:var(--mid-t);">100% Client-Side · Zero Data Stored</span>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results">
+        <div class="verdict-card">
+          <div class="score-row">
+            <div>
+              <div style="font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--mid);">Positioning Clarity Score</div>
+              <div class="score-num" id="scoreNum">3.2 / 10</div>
+            </div>
+            <div class="score-tag" id="verdictBadge">COWARDLY RESUME SOUP</div>
           </div>
-          <div class="score-tag" id="verdictBadge">COWARDLY RESUME SOUP</div>
-        </div>
 
-        <div class="verdict-headline" id="verdictTitle">You Sound Like An Unpaid Product Catalog</div>
-        <div class="verdict-sub" id="verdictSummary">
-          Your positioning is cramming multiple identities into one line while hiding behind features. Enterprise buyers do not buy mission-critical solutions from polite tool-builders.
-        </div>
-
-        <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-top:1.5rem;">
-          Specific Diagnostic Findings:
-        </div>
-
-        <div class="findings-list" id="findingsContainer">
-          <!-- Populated by JS -->
-        </div>
-
-        <div class="shift-grid">
-          <div class="shift-box bad">
-            <span class="shift-lbl">What You Signal Today (Commodity)</span>
-            <div id="shiftBad">Keyword laundry list. Waiting for prospects to guess your value.</div>
+          <div class="verdict-headline" id="verdictTitle">You Sound Like An Unpaid Product Catalog</div>
+          <div class="verdict-sub" id="verdictSummary">
+            Your positioning is cramming multiple identities into one line while hiding behind features. Enterprise buyers do not buy mission-critical solutions from polite tool-builders.
           </div>
-          <div class="shift-box good">
-            <span class="shift-lbl">How A Category Authority Frames It</span>
-            <div id="shiftGood">1 sharp commercial claim. Diagnosing the exact bleeding fire you extinguish.</div>
+
+          <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-top:1.5rem;">
+            Diagnostic Findings:
+          </div>
+
+          <div class="findings-list" id="findingsContainer">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="shift-grid">
+            <div class="shift-box bad">
+              <span class="shift-lbl">What You Signal Today (Commodity)</span>
+              <div id="shiftBad">Keyword laundry list. Waiting for prospects to guess your value.</div>
+            </div>
+            <div class="shift-box good">
+              <span class="shift-lbl">How A Category Authority Frames It</span>
+              <div id="shiftGood">1 sharp commercial claim. Diagnosing the exact bleeding fire you extinguish.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA BANNER -->
+        <div class="cta-banner">
+          <h3>Want this entire teardown written for your brand?</h3>
+          <p>The Positioning Linter catches surface cowardice. The Personal Brand Audit gives you the full 4-6 page strategic overhaul: your revised narrative spear, content engine, and word-for-word profile rewrites.</p>
+          <div class="cta-btns">
+            <a href="https://aah.monster/brand-audit/" class="btn-buy">Get The Brand Audit, €199 →</a>
+            <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" class="btn-pdf">📄 View sample 4-page audit (PDF)</a>
           </div>
         </div>
       </div>
+    </div>
+  </main>
 
-      <!-- CTA -->
-      <div class="cta-banner">
-        <h3>Want this entire teardown written for your brand?</h3>
-        <p>The Positioning Linter catches surface cowardice. The Personal Brand Audit gives you the full 4-6 page strategic overhaul: your revised narrative spear, content engine, and line-by-line profile rewrites.</p>
-        <div class="cta-btns">
-          <a href="https://aah.monster/brand-audit/" class="btn-buy">Get The Brand Audit, €199 →</a>
-          <a href="/samples/aah-monster-brand-audit-sample.pdf" target="_blank" class="btn-pdf">📄 View sample 4-page audit (PDF)</a>
-        </div>
+  <!-- CANONICAL 4-COLUMN FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>brand strategy for founders and C-suite who are tired of being invisible.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ linkedin</a>
+      </div>
+      <div class="f-col">
+        <h3>offers</h3>
+        <ul>
+          <li><a href="/the-monster-job/">The Monster Job, €2,500</a></li>
+          <li><a href="/monster-retainer/">The Monster on Retainer, €2k/mo</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit, €199</a></li>
+          <li><a href="/ai-executive/">AI Executive System, €1,500</a></li>
+          <li><a href="/voice-fingerprint/">Voice Fingerprint, €249</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint, €499</a></li>
+          <li><a href="/free-checklist/">Free Checklist</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>pages</h3>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="/manifesto/">manifesto</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://www.crunchbase.com/person/adrian-peticila" target="_blank">crunchbase</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://www.producthunt.com/@adrian_m_peticila" target="_blank">product hunt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>books</h3>
+        <ul>
+          <li><a href="https://payhip.com/b/tgiAM" target="_blank">Fear is the Brand Killer, €49</a></li>
+          <li><a href="https://payhip.com/b/mKgTI" target="_blank">Personal Branding Manual, €97</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3>tools</h3>
+        <ul>
+          <li><a href="/tools/positioning-linter/">Positioning Linter</a></li>
+          <li><a href="/tools/llms-generator/">LLMs.txt Generator</a></li>
+          <li><a href="/gaia-code/">Gaia Code</a></li>
+          <li><a href="/eos-mcp/">Eos MCP</a></li>
+          <li><a href="/daemon/">Daemon Telemetry</a></li>
+        </ul>
       </div>
     </div>
-
-    <footer>
-      <div>aah.monster · Personal Branding Consultancy by Adrian M. Peticila</div>
-      <div>Async Only · One Document · No Calls</div>
-    </footer>
-  </div>
+    <div class="f-bottom">
+      <span>Published by <a rel="author" href="/about/" style="color:inherit;text-decoration:underline;">Adrian M. Peticila</a> · © 2026 aah, monster!</span>
+      <span>Contact: hello@aah.monster · <time datetime="2026-08-18">Updated August 2026</time></span>
+    </div>
+  </footer>
 
   <script>
     const examples = {
