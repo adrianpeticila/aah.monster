@@ -2,7 +2,7 @@
 
 the full transformation. positioning, voice, linkedin, 30 posts, messaging framework, visual identity brief. four weeks. in writing. nothing held back.
 
-the monster job closes the gap between who you actually are and what your linkedin says about you. not by posting more — by making every piece of your brand say what you actually built.
+the monster job closes the gap between who you actually are and what your linkedin says about you. not by posting more, by making every piece of your brand say what you actually built.
 
 01 — who this is for 01
 
@@ -12,29 +12,29 @@ you've built the company.\
 your brand lags behind.
 ------------------------
 
-If your name shows up in a deal and your LinkedIn shows nothing useful, you lose the deal. That's not vanity. That's pipeline. The Monster Job closes that gap — not by posting more, by making every piece of your brand say what you actually built.
+If your name shows up in a deal and your LinkedIn shows nothing useful, you lose the deal. That's not vanity. That's pipeline. The Monster Job closes that gap: not by posting more, by making every piece of your brand say what you actually built.
 
 Edelman-LinkedIn B2B Thought Leadership Impact Report (2024): 73% of decision-makers trust an organization's thought leadership over its marketing materials.
 
-LinkedIn (2024): fewer than 1% of its 1 billion+ users publish in any given week. Executives who publish are far more likely to be found and contacted by the right people.
+LinkedIn's own session data (2024): fewer than 1% of its 1 billion+ users publish in any given week. Executives who publish are far more likely to be found and contacted by the right people.
 
 →
 
 ### your positioning is generic
 
-your profile could belong to fifty other people. nothing sticks. nobody remembers you after the scroll. the work changes that — a positioning document built only around what you actually do, and for whom.
+your profile could belong to fifty other people. nothing sticks. nobody remembers you after the scroll. the work changes that: a positioning document built only around what you actually do, and for whom.
 
 →
 
 ### linkedin is dead weight
 
-headline says nothing. about section is 5 lines of buzzwords. the work rewrites both — and delivers 30 posts ready to publish in your voice, not a template.
+headline says nothing. about section is 5 lines of buzzwords. the work rewrites both: it delivers 30 posts ready to publish in your voice, not a template.
 
 →
 
 ### you've never had a content spine
 
-you post when you feel like it. the calendar fills, the brand stays empty. the work ships a 3-month content strategy tied to the positioning — so every post earns its place.
+you post when you feel like it. the calendar fills, the brand stays empty. the work ships a 3-month content strategy tied to the positioning, so every post earns its place.
 
 →
 
@@ -104,15 +104,15 @@ ANSWERS.
 
 how exactly do i get all eight deliverables?
 
-eight deliverables, all in writing: full positioning document, complete LinkedIn rewrite (headline + about + featured + skills + banner direction), 30 ready-to-publish posts, messaging framework, voice and tone guide, visual identity brief, 3-month content strategy, final brand OS PDF. the brand OS is the master document — every other deliverable ties back to it.
+eight deliverables, all in writing: full positioning document, complete LinkedIn rewrite (headline + about + featured + skills + banner direction), 30 ready-to-publish posts, messaging framework, voice and tone guide, visual identity brief, 3-month content strategy, final brand OS PDF. the brand OS is the master document; every other deliverable ties back to it.
 
 how is this different from the audit or sprint?
 
-the audit diagnoses. the sprint builds positioning. The Monster Job is the full thing — positioning, voice, linkedin, posts, messaging, visual identity, content strategy, master document. nothing left for you to figure out. you ship the brand, not a half-built brand.
+the audit diagnoses. the sprint builds positioning. The Monster Job is the full thing: positioning, voice, linkedin, posts, messaging, visual identity, content strategy, master document. nothing left for you to figure out. you ship the brand, not a half-built brand.
 
 how long does it take?
 
-four weeks from intake to final PDF. you get the first drafts by week two, the full set by week four. no check-in calls, no status updates — just the work, when it's done.
+four weeks from intake to final PDF. you get the first drafts by week two, the full set by week four. no check-in calls, no status updates. just the work, when it's done.
 
 what if i don't like it?
 
@@ -120,7 +120,7 @@ two rounds of revision on each deliverable, written, async. after that, the work
 
 how many jobs do you take?
 
-limited capacity. application required. the work is intensive by design — fewer clients means each one gets the full focus, not a fraction of it.
+limited capacity. application required. the work is intensive by design: fewer clients means each one gets the full focus, not a fraction of it.
 
 can i pay in instalments?
 

@@ -2,7 +2,7 @@
 
 16 posts/month in your voice. monthly async brand strategy. positioning that compounds. cancel any month.
 
-a brand isn't built once and walked away from. the market moves. your positioning needs to keep up. the retainer is for the founder who has the foundation — and needs ongoing strategic input and content production without hiring in-house.
+a brand isn't built once and walked away from. the market moves. your positioning needs to keep up. the retainer is for the founder who has the foundation: ongoing strategic input and content production, without hiring in-house.
 
 01 — who this is for 01
 
@@ -12,7 +12,7 @@ you've built the brand.\
 now you need it to keep working.
 ----------------------------------
 
-A brand isn't built once and walked away from. The market moves. Your positioning needs to keep up. The Monster on Retainer is for the founder who has the foundation — and needs ongoing strategic input and content production without hiring in-house.
+A brand isn't built once and walked away from. The market moves. Your positioning needs to keep up. The Monster on Retainer is for the founder who has the foundation: ongoing strategic input and content production, without hiring in-house.
 
 Most personal brands don't compound on their own. The positioning isn't refreshed. The content goes stale. The audience forgets. The retainer exists to prevent that.
 
@@ -22,7 +22,7 @@ Regular posting is the threshold where presence becomes real. Without it, you're
 
 ### your content cadence is dead
 
-you posted for two weeks. then it stopped. the algorithm forgot you. the audience forgot you. the retainer fixes the cadence — 16 posts/month, every month, without you lifting a finger.
+you posted for two weeks. then it stopped. the algorithm forgot you. the audience forgot you. the retainer fixes the cadence: 16 posts/month, every month, without you lifting a finger.
 
 →
 
@@ -40,7 +40,7 @@ you run a company. writing 16 posts a month is not in the calendar. the retainer
 
 ### you can't hire in-house
 
-you need senior strategic input, not a content writer. the retainer gives you both — strategy and execution — without the cost of hiring in-house.
+you need senior strategic input, not a content writer. the retainer gives you both: strategy and execution, without the cost of hiring in-house.
 
 02 — what you get 02
 
@@ -107,11 +107,11 @@ how exactly do i get each month?
 
 how does "in your voice" work?
 
-the first month includes a deeper onboarding — past posts, voice references, examples of writing you admire. every post goes through that filter. if a post doesn't sound like you, you push back and it gets rewritten.
+the first month includes a deeper onboarding: past posts, voice references, examples of writing you admire. every post goes through that filter. if a post doesn't sound like you, you push back and it gets rewritten.
 
 how many retainer clients do you take?
 
-limited capacity. application required. the work is intensive by design — current slots vary; ask if you want one.
+limited capacity. application required. the work is intensive by design: current slots vary; ask if you want one.
 
 can i cancel any month?
 
@@ -127,7 +127,7 @@ subscription. €2,000/month billed monthly via stripe. you can pause, cancel, o
 
 what's the difference vs The Monster Job?
 
-The Monster Job is the foundation — eight deliverables, four weeks, one-time €2,500. The Retainer is what comes after — ongoing strategy and content. many clients do The Job first, then move to retainer once the foundation is built.
+The Monster Job is the foundation: eight deliverables, four weeks, one-time €2,500. The Retainer is what comes after: ongoing strategy and content. many clients do The Job first, then move to retainer once the foundation is built.
 
 ---
 
