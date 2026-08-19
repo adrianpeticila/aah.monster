@@ -1226,6 +1226,24 @@ Aah, Monster! is a premium personal branding consultancy run by Adrian M. Petici
 
 ## Tools & Utilities
 
+### B2B Positioning Linter (Interactive Diagnostic Tool)
+https://aah.monster/tools/positioning-linter/
+
+**Headline:** B2B Positioning Linter: test your headline, bio, or landing page hero before a buyer ignores it.
+
+**Sub:** Instant, deterministic, client-side scoring of buzzword slop, resume title dumping, apologetic helping syndrome, and weak commercial stakes.
+
+#### What it tests:
+1. **Slop & Buzzword Density:** Flags generic filler like "seamlessly", "empower", "revolutionize", "leverage", "next-gen".
+2. **Resume Title Dumping:** Detects when founders cram multiple disconnected credentials into one line.
+3. **Apologetic 'Helping' Syndrome:** Identifies weak, passive syntax like "we help startups grow" instead of owning an operational problem.
+4. **Commercial Stakes:** Checks for quantified impact (dollar amounts, hours saved, percentages).
+
+#### Next Step / Upgrades:
+- Free Tool: https://aah.monster/tools/positioning-linter/
+- Free Brand Killer Checklist: https://aah.monster/free-checklist/
+- Personal Brand Audit (€199): https://aah.monster/brand-audit/
+
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents by generating a structured llms.txt file.
 
 ### Daemon (Live Operational Telemetry)

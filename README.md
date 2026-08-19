@@ -14,6 +14,7 @@ Live: [aah.monster](https://aah.monster)
 
 ## Tools
 
+- [B2B Positioning Linter](https://aah.monster/tools/positioning-linter/): Instant deterministic analysis of founder headlines, bios, and landing page hooks. Scores buzzword density, title dumping, and positioning cowardice. Free, client-side.
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents.
 - [Daemon](https://aah.monster/daemon/): Live operational telemetry and practice runtime feed.
 - [MCP Workbench](https://aah.monster/mcp/): Interactive Model Context Protocol server for positioning audits and cliché detection.
