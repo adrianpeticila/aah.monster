@@ -9,10 +9,11 @@
 4. **Commercial Stakes:** Checks for quantified impact (dollar amounts, hours saved, percentages).
 
 ## The Next Step
-The linter catches surface flaws. The **Personal Brand Audit (€199, delivered in 48 hours, 100% async)** gives you the full 4-6 page strategic overhaul: your revised narrative spear, content engine, and line-by-line profile rewrites.
+The linter catches surface flaws. Get the full 4–6 page confidential teardown (€199, delivered in 48 hours, 100% async) with your revised narrative spear, content engine, and line-by-line profile rewrites - or start with our free diagnostic checklist.
 
 - **Free Tool:** https://aah.monster/tools/positioning-linter/
+- **Free Diagnostic Checklist:** https://aah.monster/free-checklist/
 - **Sample Audit Deliverable (PDF):** https://aah.monster/samples/aah-monster-brand-audit-sample.pdf
-- **Full Brand Audit:** https://aah.monster/brand-audit/
+- **Full Brand Audit (€199):** https://aah.monster/brand-audit/
 
 Published by Adrian M. Peticila · aah.monster · Async only, no calls.
