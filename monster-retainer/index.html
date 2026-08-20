@@ -23,62 +23,126 @@
   <meta name="author" content="Adrian M. Peticila">
   <meta name="date" content="2026-08-03">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Service", "Product"],
-        "@id": "https://aah.monster/monster-retainer/#service",
-        "name": "The Monster on Retainer",
-        "description": "Ongoing personal brand strategy and content production for C-suite executives and founders. 16 posts per month in your voice, monthly async brand strategy review, positioning refinement, LinkedIn optimization. €2,000/month, cancel any month.",
-        "provider": { "@id": "https://aah.monster/#organization" },
-        "brand": { "@id": "https://aah.monster/#organization" },
-        "url": "https://aah.monster/monster-retainer/",
-        "category": "Personal Branding Service",
-        "serviceType": "Ongoing brand retainer",
-        "areaServed": "Worldwide",
-        "offers": {
-          "@type": "Offer",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Service",
+        "Product"
+      ],
+      "@id": "https://aah.monster/monster-retainer/#service",
+      "name": "The Monster on Retainer",
+      "description": "Ongoing personal brand strategy and content production for C-suite executives and founders. 16 posts per month in your voice, monthly async brand strategy review, positioning refinement, LinkedIn optimization. €2,000/month, cancel any month.",
+      "provider": {
+        "@id": "https://aah.monster/#organization"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "Aah, Monster!"
+      },
+      "url": "https://aah.monster/monster-retainer/",
+      "category": "Personal Branding Service",
+      "serviceType": "Ongoing brand retainer",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "2000",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "url": "https://buy.stripe.com/eVq6oHbnzfgyb6wgI9aIM03",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
           "price": "2000",
           "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "priceValidUntil": "2026-12-31",
-          "url": "https://buy.stripe.com/eVq6oHbnzfgyb6wgI9aIM03",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "2000",
-            "priceCurrency": "EUR",
-            "billingIncrement": 1,
-            "unitText": "month"
+          "billingIncrement": 1,
+          "unitText": "month"
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": [
+            "RO",
+            "DE",
+            "AT",
+            "CH",
+            "GB",
+            "US"
+          ],
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "EUR"
           },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE"],
-            "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": [
+              "RO",
+              "DE",
+              "AT",
+              "CH",
+              "GB",
+              "US"
+            ]
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 30,
+              "maxValue": 30,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
           }
         }
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://aah.monster/monster-retainer/",
-        "url": "https://aah.monster/monster-retainer/",
-        "name": "The Monster on Retainer, €2,000/month · aah, monster!",
-        "description": "Ongoing brand strategy and content. €2,000/month, cancel any month.",
-        "inLanguage": "en",
-        "isPartOf": { "@id": "https://aah.monster/#website" },
-        "author": { "@id": "https://aah.monster/#person" },
-        "dateModified": "2026-08-03"
+      "image": "https://aah.monster/og-image.png"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aah.monster/monster-retainer/",
+      "url": "https://aah.monster/monster-retainer/",
+      "name": "The Monster on Retainer, €2,000/month · aah, monster!",
+      "description": "Ongoing brand strategy and content. €2,000/month, cancel any month.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://aah.monster/#website"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aah.monster/" },
-          { "@type": "ListItem", "position": 2, "name": "The Monster on Retainer", "item": "https://aah.monster/monster-retainer/" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "author": {
+        "@id": "https://aah.monster/#person"
+      },
+      "dateModified": "2026-08-03"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aah.monster/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Monster on Retainer",
+          "item": "https://aah.monster/monster-retainer/"
+        }
+      ]
+    }
+  ]
+}
+</script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preload" as="font" href="/fonts/SpriteGraffiti.woff" type="font/woff" crossorigin>
   <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>

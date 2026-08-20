@@ -23,37 +23,113 @@
 <meta name="date" content="2026-08-03">
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@graph":[
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@type":["Service","Product"],
-      "@id":"https://aah.monster/ai-executive/#service",
-      "name":"AI Executive System",
-      "description":"A written operating system for a C-suite executive who has become the bottleneck. It maps the work, stabilizes the immediate leak, systematizes repeatable decisions, and provides ready configuration files and a 30-day operating checklist. Delivered in 48 to 72 hours. No calls.",
-      "provider":{"@id":"https://aah.monster/#organization"},
-      "brand":{"@type":"Brand","name":"Aah, Monster!"},
-      "url":"https://aah.monster/ai-executive/",
-      "category":"Executive operating system",
-      "serviceType":"Written AI operating system",
-      "areaServed":"Worldwide",
-      "offers":{"@type":"Offer","price":"1500","priceCurrency":"EUR","availability":"https://schema.org/InStock","priceValidUntil":"2026-12-31","url":"https://aah.monster/ai-executive/"}
+      "@type": [
+        "Service",
+        "Product"
+      ],
+      "@id": "https://aah.monster/ai-executive/#service",
+      "name": "AI Executive System",
+      "description": "A written operating system for a C-suite executive who has become the bottleneck. It maps the work, stabilizes the immediate leak, systematizes repeatable decisions, and provides ready configuration files and a 30-day operating checklist. Delivered in 48 to 72 hours. No calls.",
+      "provider": {
+        "@id": "https://aah.monster/#organization"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "Aah, Monster!"
+      },
+      "url": "https://aah.monster/ai-executive/",
+      "category": "Executive operating system",
+      "serviceType": "Written AI operating system",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "1500",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "url": "https://aah.monster/ai-executive/",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": [
+            "RO",
+            "DE",
+            "AT",
+            "CH",
+            "GB",
+            "US"
+          ],
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "EUR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": [
+              "RO",
+              "DE",
+              "AT",
+              "CH",
+              "GB",
+              "US"
+            ]
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 2,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "image": "https://aah.monster/og-image.png"
     },
     {
-      "@type":"WebPage",
-      "@id":"https://aah.monster/ai-executive/",
-      "url":"https://aah.monster/ai-executive/",
-      "name":"AI Executive System, €1,500 · aah, monster!",
-      "description":"A written system for the executive who has become the bottleneck. Async. No calls.",
-      "inLanguage":"en",
-      "isPartOf":{"@id":"https://aah.monster/#website"},
-      "author":{"@id":"https://aah.monster/#person"},
-      "dateModified":"2026-08-03"
+      "@type": "WebPage",
+      "@id": "https://aah.monster/ai-executive/",
+      "url": "https://aah.monster/ai-executive/",
+      "name": "AI Executive System, €1,500 · aah, monster!",
+      "description": "A written system for the executive who has become the bottleneck. Async. No calls.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://aah.monster/#website"
+      },
+      "author": {
+        "@id": "https://aah.monster/#person"
+      },
+      "dateModified": "2026-08-03"
     },
     {
-      "@type":"BreadcrumbList",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://aah.monster/"},
-        {"@type":"ListItem","position":2,"name":"AI Executive System","item":"https://aah.monster/ai-executive/"}
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aah.monster/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI Executive System",
+          "item": "https://aah.monster/ai-executive/"
+        }
       ]
     }
   ]
