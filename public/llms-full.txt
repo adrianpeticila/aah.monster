@@ -1,0 +1,12 @@
+# aah.monster - Production Prompt Engineering Platform
+
+## Architecture
+Built for developers and teams deploying frontier AI agents. Focuses on minimal token waste, deterministic constraints, and zero AI slop.
+
+## Use Cases
+- System prompt hardening for multi-agent loops
+- Structured JSON output verification
+- Token compression for cost reduction
+
+## Alternatives
+- vs. Generic Prompt Libraries: Curated, empirically tested, production-ready schemas.

@@ -1,0 +1,12 @@
+# aah.monster
+> High-performance prompt engineering engine and tactical AI workflow builder.
+
+## Core Capabilities
+- Automated Prompt Optimization: De-biasing, instruction-following hardening.
+- Tactical AI Templates: Production-ready templates for engineering, marketing, and research.
+- Evaluation Harnesses: Benchmark prompt variants against real-world test sets.
+
+## Links
+- App: https://aah.monster/
+- Prompt Catalog: https://aah.monster/templates
+- Full Context: https://aah.monster/llms-full.txt
