@@ -249,6 +249,81 @@
       cursor: pointer;
     }
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-back {
+      font-family: var(--body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid-t);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--fg); }
+    .nav-link {
+      font-family: var(--body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid-t);
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--fg); }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-t);
+    }
+    .breadcrumb a {
+      color: var(--red);
+      transition: opacity 0.2s;
+    }
+    .breadcrumb a:hover { opacity: 0.8; }
+    .bc-sep { opacity: 0.4; }
+    .bc-current { color: var(--fg); }
+
+    .hero-kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background: var(--red);
+    }
+    .hero-h1 {
+      margin: 0;
+      padding: 0;
+      line-height: 0.92;
+    }
+    .hero-subhead {
+      font-size: clamp(0.92rem, 1.6vw, 1.15rem);
+      color: var(--mid-t);
+      max-width: 760px;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+
     .wrap {
       max-width: 1100px;
       margin: 0 auto;
@@ -757,6 +832,7 @@
     }
 
     @media (max-width: 860px) {
+      .nav-link, .nav-back { display: none; }
       nav { padding: 1rem 1.5rem; }
       .wrap { padding: 0 1.5rem; }
       .hero { padding: 0 1.5rem; padding-top: 58px; }
@@ -772,8 +848,13 @@
 <body>
   <a class="skip-link" href="#main">skip to content</a>
   <nav>
-    <a href="https://aah.monster/" class="nav-logo">aah, monster!</a>
+    <div class="nav-left">
+      <a href="/" class="nav-logo">aah, monster!</a>
+      <a href="/" class="nav-back">← back to home</a>
+    </div>
     <div class="nav-right">
+      <a href="/about/" class="nav-link">about</a>
+      <a href="/manifesto/" class="nav-link">manifesto</a>
       <button id="theme-toggle" type="button" aria-label="Toggle colour theme">◐ dark</button>
       <a href="/brand-audit/" class="nav-cta">get audited →</a>
     </div>
@@ -781,18 +862,26 @@
 
   <header class="hero">
     <div class="hero-top">
-      <span class="hero-corner">comparison guide</span>
-      <span class="hero-corner price-label">pr agencies vs. aah, monster!</span>
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span class="bc-sep">/</span>
+        <span class="bc-current">vs. Traditional PR Agencies</span>
+      </nav>
+      <span class="hero-corner price-label">Aah, Monster! vs. PR Agencies</span>
     </div>
     <div class="hero-words">
-      <span class="fit-line">THE RETAINER</span>
-      <span class="fit-line outline">TRAP.</span>
+      <div class="hero-kicker">executive brand positioning vs. traditional agency retainers</div>
+      <h1 class="hero-h1">
+        <span class="fit-line">AAH, MONSTER! VS.</span>
+        <span class="fit-line outline">PR AGENCIES</span>
+      </h1>
+      <p class="hero-subhead">Why paying $5,000 to $15,000/month for traditional PR retainers fails executive brands. Async voice architecture vs. billable agency hours.</p>
     </div>
     <div class="hero-bottom">
       <div class="hero-bottom-left">aah.monster<br><span style="opacity:.5">written work only · no calls</span></div>
-      <div class="hero-bottom-center">traditional pr agencies sell billable hours and meetings.<br>we engineer executive positioning that drives pipeline.</div>
+      <div class="hero-bottom-center"><strong>The Retainer Trap:</strong> Traditional PR agencies sell billable hours and meetings.<br>We engineer authentic executive positioning that builds direct organic authority.</div>
       <div class="hero-bottom-right">
-        <a href="#comparison" class="nav-cta" style="font-size:0.75rem;padding:0.75rem 1.6rem;">see the breakdown ↓</a>
+        <a href="#comparison" class="nav-cta" style="font-size:0.75rem;padding:0.75rem 1.6rem;">see comparison matrix ↓</a>
       </div>
     </div>
   </header>
@@ -822,7 +911,7 @@
           <span>01 : the direct answer</span>
           <span>executive summary</span>
         </div>
-        <h2>stop buying the <span class="red">performance</span> of work.</h2>
+        <h2>the retainer trap : <span class="red">why agencies fail</span></h2>
         <p class="prose">Most founders and C-suite executives hire a PR agency because they feel invisible outside their own company walls. What they receive instead is a 6-month contract, endless kickoff workshops, junior account coordinators, and sterile press releases that get buried on obscure syndication wires.</p>
 
         <div class="answer-box">
