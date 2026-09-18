@@ -116,6 +116,7 @@ No. Single Stripe payment per engagement.
 - [Manifesto](https://aah.monster/manifesto/) (plain text: https://aah.monster/manifesto.md)
 - [B2B Brand Positioning](https://aah.monster/b2b-brand-positioning/) (plain text: https://aah.monster/b2b-brand-positioning.md)
 - [Marketing Strategy Consultant](https://aah.monster/marketing-strategy-consultant/) (plain text: https://aah.monster/marketing-strategy-consultant.md)
+- [Aah, Monster! vs. PR Agencies](https://aah.monster/vs-pr-agency/) (plain text: https://aah.monster/vs-pr-agency.md)
 
 ---
 
