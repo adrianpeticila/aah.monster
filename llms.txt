@@ -186,5 +186,20 @@ Aah, Monster! (aah.monster) is a premium personal branding consultancy run by Ad
 
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents by generating a structured llms.txt file.
 - [Daemon Telemetry & Operational Feed](https://aah.monster/daemon/): Real-time pulse and diagnostics of the async, no-calls advisory infrastructure.
-- [Positioning Audit MCP Workbench](https://aah.monster/mcp/): Interactive Model Context Protocol testbed for evaluating B2B positioning, detecting clichés, and scoring brand differentiation.- [Gaia Code](https://aah.monster/gaia-code/): Deterministic code grading for pasted snippets or GitHub repos. Score, grade, findings. Optional security pass. Runs in the browser, no AI opinion.
+- [Positioning Audit MCP Workbench](https://aah.monster/mcp/): Interactive Model Context Protocol testbed for evaluating B2B positioning, detecting clichés, and scoring brand differentiation.
+- [Gaia Code](https://aah.monster/gaia-code/): Deterministic code grading for pasted snippets or GitHub repos. Score, grade, findings. Optional security pass. Runs in the browser, no AI opinion.
 - [Eos MCP](https://aah.monster/eos-mcp/): Directory of hosted, scaled, MIT-licensed MCP servers for AI agents. Free tier, hosted Pro, Enterprise.
+
+---
+
+## Agent commerce endpoints
+
+For AI agents that want to buy on behalf of a user (human-in-the-loop):
+
+- Agent entrypoint: https://aah.monster/.well-known/agent.json
+- Product catalog (JSON): https://aah.monster/api/catalog.json — fixed prices, no negotiation
+- Purchase (HTTP 402): `POST https://aah.monster/api/agent/buy` with `{"product_id": "...", "agent_id" or "email": "..."}` → 402 with payment instructions or 200 with a pre-filled checkout URL
+- Service status: https://aah.monster/api/status
+- Paid deliverables: `GET https://aah.monster/api/agent/deliveries/{token}` after payment verification
+
+Guardrails (hard-coded, not negotiable): USD 20/day programmatic settlement cap, max 3 buy attempts per agent+IP per 10 minutes (429), idempotent transaction tokens.

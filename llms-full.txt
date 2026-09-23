@@ -1559,3 +1559,23 @@ https://aah.monster/mcp/
 **Sub:** Interactive Model Context Protocol testbed for evaluating B2B positioning, detecting clichés, and scoring brand differentiation.
 - [Gaia Code](https://aah.monster/gaia-code/): Deterministic code grading for pasted snippets or GitHub repos. Score, grade, findings. Optional security pass. Runs in the browser, no AI opinion.
 - [Eos MCP](https://aah.monster/eos-mcp/): Directory of hosted, scaled, MIT-licensed MCP servers for AI agents. Free tier, hosted Pro, Enterprise.
+
+---
+
+## Agent commerce endpoints (machine purchasers)
+
+Entrypoint: https://aah.monster/.well-known/agent.json
+
+| Step | Endpoint | Contract |
+|---|---|---|
+| 1. Discover | GET https://aah.monster/api/catalog.json | Strict JSON array: `id`, `name`, `price_cents`, `currency`, `description`, `sample_output_url`, `checkout_type` |
+| 2. Buy | POST https://aah.monster/api/agent/buy | Body: `product_id` + (`agent_id` or `email`), optional `rail` (`x402` default | `zeroclick` | `1f916_base` | `stripe_hosted`), optional `Idempotency-Key` header → HTTP 402 with ZeroClick/x402 payment details or HTTP 200 with pre-filled Stripe hosted session URL |
+| 3. Deliver | `GET https://aah.monster/api/agent/deliveries/{token}` | Requires verified payment (webhook or signed transaction) → JSON/markdown payload |
+| 3b. Settle | `POST https://aah.monster/api/agent/payments/webhook` | HMAC-SHA256 signature over raw body (shared secret); daily USD cap applied → `paid` or `held_for_review` |
+| Status | GET https://aah.monster/api/status | Uptime, ledger day-total |
+
+Payment rails advertised: `zeroclick`, `stripe_hosted`, `1f916_base`.
+
+Hard-coded circuit breakers (server code, never prompt-controlled): USD 20/day programmatic settlement cap; rate limit 3 buy attempts per agent_id+IP per 10 minutes → HTTP 429; unique idempotent transaction tokens (replay protection); unknown `product_id` → HTTP 404; malformed body → HTTP 400.
+
+Free public samples live under https://aah.monster/samples/ so agents can evaluate quality before purchase.

@@ -28,4 +28,11 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+User-agent: AgentReach
+Allow: /
+
+User-agent: 1F916
+Allow: /
+
 Sitemap: https://aah.monster/sitemap.xml
+Sitemap: https://aah.monster/sitemap-markdown.xml

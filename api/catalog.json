@@ -1,0 +1,65 @@
+[
+  {
+    "id": "brand-audit",
+    "name": "Personal Brand Audit",
+    "price_cents": 19900,
+    "currency": "EUR",
+    "description": "Full written diagnosis of your personal brand online: LinkedIn profile, Google presence, messaging gaps, positioning failures, content strategy. Delivered as a PDF in 48-72h. No calls.",
+    "sample_output_url": "https://aah.monster/samples/brand-audit-sample.md",
+    "checkout_type": "stripe_hosted"
+  },
+  {
+    "id": "voice-fingerprint",
+    "name": "Voice Fingerprint",
+    "price_cents": 24900,
+    "currency": "EUR",
+    "description": "Written record of how you write, built from 15-20 of your own samples: sentence rhythm, cuts, punctuation, opens and landings, a never-list, gap analysis, three rewrites of your posts, and a one-page brief for anyone who writes for you. 48h.",
+    "sample_output_url": "https://aah.monster/samples/voice-fingerprint-sample.md",
+    "checkout_type": "stripe_hosted"
+  },
+  {
+    "id": "positioning-sprint",
+    "name": "Brand Positioning Sprint",
+    "price_cents": 49900,
+    "currency": "EUR",
+    "description": "Positioning document, LinkedIn headline + about rewrite, messaging framework, brand voice guide. 5 business days. Async, written deliverables.",
+    "sample_output_url": "https://aah.monster/samples/positioning-sprint-sample.md",
+    "checkout_type": "stripe_hosted"
+  },
+  {
+    "id": "ai-executive",
+    "name": "AI Executive System",
+    "price_cents": 150000,
+    "currency": "EUR",
+    "description": "Written operating system for the executive who became the bottleneck: stabilize the immediate leak, systematize repeatable decisions, scale with configuration files and a 30-day operating checklist. 48-72h.",
+    "sample_output_url": "https://aah.monster/samples/ai-executive-sample.md",
+    "checkout_type": "inquiry"
+  },
+  {
+    "id": "the-monster-job",
+    "name": "The Monster Job",
+    "price_cents": 250000,
+    "currency": "EUR",
+    "description": "Full brand build: positioning, narrative, LinkedIn profile, messaging framework, brand voice guide, content system. The flagship engagement. 4 weeks, written deliverables, no calls.",
+    "sample_output_url": "https://aah.monster/samples/the-monster-job-sample.md",
+    "checkout_type": "stripe_hosted"
+  },
+  {
+    "id": "monster-retainer",
+    "name": "The Monster on Retainer",
+    "price_cents": 200000,
+    "currency": "EUR",
+    "description": "Ongoing brand strategy and written deliverables for founders and C-suite, billed monthly. Positioning guardrails, narrative, and ghostwriting direction every month.",
+    "sample_output_url": "https://aah.monster/samples/monster-retainer-sample.md",
+    "checkout_type": "stripe_hosted"
+  },
+  {
+    "id": "free-checklist",
+    "name": "Free Personal Branding Checklist",
+    "price_cents": 0,
+    "currency": "EUR",
+    "description": "Free operational checklist to audit your personal brand today. Instant delivery, no calls, no account.",
+    "sample_output_url": "https://aah.monster/samples/free-checklist-sample.md",
+    "checkout_type": "free"
+  }
+]

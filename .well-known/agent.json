@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "name": "aah, monster!",
+  "description": "Agent entrypoint for the Aah, Monster! personal branding consultancy. Lets external AI agents discover the product catalog, initiate purchases over HTTP 402, and retrieve paid deliverables machine-readably.",
+  "brand_url": "https://aah.monster/",
+  "operator": {
+    "name": "Adrian M. Peticila",
+    "url": "https://aah.monster/about/",
+    "contact": "hello@aah.monster"
+  },
+  "endpoints": {
+    "catalog": "https://aah.monster/api/catalog.json",
+    "buy": "https://aah.monster/api/agent/buy",
+    "status": "https://aah.monster/api/status",
+    "deliveries": "https://aah.monster/api/agent/deliveries/{token}",
+    "payments_webhook": "https://aah.monster/api/agent/payments/webhook",
+    "llms": "https://aah.monster/llms.txt",
+    "llms_full": "https://aah.monster/llms-full.txt",
+    "markdown_sitemap": "https://aah.monster/sitemap-markdown.xml"
+  },
+  "content_negotiation": {
+    "accept_header": "text/markdown",
+    "bot_user_agents": ["GPTBot", "ClaudeBot", "PerplexityBot", "AgentReach"],
+    "mirror_pattern": "<page>.md"
+  },
+  "payment_rails": ["zeroclick", "stripe_hosted", "1f916_base"],
+  "checkout": {
+    "protocol": "POST /api/agent/buy -> HTTP 402 Payment Required with payment instructions, or HTTP 200 with a pre-filled Stripe hosted checkout URL",
+    "idempotency_header": "Idempotency-Key",
+    "buyer_fields": ["agent_id", "email"]
+  },
+  "guardrails": {
+    "daily_programmatic_cap_usd": 20,
+    "rate_limit": "max 3 buy attempts per agent_id+IP per 10 minutes (HTTP 429)",
+    "currency_note": "Product prices are fixed in EUR; the USD cap applies to programmatic (x402/zeroclick) settlement value per UTC day."
+  },
+  "version": "2026-09-23"
+}
