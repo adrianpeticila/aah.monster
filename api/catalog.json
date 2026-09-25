@@ -61,5 +61,23 @@
     "description": "Free operational checklist to audit your personal brand today. Instant delivery, no calls, no account.",
     "sample_output_url": "https://aah.monster/samples/free-checklist-sample.md",
     "checkout_type": "free"
+  },
+  {
+    "id": "security-audit-quick",
+    "name": "Vibe-Coded SaaS Security Audit Quick Scan",
+    "price_cents": 19700,
+    "currency": "USD",
+    "description": "Written security and AEO audit of public application surfaces, client bundles, API routes, Supabase RLS, CORS, prompt injection, admin routes, tenant isolation, and AI crawler exposure. Delivered within 48 hours.",
+    "sample_output_url": "https://aah.monster/security-audit.md",
+    "checkout_type": "inquiry"
+  },
+  {
+    "id": "security-audit-full",
+    "name": "Vibe-Coded SaaS Security Audit Full Audit",
+    "price_cents": 99700,
+    "currency": "USD",
+    "description": "Quick audit plus hands-on remediation sprint on a staging branch or sanitized environment. Includes Supabase RLS policies, edge auth and rate limiting, webhook HMAC verification, environment isolation, a ready-to-merge pull request, and post-deployment verification.",
+    "sample_output_url": "https://aah.monster/security-audit.md",
+    "checkout_type": "inquiry"
   }
 ]

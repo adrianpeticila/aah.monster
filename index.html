@@ -65,6 +65,28 @@
         ]
       },
       {
+        "@type": "Service",
+        "@id": "https://aah.monster/security-audit/#service",
+        "name": "Vibe-Coded SaaS Security Audit",
+        "url": "https://aah.monster/security-audit/",
+        "provider": { "@id": "https://aah.monster/#organization" },
+        "founder": { "@id": "https://aah.monster/#person" },
+        "sameAs": [
+          "https://www.linkedin.com/company/aah-monster/",
+          "https://www.linkedin.com/in/adrian-peticila/",
+          "https://x.com/adrianmpeticila",
+          "https://www.producthunt.com/@adrian_m_peticila",
+          "https://www.crunchbase.com/person/adrian-peticila"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Security Audit Quick Scan", "price": "197", "priceCurrency": "USD", "url": "https://aah.monster/security-audit/" },
+            { "@type": "Offer", "name": "Security Audit Full Audit", "price": "997", "priceCurrency": "USD", "url": "https://aah.monster/security-audit/" }
+          ]
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aah.monster/",
         "url": "https://aah.monster/",
@@ -943,7 +965,7 @@
   <!-- PROBLEM -->
   <section>
     <div class="wrap">
-      <div class="sec-top"><span>01 — the problem</span><span>01</span></div>
+      <div class="sec-top"><span>01  -  the problem</span><span>01</span></div>
       <div class="sec-words"><span class="fit-line">INVISIBLE.</span></div>
       <h2 class="sec-sub">most personal brands are <span class="outline">quietly</span> <span class="red">forgettable.</span></h2>
       <p style="font-size:0.88rem;color:var(--mid);line-height:1.75;max-width:640px;margin-bottom:1.25rem;padding-left:1rem;border-left:2px solid var(--rule);font-style:italic;">In 20+ years working with C-suite executives and founders, I have diagnosed 229 personal brands. The same expensive mistake shows up every time: a brand that undersells the person behind it. The gap between what you have built and what your online presence says costs real deals, real partnerships, real introductions.</p>
@@ -977,7 +999,7 @@
   <!-- OFFERS -->
   <div id="offers" class="offers-bg">
     <div class="offers-wrap">
-      <div class="sec-top"><span>02 — the work</span><span>02</span></div>
+      <div class="sec-top"><span>02  -  the work</span><span>02</span></div>
       <div class="sec-words"><span class="fit-line">THE WORK.</span></div>
       
       <!-- URGENȚĂ CAPACITATE -->
@@ -1207,7 +1229,7 @@
   <!-- PROCESS -->
   <section>
     <div class="wrap">
-      <div class="sec-top"><span>03 — process</span><span>03</span></div>
+      <div class="sec-top"><span>03  -  process</span><span>03</span></div>
       <div class="sec-words"><span class="fit-line outline">SIMPLE.</span></div>
       <h2 class="sec-sub">async. <span class="outline">no calls.</span> <span class="red">no surprises.</span></h2>
       <div class="steps">
@@ -1233,7 +1255,7 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap">
-      <div class="sec-top"><span>04 — about</span><span>04</span></div>
+      <div class="sec-top"><span>04  -  about</span><span>04</span></div>
       <div class="sec-words"><span class="fit-line outline">WHO I AM.</span></div>
       <div class="about-grid">
         <div class="about-text">
@@ -1310,7 +1332,7 @@
   <!-- FAQ -->
   <section style="padding:6rem 2rem;background:var(--bg);">
     <div style="max-width:720px;margin:0 auto;">
-      <div class="sec-top" style="margin-bottom:3rem;"><span>05 — faq</span><span>05</span></div>
+      <div class="sec-top" style="margin-bottom:3rem;"><span>05  -  faq</span><span>05</span></div>
       <div style="display:flex;flex-direction:column;gap:0;">
         <div style="border-top:1px solid var(--faint);padding:2rem 0;">
           <h3 style="font-family:var(--display);font-size:1.1rem;color:var(--fg);margin-bottom:0.75rem;font-weight:400;">why no calls?</h3>
@@ -1391,11 +1413,22 @@
       <p class="cta-sub">or <a href="#offers">see all offers</a> if you're ready for The Monster Job.</p>
     </div>
   </div>
+
+  <section aria-labelledby="security-audit-card-title" style="padding:3rem 3rem;border-top:1px solid var(--rule);">
+    <div class="wrap" style="max-width:1200px;margin:0 auto;">
+      <h2 id="security-audit-card-title" style="font-family:var(--display);font-size:clamp(2rem,4vw,3.4rem);text-transform:uppercase;margin-bottom:1rem;">Vibe-Coded SaaS Security Audit</h2>
+      <p style="max-width:760px;color:var(--mid);margin-bottom:1.5rem;">Find leaked env keys, Supabase RLS gaps, permissive CORS, prompt injection exposure, and unsecured admin routes before someone else does. Manual report with exact remediation steps.</p>
+      <a href="/security-audit/" class="btn-red">run the security audit →</a>
+    </div>
+  </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
+          <li><a href="/security-audit/">Vibe-Coded SaaS Security Audit, $197</a></li>
+
       <div class="f-brand">
         <div class="f-logo">aah, monster!</div>
         <p>brand strategy for founders and C-suite who are tired of being invisible.</p>

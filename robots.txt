@@ -34,5 +34,7 @@ Allow: /
 User-agent: 1F916
 Allow: /
 
+Allow: /security-audit/
+
 Sitemap: https://aah.monster/sitemap.xml
 Sitemap: https://aah.monster/sitemap-markdown.xml

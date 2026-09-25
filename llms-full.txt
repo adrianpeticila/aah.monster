@@ -239,6 +239,27 @@ A: Because the best opportunities find you before you need them. Speaking invita
 
 Aah, Monster! does not compete on: volume content production, LinkedIn posting schedules, ghostwriting-at-scale, generic personal branding courses, or follower-growth tactics. The "social media coach" space is ceded entirely. No price competition: there are cheaper options at every tier. The influencer brand market is ceded. Clients want business outcomes, not follower counts. Speed without quality is not offered.
 
+## Security and AEO Audit
+
+### Vibe-Coded SaaS Security Audit, $197
+**Page:** https://aah.monster/security-audit/
+**Markdown:** https://aah.monster/security-audit.md
+**Catalog SKU:** `security-audit`
+
+A written audit for SaaS products built with Lovable, Bolt, Cursor, Replit, Next.js, or Supabase. It checks leaked environment keys in client bundles, Supabase and Postgres row-level security, permissive CORS, prompt injection exposure, admin routes, webhooks, IDOR, tenant isolation, and AI crawler exposure. Delivery is a 10 to 15 page report within 48 hours.
+
+### Architecture Remediation Sprint, $997
+**Catalog SKU:** `security-audit-remediation`
+Includes the $197 audit plus a hands-on remediation sprint on a staging branch or sanitized environment. Includes custom Supabase RLS policies, edge auth and rate limiting, webhook HMAC verification, environment variable isolation, a ready-to-merge pull request, and post-deployment verification. Delivery is 5 business days.
+
+### Security scan checkout
+- Stripe Hosted Checkout: not currently configured for these products. The canonical purchase instruction is the email checkout link on https://aah.monster/security-audit/.
+- Programmatic purchase: `POST https://aah.monster/api/agent/buy` with `product_id`, `agent_id` or `email`, and `rail` set to `x402` or `1f916_base` for Base USDC when configured, or `stripe_hosted` when a hosted link exists. The API returns payment instructions and a delivery URL.
+- Discovery: `GET https://aah.monster/api/catalog.json` for fixed prices and SKUs.
+- Guardrails: USD 20 per UTC day programmatic settlement cap, three attempts per agent and IP every 10 minutes, and an idempotency key is required for reliable retries.
+
+
+
 ---
 
 ## Pages
@@ -255,7 +276,7 @@ i built aah, monster! because i watched genuinely talented founders and executiv
 
 your brand is not your logo. not your bio. not your title. it's the answer to one question: why should someone who's never met you take the meeting? i help you answer that. in writing. without calls.
 
-03 — the person 03
+03  -  the person 03
 
 about the monster
 
@@ -271,7 +292,7 @@ you know why people pay lawyers? not for the documents. the documents are a comm
 
 [→ connect on linkedin](https://www.linkedin.com/in/adrian-peticila/)
 
-04 — what i believe 04
+04  -  what i believe 04
 
 three things.\
 non-negotiable.
@@ -409,7 +430,7 @@ the personal brand audit is a 10-15 page document that tells you exactly where y
 most advisors give you a recommendation and bill for the hour. i give you one i'd put my name on.\
 **your name is on the brand. so is mine.**
 
-02 — what's included 02
+02  -  what's included 02
 
 five sections.\
 zero fluff.
@@ -451,7 +472,7 @@ one-time · 48-72h turnaround
 
 [start the audit →](https://buy.stripe.com/bJeeVdezL3xQ2A0dvXaIM00)
 
-03 — how it works 03
+03  -  how it works 03
 
 three steps.\
 no surprises.
@@ -475,7 +496,7 @@ i audit your brand against your target audience and positioning goals. 48-72 hou
 
 10-15 pages. delivered to your email. concrete, specific, prioritised. you know exactly what to fix on monday morning.
 
-04 — who it's for 04
+04  -  who it's for 04
 
 this is for you if\
 any of this fits.
@@ -527,7 +548,7 @@ diagnosed.
 
 or [see all offers](https://aah.monster/#offers) if you're ready for the full rebuild.
 
-05 — faq 05
+05  -  faq 05
 
 questions\
 answered.
@@ -623,7 +644,7 @@ most founders have a brand that describes what they do. not who they are, not wh
 
 the positioning sprint fixes the foundation. everything else gets easier after.
 
-02 — what you get 02
+02  -  what you get 02
 
 six deliverables.\
 zero filler.
@@ -665,7 +686,7 @@ three linkedin post outlines based on your positioning. so you start monday with
 
 [start the sprint →](https://buy.stripe.com/9B6cN58bnb0ieiIeA1aIM01)
 
-03 — how it works 03
+03  -  how it works 03
 
 three steps.\
 no surprises.
@@ -689,7 +710,7 @@ longer intake than the audit. 20 minutes. your background, goals, audience, comp
 
 full document package delivered to your email. review it, ask follow-up questions by email. ready to implement immediately.
 
-04 — who it's for 04
+04  -  who it's for 04
 
 this is for you if\
 any of this fits.
@@ -729,7 +750,7 @@ finally.
 
 or start with the [brand audit (€199)](https://aah.monster/brand-audit/) if you're not sure yet.
 
-05 — faq 05
+05  -  faq 05
 
 questions\
 answered.
@@ -761,7 +782,7 @@ most personal brands die of the same five things. invisible positioning. a linke
 
 the brand killer checklist is 10 yes/no questions. most founders answer no to at least six. that's the point. you leave knowing exactly where your brand is leaking.
 
-02 — the 10 questions 02
+02  -  the 10 questions 02
 
 see where\
 yours breaks.
@@ -807,7 +828,7 @@ are you the most credible person in your category online, or is someone with hal
 
 if you disappeared from linkedin for 3 months, would anyone notice?
 
-03 — get the checklist 03
+03  -  get the checklist 03
 
 get the\
 full checklist.
@@ -815,7 +836,7 @@ full checklist.
 
 the pdf version includes scoring, what each answer means, and the three most common brand killers for each failure point.
 
-04 — what happens after 04
+04  -  what happens after 04
 
 you get the checklist.\
 then what?
@@ -1010,15 +1031,15 @@ related
 
 the full transformation. positioning, voice, linkedin, 30 posts, messaging framework, visual identity brief. four weeks. in writing. nothing held back.
 
-the monster job closes the gap between who you actually are and what your linkedin says about you. not by posting more — by making every piece of your brand say what you actually built.
+the monster job closes the gap between who you actually are and what your linkedin says about you. not by posting more  -  by making every piece of your brand say what you actually built.
 
-01 — who this is for 01
+01  -  who this is for 01
 
 YOU.
 
 you've built the company. your brand lags behind.
 
-If your name shows up in a deal and your LinkedIn shows nothing useful, you lose the deal. That's not vanity. That's pipeline. The Monster Job closes that gap — not by posting more, by making every piece of your brand say what you actually built.
+If your name shows up in a deal and your LinkedIn shows nothing useful, you lose the deal. That's not vanity. That's pipeline. The Monster Job closes that gap  -  not by posting more, by making every piece of your brand say what you actually built.
 
 Edelman-LinkedIn B2B Thought Leadership Impact Report (2024): 73% of decision-makers trust an organization's thought leadership over its marketing materials.
 
@@ -1026,12 +1047,12 @@ LinkedIn's own session data (2024): fewer than 1% of its 1 billion+ users publis
 
 #### the four problems the work solves
 
-- **your positioning is generic** — your profile could belong to fifty other people. nothing sticks. nobody remembers you after the scroll. the work changes that — a positioning document built only around what you actually do, and for whom.
-- **linkedin is dead weight** — headline says nothing. about section is 5 lines of buzzwords. the work rewrites both — and delivers 30 posts ready to publish in your voice, not a template.
-- **you've never had a content spine** — you post when you feel like it. the calendar fills, the brand stays empty. the work ships a 3-month content strategy tied to the positioning — so every post earns its place.
-- **your visual identity undersells you** — headshots from 2019. inconsistent colors. the work delivers a visual identity brief so your designer or future designer knows exactly what to do.
+- **your positioning is generic**  -  your profile could belong to fifty other people. nothing sticks. nobody remembers you after the scroll. the work changes that  -  a positioning document built only around what you actually do, and for whom.
+- **linkedin is dead weight**  -  headline says nothing. about section is 5 lines of buzzwords. the work rewrites both  -  and delivers 30 posts ready to publish in your voice, not a template.
+- **you've never had a content spine**  -  you post when you feel like it. the calendar fills, the brand stays empty. the work ships a 3-month content strategy tied to the positioning  -  so every post earns its place.
+- **your visual identity undersells you**  -  headshots from 2019. inconsistent colors. the work delivers a visual identity brief so your designer or future designer knows exactly what to do.
 
-02 — what you get 02
+02  -  what you get 02
 
 THE WORK.
 
@@ -1042,7 +1063,7 @@ flagship · full transformation
 **The Monster Job.** the full thing. positioning, voice, linkedin rewritten from scratch, 30 posts ready to publish, messaging framework, visual identity brief. four weeks. in writing. nothing held back.
 
 - full positioning document
-- linkedin — complete rewrite
+- linkedin  -  complete rewrite
 - 30 ready-to-publish posts
 - messaging framework
 - voice & tone guide
@@ -1056,27 +1077,27 @@ flagship · full transformation
 
 4-week sprint · fully async · no refunds
 
-03 — process 03
+03  -  process 03
 
 async. no calls. no surprises.
 
-01 — you pay & submit — short intake form. 10 minutes. no discovery calls. no "let's hop on a quick zoom." not now, not ever.
-02 — i do the work — deep on your brand, your market, your positioning. built around you specifically. not a template. not a checklist. four weeks of focus on you.
-03 — you get the deliverables — on time. in writing. eight documents, ready to ship. you know exactly what to do on monday morning.
+01  -  you pay & submit  -  short intake form. 10 minutes. no discovery calls. no "let's hop on a quick zoom." not now, not ever.
+02  -  i do the work  -  deep on your brand, your market, your positioning. built around you specifically. not a template. not a checklist. four weeks of focus on you.
+03  -  you get the deliverables  -  on time. in writing. eight documents, ready to ship. you know exactly what to do on monday morning.
 
-04 — faq 04
+04  -  faq 04
 
 ##### what exactly do i get?
 
-eight deliverables, all in writing: full positioning document, complete LinkedIn rewrite (headline + about + featured + skills + banner direction), 30 ready-to-publish posts, messaging framework, voice and tone guide, visual identity brief, 3-month content strategy, final brand OS PDF. the brand OS is the master document — every other deliverable ties back to it.
+eight deliverables, all in writing: full positioning document, complete LinkedIn rewrite (headline + about + featured + skills + banner direction), 30 ready-to-publish posts, messaging framework, voice and tone guide, visual identity brief, 3-month content strategy, final brand OS PDF. the brand OS is the master document  -  every other deliverable ties back to it.
 
 ##### how is this different from the audit or sprint?
 
-the audit diagnoses. the sprint builds positioning. The Monster Job is the full thing — positioning, voice, linkedin, posts, messaging, visual identity, content strategy, master document. nothing left for you to figure out. you ship the brand, not a half-built brand.
+the audit diagnoses. the sprint builds positioning. The Monster Job is the full thing  -  positioning, voice, linkedin, posts, messaging, visual identity, content strategy, master document. nothing left for you to figure out. you ship the brand, not a half-built brand.
 
 ##### how long does it take?
 
-four weeks from intake to final PDF. you get the first drafts by week two, the full set by week four. no check-in calls, no status updates — just the work, when it's done.
+four weeks from intake to final PDF. you get the first drafts by week two, the full set by week four. no check-in calls, no status updates  -  just the work, when it's done.
 
 ##### what if i don't like it?
 
@@ -1084,7 +1105,7 @@ two rounds of revision on each deliverable, written, async. after that, the work
 
 ##### how many jobs do you take?
 
-limited capacity. application required. the work is intensive by design — fewer clients means each one gets the full focus, not a fraction of it.
+limited capacity. application required. the work is intensive by design  -  fewer clients means each one gets the full focus, not a fraction of it.
 
 ##### can i pay in instalments?
 
@@ -1098,15 +1119,15 @@ founders who want content calendar management. companies. anyone who needs calls
 
 16 posts/month in your voice. monthly async brand strategy. positioning that compounds. cancel any month.
 
-a brand isn't built once and walked away from. the market moves. your positioning needs to keep up. the retainer is for the founder who has the foundation — and needs ongoing strategic input and content production without hiring in-house.
+a brand isn't built once and walked away from. the market moves. your positioning needs to keep up. the retainer is for the founder who has the foundation  -  and needs ongoing strategic input and content production without hiring in-house.
 
-01 — who this is for 01
+01  -  who this is for 01
 
 YOU.
 
 you've built the brand. now you need it to keep working.
 
-A brand isn't built once and walked away from. The market moves. Your positioning needs to keep up. The Monster on Retainer is for the founder who has the foundation — and needs ongoing strategic input and content production without hiring in-house.
+A brand isn't built once and walked away from. The market moves. Your positioning needs to keep up. The Monster on Retainer is for the founder who has the foundation  -  and needs ongoing strategic input and content production without hiring in-house.
 
 Most personal brands don't compound on their own. The positioning isn't refreshed. The content goes stale. The audience forgets. The retainer exists to prevent that.
 
@@ -1114,12 +1135,12 @@ Regular posting is the threshold where presence becomes real. Without it, you're
 
 #### the four problems the work solves
 
-- **your content cadence is dead** — you posted for two weeks. then it stopped. the algorithm forgot you. the audience forgot you. the retainer fixes the cadence — 16 posts/month, every month, without you lifting a finger.
-- **your positioning drifts** — what worked in q1 doesn't work in q3. the retainer ships a monthly async brand strategy session so positioning stays sharp and current.
-- **you're too busy to write** — you run a company. writing 16 posts a month is not in the calendar. the retainer writes them in your voice, not a freelancer's voice, not a template's voice.
-- **you can't hire in-house** — you need senior strategic input, not a content writer. the retainer gives you both — strategy and execution — without the cost of hiring in-house.
+- **your content cadence is dead**  -  you posted for two weeks. then it stopped. the algorithm forgot you. the audience forgot you. the retainer fixes the cadence  -  16 posts/month, every month, without you lifting a finger.
+- **your positioning drifts**  -  what worked in q1 doesn't work in q3. the retainer ships a monthly async brand strategy session so positioning stays sharp and current.
+- **you're too busy to write**  -  you run a company. writing 16 posts a month is not in the calendar. the retainer writes them in your voice, not a freelancer's voice, not a template's voice.
+- **you can't hire in-house**  -  you need senior strategic input, not a content writer. the retainer gives you both  -  strategy and execution  -  without the cost of hiring in-house.
 
-02 — what you get 02
+02  -  what you get 02
 
 EVERY MONTH.
 
@@ -1144,15 +1165,15 @@ ongoing · monthly
 
 monthly rolling · cancel any month · no refunds on paid month
 
-03 — process 03
+03  -  process 03
 
 async. no calls. no surprises.
 
-01 — you subscribe — stripe subscription. €2,000/month. cancel any month from your stripe dashboard. no calls to cancel. no "are you sure?" emails.
-02 — i produce — 16 posts in your voice, monthly brand strategy, positioning review, linkedin optimization. delivered on a fixed schedule, in writing, in your inbox.
-03 — you publish — posts are ready to schedule. you approve them or push back. either way, the cadence holds. the brand compounds. the audience grows.
+01  -  you subscribe  -  stripe subscription. €2,000/month. cancel any month from your stripe dashboard. no calls to cancel. no "are you sure?" emails.
+02  -  i produce  -  16 posts in your voice, monthly brand strategy, positioning review, linkedin optimization. delivered on a fixed schedule, in writing, in your inbox.
+03  -  you publish  -  posts are ready to schedule. you approve them or push back. either way, the cadence holds. the brand compounds. the audience grows.
 
-04 — faq 04
+04  -  faq 04
 
 ##### what exactly do i get each month?
 
@@ -1160,11 +1181,11 @@ async. no calls. no surprises.
 
 ##### how does "in your voice" work?
 
-the first month includes a deeper onboarding — past posts, voice references, examples of writing you admire. every post goes through that filter. if a post doesn't sound like you, you push back and it gets rewritten.
+the first month includes a deeper onboarding  -  past posts, voice references, examples of writing you admire. every post goes through that filter. if a post doesn't sound like you, you push back and it gets rewritten.
 
 ##### how many retainer clients do you take?
 
-limited capacity. application required. the work is intensive by design — current slots vary; ask if you want one.
+limited capacity. application required. the work is intensive by design  -  current slots vary; ask if you want one.
 
 ##### can i cancel any month?
 
@@ -1180,43 +1201,43 @@ subscription. €2,000/month billed monthly via stripe. you can pause, cancel, o
 
 ##### what's the difference vs The Monster Job?
 
-The Monster Job is the foundation — eight deliverables, four weeks, one-time €2,500. The Retainer is what comes after — ongoing strategy and content. many clients do The Job first, then move to retainer once the foundation is built.
+The Monster Job is the foundation  -  eight deliverables, four weeks, one-time €2,500. The Retainer is what comes after  -  ongoing strategy and content. many clients do The Job first, then move to retainer once the foundation is built.
 
 ### AI Executive System (https://aah.monster/ai-executive/)
 
 a written operating system for the executive who has become the bottleneck. €1,500, one-time, 48 to 72 hours, no calls.
 
-you are the execution. every important answer still routes through one person — the client question, the board brief, the decision nobody else can make. the team has tools. the calendar has no room. the fix is not more software, it is a written operating layer that lets the right work move without waiting for the executive.
+you are the execution. every important answer still routes through one person  -  the client question, the board brief, the decision nobody else can make. the team has tools. the calendar has no room. the fix is not more software, it is a written operating layer that lets the right work move without waiting for the executive.
 
 #### the four problems the work solves
 
-- **commercial drag** — a response waits for your context, a proposal waits for your judgment, a client feels the gap before you do.
-- **operating drag** — repeatable work keeps returning to your head because nobody has the written rule for what good looks like.
-- **approval drag** — the team can move, but only after you translate the decision into a sentence they can safely act on.
-- **reputation drag** — inconsistency becomes visible. the business looks slower because its best judgment is trapped in one person.
+- **commercial drag**  -  a response waits for your context, a proposal waits for your judgment, a client feels the gap before you do.
+- **operating drag**  -  repeatable work keeps returning to your head because nobody has the written rule for what good looks like.
+- **approval drag**  -  the team can move, but only after you translate the decision into a sentence they can safely act on.
+- **reputation drag**  -  inconsistency becomes visible. the business looks slower because its best judgment is trapped in one person.
 
 #### the system, three phases
 
-01 — stabilize — find the leak that is costing you first, the decision that keeps circling, the handoff that keeps coming back. write the immediate rule and the minimum useful workflow.
-02 — systematize — turn your judgment into a written system: what enters, what gets checked, what the assistant can do, and where you still need to decide.
-03 — scale — give the system a place in the week. ready configuration files, named owners, and a 30-day operating checklist. less work waits for the executive.
+01  -  stabilize  -  find the leak that is costing you first, the decision that keeps circling, the handoff that keeps coming back. write the immediate rule and the minimum useful workflow.
+02  -  systematize  -  turn your judgment into a written system: what enters, what gets checked, what the assistant can do, and where you still need to decide.
+03  -  scale  -  give the system a place in the week. ready configuration files, named owners, and a 30-day operating checklist. less work waits for the executive.
 
-#### what arrives — not a course, not a call
+#### what arrives  -  not a course, not a call
 
-- **the written system** — the operating brief: the bottleneck, the decisions, the rules, the handoffs, and the line that still belongs to you.
-- **ready configuration files** — the prompts, templates, and routing instructions in a form the existing stack can use.
-- **the never-list** — what the system must not invent, approve, send, or decide on your behalf.
-- **30-day checklist** — a short operating sequence that makes the new layer part of the week instead of another document in a folder.
+- **the written system**  -  the operating brief: the bottleneck, the decisions, the rules, the handoffs, and the line that still belongs to you.
+- **ready configuration files**  -  the prompts, templates, and routing instructions in a form the existing stack can use.
+- **the never-list**  -  what the system must not invent, approve, send, or decide on your behalf.
+- **30-day checklist**  -  a short operating sequence that makes the new layer part of the week instead of another document in a folder.
 
-#### how it works — you do three things
+#### how it works  -  you do three things
 
-01 — send the real work — recent briefs, decisions, recurring requests, and the place where work currently stops. not a polished questionnaire.
-02 — answer the sharp questions — a short written exchange closes the gaps. no call, no workshop, no performance of alignment.
-03 — put it into the week — the system arrives in 48 to 72 hours with the files and checklist. the buyer decides what goes live first.
+01  -  send the real work  -  recent briefs, decisions, recurring requests, and the place where work currently stops. not a polished questionnaire.
+02  -  answer the sharp questions  -  a short written exchange closes the gaps. no call, no workshop, no performance of alignment.
+03  -  put it into the week  -  the system arrives in 48 to 72 hours with the files and checklist. the buyer decides what goes live first.
 
 [ask for the system →](mailto:hello@aah.monster?subject=AI%20Executive%20System)
 
-€1,500 · one-time · 48 to 72 hours · written delivery · no calls. Upsell path: a larger brand intervention after this is [The Monster Job](https://aah.monster/the-monster-job/). Not sure yet: send one sentence about the work that keeps landing back on your desk to hello@aah.monster — if it is not a system problem, that gets said before anything is bought.
+€1,500 · one-time · 48 to 72 hours · written delivery · no calls. Upsell path: a larger brand intervention after this is [The Monster Job](https://aah.monster/the-monster-job/). Not sure yet: send one sentence about the work that keeps landing back on your desk to hello@aah.monster  -  if it is not a system problem, that gets said before anything is bought.
 
 
 ### Aah, Monster! vs. Traditional PR Agencies (https://aah.monster/vs-pr-agency/)

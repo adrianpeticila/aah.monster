@@ -122,14 +122,14 @@ CAT_CODE="$(curl -s -o "$TMPDIR_RUN/catalog.json" -w '%{http_code}' "$BASE/api/c
 check_eq "GET /api/catalog.json -> 200" "200" "$CAT_CODE"
 C="$TMPDIR_RUN/catalog.json"
 jq -e 'type=="array"' "$C" >/dev/null 2>&1 && ok "catalog is a JSON array" || bad "catalog is a JSON array"
-jq -e 'length==7' "$C" >/dev/null 2>&1 && ok "catalog has 7 products" || bad "catalog has 7 products (got $(jq 'length' "$C" 2>/dev/null || echo '?'))"
+jq -e 'length==9' "$C" >/dev/null 2>&1 && ok "catalog has 9 products" || bad "catalog has 9 products (got $(jq 'length' "$C" 2>/dev/null || echo '?'))"
 jq -e 'all(.[]; (keys|sort)==["checkout_type","currency","description","id","name","price_cents","sample_output_url"])' "$C" >/dev/null 2>&1 \
   && ok "every product has exactly the 7 contract keys" || bad "every product has exactly the 7 contract keys"
 jq -e 'all(.[]; (.price_cents|type)=="number" and (.price_cents|floor)==.price_cents and .price_cents>=0)' "$C" >/dev/null 2>&1 \
   && ok "price_cents non-negative integers" || bad "price_cents non-negative integers"
-jq -e 'all(.[]; .currency=="EUR")' "$C" >/dev/null 2>&1 && ok "currency EUR everywhere" || bad "currency EUR everywhere"
-jq -e 'all(.[]; .sample_output_url|startswith("https://aah.monster/samples/"))' "$C" >/dev/null 2>&1 \
-  && ok "sample_output_url absolute under /samples/" || bad "sample_output_url absolute under /samples/"
+jq -e 'all(.[]; (.currency=="EUR" or .currency=="USD"))' "$C" >/dev/null 2>&1 && ok "currency EUR or USD" || bad "currency EUR or USD"
+jq -e 'all(.[]; ((.sample_output_url|startswith("https://aah.monster/samples/")) or (.sample_output_url=="https://aah.monster/security-audit.md")))' "$C" >/dev/null 2>&1 \
+  && ok "sample output URLs are absolute sample or security mirror URLs" || bad "sample output URLs are absolute sample or security mirror URLs"
 jq -e 'all(.[]; .checkout_type=="stripe_hosted" or .checkout_type=="inquiry" or .checkout_type=="free")' "$C" >/dev/null 2>&1 \
   && ok "checkout_type in {stripe_hosted, inquiry, free}" || bad "checkout_type in {stripe_hosted, inquiry, free}"
 check_eq "price brand-audit 19900" "19900" "$(jq -r '.[]|select(.id=="brand-audit")|.price_cents' "$C")"

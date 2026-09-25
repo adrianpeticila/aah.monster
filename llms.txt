@@ -60,6 +60,11 @@ Positioning document, LinkedIn headline + about rewrite, messaging framework, br
 
 ### Aah, Monster! vs. Traditional PR Agencies
 **URL:** https://aah.monster/vs-pr-agency/
+### Vibe-Coded SaaS Security & AEO Audit
+**URL:** https://aah.monster/security-audit/
+**Markdown:** https://aah.monster/security-audit.md
+Full Security and AEO audit for AI-built SaaS. Checks leaked env keys, Supabase RLS, CORS, prompt injection, admin routes, and other agentic exposure. $197, delivered in 48 hours. The $997 remediation sprint includes the audit and hands-on code hardening.
+
 A direct breakdown comparing traditional $5,000-$15,000/month PR agency retainers against the async Aah, Monster! executive positioning engine. Transparent pricing, zero meetings, 100% async voice architecture.
 
 ### Aah, Monster! vs. Ghostwriters & LinkedIn Freelancers
@@ -197,7 +202,7 @@ Aah, Monster! (aah.monster) is a premium personal branding consultancy run by Ad
 For AI agents that want to buy on behalf of a user (human-in-the-loop):
 
 - Agent entrypoint: https://aah.monster/.well-known/agent.json
-- Product catalog (JSON): https://aah.monster/api/catalog.json — fixed prices, no negotiation
+- Product catalog (JSON): https://aah.monster/api/catalog.json  -  fixed prices, no negotiation
 - Purchase (HTTP 402): `POST https://aah.monster/api/agent/buy` with `{"product_id": "...", "agent_id" or "email": "..."}` → 402 with payment instructions or 200 with a pre-filled checkout URL
 - Service status: https://aah.monster/api/status
 - Paid deliverables: `GET https://aah.monster/api/agent/deliveries/{token}` after payment verification

@@ -1,6 +1,6 @@
 'use strict';
 /**
- * aah.monster — agentic commerce API (Faza 3 + 4).
+ * aah.monster  -  agentic commerce API (Faza 3 + 4).
  * Mounted by server/agent-server.js: handleApi(req, res, pathname) -> true if handled.
  *
  * Routes:
@@ -10,7 +10,7 @@
  *   POST /api/agent/payments/webhook   HMAC-signed settlement -> paid / held_for_review
  *   GET  /api/status                   uptime + ledger day totals
  *
- * Circuit breakers: hard-coded in ./agent-ledger.js (never env/prompt) —
+ * Circuit breakers: hard-coded in ./agent-ledger.js (never env/prompt) -
  *   programmatic daily cap USD 20 -> over-cap held_for_review (stripe_hosted unlimited),
  *   3 buy attempts per agent_id+IP per 10 min -> 429, unknown product -> 404, bad body -> 400.
  * Env = secrets/addresses only, NEVER limits:
@@ -43,7 +43,11 @@ const STRIPE = {
   'monster-retainer': 'https://buy.stripe.com/eVq6oHbnzfgyb6wgI9aIM03',
 };
 // ai-executive has NO Stripe link on the site: inquiry-only, never blocks the catalog.
-const INQUIRY = { 'ai-executive': 'mailto:hello@aah.monster?subject=AI%20Executive%20System%20inquiry' };
+const INQUIRY = {
+  'ai-executive': 'mailto:hello@aah.monster?subject=AI%20Executive%20System%20inquiry',
+  'security-audit-quick': 'https://aah.monster/security-audit/',
+  'security-audit-full': 'https://aah.monster/security-audit/'
+};
 
 function send(res, status, contentType, body, extra = {}) {
   const buf = Buffer.from(body);
@@ -166,9 +170,9 @@ function deliveryPayload(led, order) {
 }
 function deliveryMarkdown(p) {
   return [
-    `# order ${p.order_token} — paid`,
+    `# order ${p.order_token}  -  paid`,
     '',
-    `**${p.product.name}** — ${p.product.price_cents / 100} ${p.product.currency} · rail: ${p.order.rail}`,
+    `**${p.product.name}**  -  ${p.product.price_cents / 100} ${p.product.currency} · rail: ${p.order.rail}`,
     '',
     `status: paid${p.order.paid_at ? ` · paid_at: ${p.order.paid_at}` : ''}${p.order.tx_reference ? ` · tx: ${p.order.tx_reference}` : ''}`,
     '',
@@ -257,14 +261,14 @@ async function handleBuy(req, res) {
     payload = {
       checkout_type: 'inquiry', product_id: productId, price_cents: product.price_cents, currency: product.currency,
       inquiry_url: INQUIRY[productId] || 'mailto:hello@aah.monster',
-      note: 'no autonomous checkout for this product — open a written inquiry; a human replies async.',
+      note: 'no autonomous checkout for this product  -  open a written inquiry; a human replies async.',
     };
   } else if (product.checkout_type === 'free' || product.price_cents === 0) {
     const token = newOrderToken();
     led.orders[token] = { token, product_id: productId, agent, email, rail: 'free', checkout_type: 'free', price_cents: 0, currency: product.currency, usd_cents: 0, status: 'paid', created_at: now, paid_at: now };
     save(led);
     status = 200;
-    payload = { checkout_type: 'free', order_token: token, status: 'paid', product_id: productId, price_cents: 0, currency: product.currency, delivery_url: `/api/agent/deliveries/${token}`, note: 'zero-cost order — delivered immediately, no settlement required.' };
+    payload = { checkout_type: 'free', order_token: token, status: 'paid', product_id: productId, price_cents: 0, currency: product.currency, delivery_url: `/api/agent/deliveries/${token}`, note: 'zero-cost order  -  delivered immediately, no settlement required.' };
   } else if (rail === 'stripe_hosted') {
     const token = newOrderToken();
     led.orders[token] = { token, product_id: productId, agent, email, rail: 'stripe_hosted', checkout_type: 'stripe_hosted', price_cents: product.price_cents, currency: product.currency, usd_cents: usdCents, status: 'awaiting_payment', created_at: now, paid_at: null };
@@ -284,7 +288,7 @@ async function handleBuy(req, res) {
         pay_to: process.env.X402_PAYTO_ADDRESS || null,
         configured: Boolean(process.env.X402_PAYTO_ADDRESS),
         settle_endpoint: 'POST /api/agent/payments/webhook (HMAC-SHA256 over raw body)',
-        note: process.env.X402_PAYTO_ADDRESS ? 'pay USDC to pay_to, then confirm via signed webhook.' : 'no pay_to configured yet — use rail=stripe_hosted for hosted checkout, or wait for x402 configuration.',
+        note: process.env.X402_PAYTO_ADDRESS ? 'pay USDC to pay_to, then confirm via signed webhook.' : 'no pay_to configured yet  -  use rail=stripe_hosted for hosted checkout, or wait for x402 configuration.',
       },
       guardrails: { daily_programmatic_cap_usd: DAILY_CAP_USD, over_cap_status: 'held_for_review', rate_limit: `${RATE_LIMIT_MAX_ATTEMPTS} per agent_id+IP per ${RATE_LIMIT_WINDOW_MS / 60000}min` },
       delivery_url: `/api/agent/deliveries/${token}`,
@@ -296,7 +300,7 @@ async function handleBuy(req, res) {
 }
 async function handleWebhook(req, res) {
   const secret = process.env.PAYMENT_WEBHOOK_SECRET;
-  if (!secret) throw httpError(503, 'webhook_disabled', { detail: 'PAYMENT_WEBHOOK_SECRET not set — settlement confirmations disabled (fail closed)' });
+  if (!secret) throw httpError(503, 'webhook_disabled', { detail: 'PAYMENT_WEBHOOK_SECRET not set  -  settlement confirmations disabled (fail closed)' });
 
   const raw = await readBody(req);
   const sigHeader = String(req.headers['x-payment-signature'] || '').replace(/^sha256=/i, '');
