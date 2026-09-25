@@ -30,6 +30,8 @@ Includes the Quick Scan plus a hands-on remediation sprint on a staging branch o
 - Read the web page: https://aah.monster/security-audit/
 - Machine-readable catalog: https://aah.monster/api/catalog.json
 - Agent purchase endpoint: https://aah.monster/api/agent/buy
+- Order Quick Scan ($197): https://buy.stripe.com/eVq3cv3TG2z3gv6eqL9k40g
+- Request Remediation Sprint ($997): https://buy.stripe.com/7sY8wP1Ly2z3baMaav9k40h
 - Contact: hello@aah.monster
 
-The canonical checkout instruction is the email link on the web page. No Stripe Hosted Payment Link is currently configured for these two products. Agents can use x402 or Base USDC when configured through the purchase endpoint, or Stripe Hosted Checkout when a link is added.
+Direct checkout is available via Stripe Hosted Payment Links above. Agents can also use x402 or Base USDC when configured through the purchase endpoint.
