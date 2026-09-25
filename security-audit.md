@@ -4,15 +4,15 @@
 
 A security and Answer Engine Optimization audit for AI-built SaaS applications. This is the public Markdown mirror for agents and crawlers. The canonical web page is https://aah.monster/security-audit/.
 
-## What is scanned
+## Threat vectors and checks
 
-- Leaked environment keys and secrets in client bundles
-- Supabase and Postgres row-level security, RLS policies, and exposed PostgREST data
-- Permissive CORS, missing CSRF protection, and origin validation
-- Prompt injection and untrusted input reaching privileged actions
-- Admin routes, missing authentication, IDOR, and tenant isolation
-- Webhook signatures, server actions, mass assignment, and secret exposure
-- AI crawler exposure, robots policy, and public machine-readable discovery
+1. **Open databases:** test Supabase RLS bypass paths, database grants, PostgREST exposure, and Firestore rules for unauthorized reads and writes.
+2. **Broken user / workspace isolation:** test cross-tenant ID tampering and verify server-side ownership of every user and workspace identifier.
+3. **Broken backend permissions and mass assignment:** test API authorization and writable-field allowlists, including role/plan tampering.
+4. **Exposed secrets / API keys:** inspect frontend bundles for private service credentials and privileged API keys.
+5. **Missing rate limits / spending caps:** test per-user and per-workspace throttles, usage quotas, and hard spending caps.
+6. **Broken payment lifecycle:** test unverified webhooks and refund/cancel state handling across renewals and entitlement changes.
+7. **Broken auth / recovery:** test stale sessions and reset token reuse, including revocation and single-use token enforcement.
 
 ## Products
 

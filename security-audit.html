@@ -430,64 +430,64 @@
         <div class="vuln-card">
           <div>
             <div class="vuln-num">01</div>
-            <div class="vuln-title">Open Databases & Missing RLS</div>
-            <div class="vuln-desc">Supabase and Firebase tables created with default public read/write access. Anyone inspecting your client network requests can read or overwrite the entire customer database.</div>
+            <div class="vuln-title">Open Databases</div>
+            <div class="vuln-desc">Supabase RLS bypass attempts, permissive PostgREST access, and Firestore rules that permit unauthorized reads or writes.</div>
           </div>
-          <div class="vuln-impact">Severity: Catastrophic data breach</div>
+          <div class="vuln-impact">Check: RLS bypass, database grants, and Firestore rules</div>
         </div>
 
         <div class="vuln-card">
           <div>
             <div class="vuln-num">02</div>
-            <div class="vuln-title">Zero Tenant Isolation</div>
-            <div class="vuln-desc">Query filters that rely solely on frontend parameters like <code>user_id</code> sent from client state. Attackers swap IDs in HTTP requests and fetch another company's confidential records.</div>
+            <div class="vuln-title">Broken User / Workspace Isolation</div>
+            <div class="vuln-desc">Broken user / workspace isolation and cross-tenant ID tampering let an attacker reach another tenant's records by replacing client-controlled identifiers.</div>
           </div>
-          <div class="vuln-impact">Severity: Complete multi-tenant compromise</div>
+          <div class="vuln-impact">Check: cross-tenant ID tampering and server-side ownership validation</div>
         </div>
 
         <div class="vuln-card">
           <div>
             <div class="vuln-num">03</div>
-            <div class="vuln-title">Exposed Service & LLM Keys</div>
-            <div class="vuln-desc">API keys for OpenAI, Anthropic, Stripe, or Resend baked directly into frontend code bundles, edge functions without origin checks, or public client environments.</div>
+            <div class="vuln-title">Broken Backend Permissions & Mass Assignment</div>
+            <div class="vuln-desc">Broken backend permissions and mass assignment expose privileged fields. Checks include role/plan tampering and writable-field allowlists.</div>
           </div>
-          <div class="vuln-impact">Severity: Instant wallet draining</div>
+          <div class="vuln-impact">Check: role tampering, plan tampering, and field allowlists</div>
         </div>
 
         <div class="vuln-card">
           <div>
             <div class="vuln-num">04</div>
-            <div class="vuln-title">Unprotected AI Endpoints & No Rate Limits</div>
-            <div class="vuln-desc">API routes that invoke expensive LLM completions without user-level quotas or IP throttling. A script loops your endpoint 50,000 times overnight and presents you with a $12,000 OpenAI bill.</div>
+            <div class="vuln-title">Exposed Secrets / API Keys</div>
+            <div class="vuln-desc">Service credentials and private API keys shipped in JavaScript bundles, source maps, client environment variables, or public configuration.</div>
           </div>
-          <div class="vuln-impact">Severity: Financial denial of service</div>
+          <div class="vuln-impact">Check: frontend bundles for secrets and privileged keys</div>
         </div>
 
         <div class="vuln-card">
           <div>
             <div class="vuln-num">05</div>
-            <div class="vuln-title">Forged Webhook Handlers</div>
-            <div class="vuln-desc">Stripe and Lemon Squeezy payment webhook handlers that check payload data without verifying the cryptographic HMAC signature. Anyone can simulate a payment event and grant themselves free access.</div>
+            <div class="vuln-title">Missing Rate Limits / Spending Caps</div>
+            <div class="vuln-desc">Unthrottled endpoints and usage paths let automated clients exhaust quotas, credits, or budget without an account-level stop.</div>
           </div>
-          <div class="vuln-impact">Severity: Payment fraud & revenue bypass</div>
+          <div class="vuln-impact">Check: per-user limits, abuse controls, and spending caps</div>
         </div>
 
         <div class="vuln-card">
           <div>
             <div class="vuln-num">06</div>
-            <div class="vuln-title">Client-Side Auth Gating</div>
-            <div class="vuln-desc">Protecting premium dashboard views using simple React state checks instead of server-side middleware and JWT verification. Bypassed by editing local storage or blocking redirect scripts.</div>
+            <div class="vuln-title">Broken Payment Lifecycle</div>
+            <div class="vuln-desc">Broken payment lifecycle checks cover unverified webhooks and refund/cancel state handling across renewals and entitlement changes.</div>
           </div>
-          <div class="vuln-impact">Severity: Complete authorization bypass</div>
+          <div class="vuln-impact">Check: webhook verification, refunds, cancels, renewals, and entitlement state</div>
         </div>
 
         <div class="vuln-card">
           <div>
             <div class="vuln-num">07</div>
-            <div class="vuln-title">Mass-Assignment & Schema Poisoning</div>
-            <div class="vuln-desc">Accepting raw JSON payloads directly into database insert and update statements. Attackers add <code>is_admin: true</code> or <code>credits: 999999</code> to their profile requests and the ORM blindly commits it.</div>
+            <div class="vuln-title">Broken Auth / Recovery</div>
+            <div class="vuln-desc">Broken auth/recovery checks cover stale sessions and reset token reuse, including revocation and single-use token enforcement.</div>
           </div>
-          <div class="vuln-impact">Severity: Immediate privilege escalation</div>
+          <div class="vuln-impact">Check: stale sessions and single-use reset token enforcement</div>
         </div>
       </div>
     </div>
@@ -539,7 +539,7 @@
               <li>Delivered as a clean 10-15 page PDF report</li>
             </ul>
           </div>
-          <a href="https://buy.stripe.com/eVq3cv3TG2z3gv6eqL9k40g" class="btn-red">order full audit ($197) →</a>
+          <a href="https://buy.stripe.com/5kQ6oH2R3d8qcaAcrTaIM06" class="btn-red">order full audit ($197) →</a>
         </div>
 
         <!-- TIER 3 -->
@@ -560,7 +560,7 @@
               <li>Post-deployment verification canary</li>
             </ul>
           </div>
-          <a href="https://buy.stripe.com/7sY8wP1Ly2z3baMaav9k40h" class="btn-secondary">request remediation ($997)</a>
+          <a href="https://buy.stripe.com/5kQ9ATdvHfgycaA4ZraIM07" class="btn-secondary">request remediation ($997)</a>
         </div>
       </div>
     </div>
@@ -571,7 +571,7 @@
     <div class="wrap">
       <h2>your app,<br><span class="red">armored.</span></h2>
       <p>48 hours. Zero sales pitches. A rigorous, battle-tested security review that ensures your next product launch is not your final security headline.</p>
-      <a href="https://buy.stripe.com/eVq3cv3TG2z3gv6eqL9k40g" class="btn-cream">start the audit, $197 →</a>
+      <a href="https://buy.stripe.com/5kQ6oH2R3d8qcaAcrTaIM06" class="btn-cream">start the audit, $197 →</a>
       <p class="cta-sub">prefer async email first? reach out directly at <a href="mailto:hello@aah.monster">hello@aah.monster</a></p>
     </div>
   </div>
