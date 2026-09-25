@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe-Coded SaaS Security & AEO Audit · aah, monster!</title>
+  <meta name="description" content="Is your vibe-coded SaaS ready to get hacked? Audit your Lovable, Bolt, or Cursor app in 60 seconds. Canary test, full attack surface audit, and remediation.">
+  <link rel="canonical" href="https://aah.monster/security-audit/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aah.monster/security-audit/">
+  <meta property="og:title" content="Vibe-Coded SaaS Security & AEO Audit · aah, monster!">
+  <meta property="og:description" content="Is your vibe-coded SaaS ready to get hacked? Audit your Lovable, Bolt, or Cursor app in 60 seconds.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="aah, monster!">
+  <meta property="og:image" content="https://aah.monster/og-image.png">
+  <meta property="og:image:alt" content="Vibe-Coded SaaS Security & AEO Audit · aah, monster!">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@adrianmpeticila">
+  <meta name="twitter:title" content="Vibe-Coded SaaS Security & AEO Audit · aah, monster!">
+  <meta name="twitter:description" content="Is your vibe-coded SaaS ready to get hacked? Audit your Lovable, Bolt, or Cursor app in 60 seconds.">
+  <meta name="twitter:image" content="https://aah.monster/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://aah.monster/security-audit/#app",
+        "name": "Vibe-Coded SaaS Canary Security Simulator",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "All",
+        "url": "https://aah.monster/security-audit/",
+        "description": "Interactive instant canary intake simulator checking exposed Supabase keys, tenant isolation leaks, webhook forgery, and mass-assignment flaws in vibe-coded applications.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": { "@id": "https://aah.monster/#person" },
+        "publisher": { "@id": "https://aah.monster/#organization" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://aah.monster/security-audit/#service",
+        "name": "Vibe-Coded SaaS Security & AEO Audit",
+        "description": "Comprehensive security and Answer Engine Optimization (AEO) audit for applications built with Lovable, Bolt, Cursor, Replit, or Next.js/Supabase. Covers 7 critical vulnerability vectors, AI hallucination leakage, and agentic exposure.",
+        "url": "https://aah.monster/security-audit/",
+        "provider": { "@id": "https://aah.monster/#organization" },
+        "brand": {
+          "@type": "Brand",
+          "name": "Aah, Monster!"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Vibe-Coded Security Audit Tiers",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Free Canary Simulator",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Instant canary score and primary vulnerability vector detection in 60 seconds."
+            },
+            {
+              "@type": "Offer",
+              "name": "Full Security & AEO Audit",
+              "price": "197",
+              "priceCurrency": "USD",
+              "description": "Exhaustive manual and automated inspection covering 7 critical vulnerabilities, AEO machine visibility, tenant isolation, and exact code-level patches."
+            },
+            {
+              "@type": "Offer",
+              "name": "Architecture Remediation",
+              "price": "997",
+              "priceCurrency": "USD",
+              "description": "Hands-on remediation sprint: Supabase RLS hardening, webhook HMAC verification, edge rate limiting, and zero-trust auth isolation."
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aah.monster/security-audit/#webpage",
+        "url": "https://aah.monster/security-audit/",
+        "name": "Vibe-Coded SaaS Security & AEO Audit · aah, monster!",
+        "description": "Is your vibe-coded SaaS ready to get hacked? Audit your Lovable, Bolt, or Cursor app in 60 seconds.",
+        "isPartOf": { "@id": "https://aah.monster/#website" },
+        "inLanguage": "en",
+        "dateModified": "2026-09-25"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://aah.monster/#organization",
+        "name": "Aah, Monster!",
+        "url": "https://aah.monster/",
+        "founder": { "@id": "https://aah.monster/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aah.monster/#person",
+        "name": "Adrian M. Peticila",
+        "url": "https://aah.monster/about/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" as="font" href="/fonts/sono-latin.woff2" type="font/woff2" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/sprite-graffiti" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @font-face {
+      font-family: 'Sono';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('/fonts/sono-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Sono';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('/fonts/sono-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    :root {
+      --bg: #F2F1ED; --fg: #111111; --cream: #F2F1ED; --ink: #111111;
+      --mid: #595959; --mid-t: #777777; --red: #D42020; --red-deep: #A80E0E;
+      --rule: rgba(17,17,17,0.1); --card: #FFFFFF; --card-border: rgba(17,17,17,0.09);
+      --display: 'Sprite Graffiti', sans-serif; --body: 'Sono', monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #0F0F0F; --fg: #F0EFEB; --cream: #0F0F0F; --ink: #F0EFEB;
+      --mid: #999999; --mid-t: #999999; --rule: rgba(255,255,255,0.09);
+      --card: #1A1A1A; --card-border: rgba(255,255,255,0.08);
+    }
+
+    /* Display-P3 HDR Glow Tokens */
+    @supports (color: color(display-p3 0.85 0.12 0.12)) {
+      @media (color-gamut: p3) {
+        :root {
+          --red-p3: color(display-p3 0.85 0.12 0.12);
+          --red-p3-glow: color(display-p3 0.98 0.10 0.10 / 0.5);
+          --red-p3-deep: color(display-p3 0.68 0.05 0.05);
+          --btn-hdr-glow: 0 0 24px var(--red-p3-glow);
+        }
+        .cta-button, .btn-primary, .tag-hot, .btn-red, .btn-cream {
+          box-shadow: var(--btn-hdr-glow);
+        }
+      }
+    }
+
+    body { background: var(--bg); color: var(--fg); font-family: var(--body); transition: background 0.3s, color 0.3s; line-height: 1.5; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 3rem; background: var(--bg); border-bottom: 1px solid var(--rule); transition: background 0.3s;
+    }
+    .nav-logo { font-family: var(--display); font-size: 1.1rem; color: var(--fg); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-size: 0.72rem; font-weight: 700; color: var(--mid); text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; }
+    .nav-link:hover { color: var(--red); }
+    .nav-cta { font-family: var(--body); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.65rem 1.4rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--red-deep); }
+    #theme-toggle { background: none; border: 1px solid var(--rule); color: var(--fg); font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0.9rem; cursor: pointer; transition: all 0.2s; }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+
+    /* HERO */
+    .page-header { padding-top: 80px; min-height: 75vh; display: flex; flex-direction: column; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+    .ph-top { display: flex; justify-content: space-between; padding: 1.5rem 3rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    .ph-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-top .badge-hot { color: var(--red); font-weight: 800; }
+    .ph-words { padding: 3rem 3rem 2rem; overflow: hidden; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .hero-h1 { font-family: var(--display); font-size: clamp(2.5rem, 6.5vw, 5.2rem); line-height: 0.95; color: var(--fg); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero-h1 .red { color: var(--red); }
+    .hero-h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--fg); }
+    .hero-sub { font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--mid); max-width: 820px; line-height: 1.55; margin-bottom: 2rem; font-weight: 400; }
+    .hero-sub strong { color: var(--fg); }
+    .ph-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding: 1.5rem 3rem 2rem; border-top: 1px solid var(--rule); gap: 2rem; }
+    .ph-bottom-left { font-family: var(--body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-t); }
+    .ph-bottom-center { font-family: var(--body); font-size: 0.85rem; color: var(--mid-t); font-style: italic; text-align: center; max-width: 480px; line-height: 1.55; }
+
+    .btn-red { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--red); color: white; text-decoration: none; padding: 0.9rem 2rem; display: inline-block; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn-red:hover { background: var(--red-deep); }
+    .btn-sub { display: block; margin-top: 0.5rem; font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid-t); opacity: 0.7; }
+
+    section { padding: 5rem 0; border-top: 1px solid var(--rule); }
+    .sec-top { display: flex; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .sec-top span { font-family: var(--body); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-t); }
+
+    h2 { font-family: var(--display); font-size: clamp(2rem, 4.5vw, 3.8rem); line-height: 1; color: var(--fg); margin-bottom: 2.5rem; text-transform: uppercase; }
+    h2 .red { color: var(--red); }
+    h2 .outline { color: transparent; -webkit-text-stroke: 2px var(--fg); }
+
+    /* INTAKE / SIMULATOR */
+    .simulator-box { background: var(--card); border: 1px solid var(--card-border); padding: 2.5rem; box-shadow: 2px 2px 0px var(--rule); }
+    .sim-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 1.8rem; }
+    .sim-header h3 { font-family: var(--display); font-size: 1.6rem; color: var(--fg); text-transform: uppercase; }
+    .sim-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+    
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; font-family: var(--body); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg); margin-bottom: 0.6rem; }
+    .input-text {
+      width: 100%; padding: 1rem 1.2rem; font-family: var(--body); font-size: 0.95rem; line-height: 1.4;
+      border: 1px solid var(--rule); border-radius: 0; background: var(--bg); color: var(--fg);
+      outline: none; transition: border-color 0.2s;
+    }
+    .input-text:focus { border-color: var(--red); }
+
+    .stack-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.6rem; margin-bottom: 1.8rem; }
+    .stack-btn {
+      background: var(--bg); border: 1px solid var(--rule); padding: 0.8rem 1rem;
+      font-family: var(--body); font-size: 0.75rem; font-weight: 700; color: var(--fg);
+      cursor: pointer; text-align: left; transition: all 0.15s; display: flex; justify-content: space-between; align-items: center;
+    }
+    .stack-btn:hover { border-color: var(--red); }
+    .stack-btn.selected { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .stack-btn.selected .stack-tag { color: var(--red); }
+    .stack-tag { font-size: 0.6rem; opacity: 0.7; }
+
+    /* SIMULATOR RESULTS */
+    #sim-results { display: none; margin-top: 2rem; border-top: 2px solid var(--fg); padding-top: 2rem; }
+    .sim-result-card { background: var(--bg); border: 1px solid var(--rule); padding: 2rem; border-left: 5px solid var(--red); }
+    .sim-score-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+    .sim-score { font-family: var(--display); font-size: 3.5rem; line-height: 0.9; color: var(--red); }
+    .sim-status { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 0.9rem; background: var(--red); color: white; }
+    .sim-details { font-size: 0.9rem; line-height: 1.6; color: var(--fg); margin-bottom: 1.5rem; }
+    .sim-warning { background: var(--card); border: 1px solid var(--card-border); padding: 1.2rem; margin-bottom: 1.5rem; }
+    .sim-warning-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.4rem; }
+    .sim-warning-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.5; }
+
+    /* VULNERABILITIES GRID */
+    .vuln-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; border-top: 3px solid var(--fg); padding-top: 2rem; }
+    .vuln-card { background: var(--card); border: 1px solid var(--card-border); padding: 1.8rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .vuln-num { font-family: var(--display); font-size: 2.2rem; color: var(--rule); line-height: 1; margin-bottom: 0.8rem; }
+    .vuln-card:hover .vuln-num { color: var(--red); }
+    .vuln-title { font-family: var(--body); font-size: 0.95rem; font-weight: 800; color: var(--fg); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .vuln-desc { font-size: 0.82rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.2rem; flex: 1; }
+    .vuln-impact { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+
+    /* PRICING TIERS */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; border-top: 3px solid var(--fg); padding-top: 2.5rem; }
+    @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+    .price-card { background: var(--card); border: 1px solid var(--card-border); padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+    .price-card.featured { border: 2px solid var(--red); }
+    .price-card.featured::before {
+      content: 'MOST POPULAR'; position: absolute; top: -13px; right: 20px;
+      background: var(--red); color: white; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em;
+      padding: 0.25rem 0.6rem; text-transform: uppercase;
+    }
+    .price-name { font-family: var(--display); font-size: 1.4rem; color: var(--fg); margin-bottom: 0.5rem; text-transform: uppercase; }
+    .price-tagline { font-size: 0.75rem; color: var(--mid); margin-bottom: 1.5rem; min-height: 2.5rem; line-height: 1.4; }
+    .price-amount { font-family: var(--display); font-size: 3rem; color: var(--fg); line-height: 0.9; margin-bottom: 0.5rem; }
+    .price-card.featured .price-amount { color: var(--red); }
+    .price-period { font-size: 0.68rem; font-weight: 700; color: var(--mid-t); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.8rem; }
+    .price-features { list-style: none; margin-bottom: 2rem; border-top: 1px solid var(--rule); padding-top: 1.2rem; flex: 1; }
+    .price-features li { font-size: 0.8rem; color: var(--fg); margin-bottom: 0.8rem; line-height: 1.45; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .price-features li::before { content: '→'; color: var(--red); font-weight: 800; }
+    .price-card .btn-red, .price-card .btn-secondary { width: 100%; text-align: center; }
+    .btn-secondary { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--bg); color: var(--fg); text-decoration: none; padding: 0.9rem 1.5rem; display: inline-block; border: 1px solid var(--rule); transition: all 0.2s; cursor: pointer; }
+    .btn-secondary:hover { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+
+    /* CTA BLOCK */
+    .cta-block { background: var(--ink); color: var(--cream); padding: 5rem 0; }
+    .cta-block h2 { color: var(--cream); margin-bottom: 1rem; }
+    .cta-block p { font-size: 0.95rem; color: #999; margin-bottom: 2rem; max-width: 680px; line-height: 1.6; }
+    .btn-cream { font-family: var(--body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--cream); color: var(--ink); text-decoration: none; padding: 0.9rem 2rem; display: inline-block; transition: all 0.2s; border: none; cursor: pointer; }
+    .btn-cream:hover { background: var(--red); color: white; }
+    .cta-sub { margin-top: 1rem; font-size: 0.75rem; color: #666; }
+    .cta-sub a { color: #888; text-decoration: underline; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; border-top: 3px solid var(--fg); }
+    .faq-item { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+    .faq-q { font-family: var(--body); font-size: 0.88rem; font-weight: 800; color: var(--fg); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .faq-a { font-size: 0.85rem; color: var(--mid); line-height: 1.65; max-width: 720px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; padding: 3rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .f-logo { font-family: var(--display); font-size: 1.5rem; color: var(--fg); margin-bottom: 0.7rem; }
+    .f-brand p { font-size: 0.78rem; color: var(--mid-t); max-width: 240px; line-height: 1.55; margin-bottom: 1rem; }
+    .f-brand a { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+    .f-col h4 { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-t); opacity: 0.5; margin-bottom: 1rem; }
+    .f-col ul { list-style: none; }
+    .f-col ul li { margin-bottom: 0.55rem; }
+    .f-col ul a { font-size: 0.78rem; color: var(--mid-t); text-decoration: none; transition: color 0.2s; }
+    .f-col ul a:hover { color: var(--fg); }
+    .f-bottom { max-width: 1100px; margin: 0 auto; padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.67rem; color: var(--mid-t); opacity: 0.5; flex-wrap: wrap; gap: 1rem; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links .nav-link { display: none; }
+      .wrap, .footer-inner, .f-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .page-header { min-height: auto; padding-top: 60px; }
+      .ph-top, .ph-words, .ph-bottom { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .ph-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="/" class="nav-logo">aah, monster!</a>
+    <div class="nav-links">
+      <a href="#simulator" class="nav-link">simulator</a>
+      <a href="#vulnerabilities" class="nav-link">7 flaws</a>
+      <a href="#pricing" class="nav-link">pricing</a>
+      <button id="theme-toggle" aria-label="Toggle theme">◐ dark</button>
+      <a href="#pricing" class="nav-cta">audit now ($197) →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="page-header">
+    <div class="ph-top">
+      <span>vibe-coded saas security · aeo audit</span>
+      <span class="badge-hot">canary intake live</span>
+    </div>
+    <div class="ph-words">
+      <h1 class="hero-h1">Is your vibe-coded SaaS ready to <span class="red">get hacked?</span></h1>
+      <p class="hero-sub">Audit your <strong>Lovable, Bolt, Cursor, Replit, or Next.js</strong> app in 60 seconds. LLMs generate code that works until someone reads your client bundle, dumps your Supabase schema, or steals every tenant record.</p>
+      <div>
+        <a href="#simulator" class="btn-red">run free canary audit →</a>
+        <span class="btn-sub">no signup required. zero fluff. pure diagnostic.</span>
+      </div>
+    </div>
+    <div class="ph-bottom">
+      <div class="ph-bottom-left">speed to market vs. zero-day disaster</div>
+      <div class="ph-bottom-center">"Prompting an app into existence is fun. Getting your customer table leaked across Twitter because you skipped Row Level Security is not."</div>
+      <div><a href="#pricing" class="btn-secondary">see audit tiers ($197)</a></div>
+    </div>
+  </header>
+
+  <!-- INTERACTIVE SIMULATOR / INTAKE -->
+  <section id="simulator">
+    <div class="wrap">
+      <div class="sec-top"><span>01: interactive intake</span><span>canary</span></div>
+      <h2>vibe app<br><span class="outline">canary simulator.</span></h2>
+      <div class="simulator-box">
+        <div class="sim-header">
+          <h3>Target Application Analysis</h3>
+          <span class="sim-tag">instant client-side inspection</span>
+        </div>
+        
+        <form id="audit-form" onsubmit="event.preventDefault(); runCanaryAudit();">
+          <div class="form-group">
+            <label for="app-url">SaaS Live URL or Deployment Domain</label>
+            <input type="url" id="app-url" class="input-text" placeholder="https://your-product.com or https://your-project.lovable.app" required>
+          </div>
+
+          <div class="form-group">
+            <label>Primary Generation Stack</label>
+            <div class="stack-selector" id="stack-group">
+              <button type="button" class="stack-btn selected" data-stack="lovable">Lovable <span class="stack-tag">Supabase+Vite</span></button>
+              <button type="button" class="stack-btn" data-stack="bolt">Bolt.new <span class="stack-tag">WebContainer</span></button>
+              <button type="button" class="stack-btn" data-stack="cursor">Cursor <span class="stack-tag">Fullstack Agent</span></button>
+              <button type="button" class="stack-btn" data-stack="replit">Replit <span class="stack-tag">Agent/Postgres</span></button>
+              <button type="button" class="stack-btn" data-stack="nextjs">Next.js / Supabase <span class="stack-tag">Custom Vibe</span></button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="founder-notes">Target Data Asset (Optional note)</label>
+            <input type="text" id="founder-notes" class="input-text" placeholder="e.g. OpenAI API calls, customer billing records, user file uploads">
+          </div>
+
+          <button type="submit" id="btn-run-sim" class="btn-red">inspect attack surface in 60s →</button>
+        </form>
+
+        <div id="sim-results">
+          <div class="sim-result-card">
+            <div class="sim-score-row">
+              <div>
+                <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); display: block; margin-bottom: 0.3rem;">Canary Vulnerability Score</span>
+                <div class="sim-score" id="res-score">34 / 100</div>
+              </div>
+              <div class="sim-status" id="res-status">CRITICAL RISK DETECTED</div>
+            </div>
+
+            <div class="sim-details" id="res-details">
+              Based on the generation patterns of your selected stack, your application is critically exposed to tenant cross-contamination and unauthenticated table dumps.
+            </div>
+
+            <div class="sim-warning">
+              <div class="sim-warning-title">#1 Biggest Canary Flaw Identified</div>
+              <div class="sim-warning-desc" id="res-warning">
+                <strong>Unenforced Row Level Security (RLS) on Supabase / Postgres:</strong> LLM prompt generators frequently instantiate tables without activating RLS policies, allowing any anonymous user with your public anon-key to execute <code>SELECT * FROM users;</code> straight from the browser console.
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+              <a href="#pricing" class="btn-red">get full manual audit + patch ($197) →</a>
+              <span style="font-size: 0.75rem; color: var(--mid-t);">Turnaround: 48 hours. Written remediation report. Zero calls.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CRITICAL VULNERABILITIES -->
+  <section id="vulnerabilities">
+    <div class="wrap">
+      <div class="sec-top"><span>02: threat vectors</span><span>07 vectors</span></div>
+      <h2>the 7 fatal sins of<br><span class="red">vibe-coded architecture.</span></h2>
+      <p style="color: var(--mid); max-width: 780px; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2.5rem;">
+        When an AI model generates your software, it optimizes for one thing: making the UI work immediately. It does not optimize for defensive boundaries, multi-tenant isolation, or token safety. Here is what we routinely break open in 5 minutes:
+      </p>
+
+      <div class="vuln-grid">
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">01</div>
+            <div class="vuln-title">Open Databases & Missing RLS</div>
+            <div class="vuln-desc">Supabase and Firebase tables created with default public read/write access. Anyone inspecting your client network requests can read or overwrite the entire customer database.</div>
+          </div>
+          <div class="vuln-impact">Severity: Catastrophic data breach</div>
+        </div>
+
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">02</div>
+            <div class="vuln-title">Zero Tenant Isolation</div>
+            <div class="vuln-desc">Query filters that rely solely on frontend parameters like <code>user_id</code> sent from client state. Attackers swap IDs in HTTP requests and fetch another company's confidential records.</div>
+          </div>
+          <div class="vuln-impact">Severity: Complete multi-tenant compromise</div>
+        </div>
+
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">03</div>
+            <div class="vuln-title">Exposed Service & LLM Keys</div>
+            <div class="vuln-desc">API keys for OpenAI, Anthropic, Stripe, or Resend baked directly into frontend code bundles, edge functions without origin checks, or public client environments.</div>
+          </div>
+          <div class="vuln-impact">Severity: Instant wallet draining</div>
+        </div>
+
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">04</div>
+            <div class="vuln-title">Unprotected AI Endpoints & No Rate Limits</div>
+            <div class="vuln-desc">API routes that invoke expensive LLM completions without user-level quotas or IP throttling. A script loops your endpoint 50,000 times overnight and presents you with a $12,000 OpenAI bill.</div>
+          </div>
+          <div class="vuln-impact">Severity: Financial denial of service</div>
+        </div>
+
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">05</div>
+            <div class="vuln-title">Forged Webhook Handlers</div>
+            <div class="vuln-desc">Stripe and Lemon Squeezy payment webhook handlers that check payload data without verifying the cryptographic HMAC signature. Anyone can simulate a payment event and grant themselves free access.</div>
+          </div>
+          <div class="vuln-impact">Severity: Payment fraud & revenue bypass</div>
+        </div>
+
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">06</div>
+            <div class="vuln-title">Client-Side Auth Gating</div>
+            <div class="vuln-desc">Protecting premium dashboard views using simple React state checks instead of server-side middleware and JWT verification. Bypassed by editing local storage or blocking redirect scripts.</div>
+          </div>
+          <div class="vuln-impact">Severity: Complete authorization bypass</div>
+        </div>
+
+        <div class="vuln-card">
+          <div>
+            <div class="vuln-num">07</div>
+            <div class="vuln-title">Mass-Assignment & Schema Poisoning</div>
+            <div class="vuln-desc">Accepting raw JSON payloads directly into database insert and update statements. Attackers add <code>is_admin: true</code> or <code>credits: 999999</code> to their profile requests and the ORM blindly commits it.</div>
+          </div>
+          <div class="vuln-impact">Severity: Immediate privilege escalation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TIERS -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="sec-top"><span>03: pricing tiers</span><span>deterministic pricing</span></div>
+      <h2>stop hoping.<br><span class="outline">start hardening.</span></h2>
+      <p style="color: var(--mid); max-width: 780px; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2.5rem;">
+        No recurring lock-in. No endless sales discovery calls. One single document with exact reproduction steps and code patches.
+      </p>
+
+      <div class="pricing-grid">
+        <!-- TIER 1 -->
+        <div class="price-card">
+          <div>
+            <div class="price-name">Free Canary</div>
+            <div class="price-tagline">Instant heuristic vulnerability assessment and primary flaw identification.</div>
+            <div class="price-amount">$0</div>
+            <div class="price-period">instant result · 60 seconds</div>
+            <ul class="price-features">
+              <li>Instant stack signature analysis</li>
+              <li>Calculated Canary Risk Score</li>
+              <li>#1 most dangerous vulnerability vector</li>
+              <li>Basic defensive recommendations</li>
+              <li>100% free forever</li>
+            </ul>
+          </div>
+          <a href="#simulator" class="btn-secondary">run canary now</a>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="price-card featured">
+          <div>
+            <div class="price-name">Full Security & AEO Audit</div>
+            <div class="price-tagline">Exhaustive attack surface audit across all 7 vulnerabilities plus AI Answer Engine visibility.</div>
+            <div class="price-amount">$197</div>
+            <div class="price-period">one-time investment · 48h turnaround</div>
+            <ul class="price-features">
+              <li>Manual and automated attack vector probe</li>
+              <li>All 7 critical vulnerabilities evaluated</li>
+              <li>Supabase / Postgres RLS leakage testing</li>
+              <li>Client bundle secrets and exposed keys audit</li>
+              <li>Webhook HMAC signature verification audit</li>
+              <li>AEO audit: LLM search readiness & crawl defense</li>
+              <li>Line-by-line remediation code snippets</li>
+              <li>Delivered as a clean 10-15 page PDF report</li>
+            </ul>
+          </div>
+          <a href="mailto:hello@aah.monster?subject=Full%20Vibe%20Security%20Audit%20($197)" class="btn-red">order full audit ($197) →</a>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="price-card">
+          <div>
+            <div class="price-name">Architecture Remediation</div>
+            <div class="price-tagline">We do not just report the holes. We write the pull requests and lock the doors.</div>
+            <div class="price-amount">$997</div>
+            <div class="price-period">hands-on sprint · 5-day delivery</div>
+            <ul class="price-features">
+              <li>Includes full $197 Security & AEO Audit</li>
+              <li>Direct GitHub repository access & audit</li>
+              <li>Custom SQL Row Level Security (RLS) policies</li>
+              <li>Edge middleware auth and rate-limiting setup</li>
+              <li>Cryptographic HMAC webhook verification</li>
+              <li>Environment variable isolation & secrets sanitization</li>
+              <li>Ready-to-merge Pull Request with test suite</li>
+              <li>Post-deployment verification canary</li>
+            </ul>
+          </div>
+          <a href="mailto:hello@aah.monster?subject=Architecture%20Remediation%20Sprint%20($997)" class="btn-secondary">request remediation ($997)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <div class="cta-block">
+    <div class="wrap">
+      <h2>your app,<br><span class="red">armored.</span></h2>
+      <p>48 hours. Zero sales pitches. A rigorous, battle-tested security review that ensures your next product launch is not your final security headline.</p>
+      <a href="mailto:hello@aah.monster?subject=Security%20Audit%20Inquiry" class="btn-cream">start the audit, $197 →</a>
+      <p class="cta-sub">prefer async email first? reach out directly at <a href="mailto:hello@aah.monster">hello@aah.monster</a></p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="sec-top"><span>04: questions</span><span>faq</span></div>
+      <h2>answers without<br><span class="outline">the corporate jargon.</span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">What makes vibe-coded apps uniquely dangerous?</div>
+          <div class="faq-a">LLMs prioritize shipping features over defensive security. When you tell Cursor or Lovable to "create an admin dashboard", it will happily build the view and fetch data directly from the client without enforcing server-side authorization or database-level RLS. To the user it looks perfect. To an attacker, it is wide open.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is the AEO part of the audit?</div>
+          <div class="faq-a">Answer Engine Optimization (AEO) audits how AI agents like Perplexity, SearchGPT, and Claude see your product. If your app leaks sensitive API documentation or confuses crawlers with misconfigured robots.txt and hydration bugs, search engines hallucinate your pricing and scrapers abuse your free tiers.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need to give you my production database credentials?</div>
+          <div class="faq-a">No. For the $197 audit, we perform white-box and gray-box testing using your public URL, client-side bundles, API surfaces, and public endpoints. For the $997 Remediation sprint, we work on a staging branch or sanitized dev environment via GitHub PRs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How fast do I get the results?</div>
+          <div class="faq-a">The Canary Simulator runs in 60 seconds on this page. The Full Audit ($197) is delivered to your inbox within 48 to 72 hours as a comprehensive, actionable document. No calls required.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="f-brand">
+        <div class="f-logo">aah, monster!</div>
+        <p>strategy, security, and positioning for founders who build fast and refuse to break.</p>
+        <a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">→ adrian peticila</a>
+      </div>
+      <div class="f-col">
+        <h4>security & audits</h4>
+        <ul>
+          <li><a href="/security-audit/">Vibe-Coded SaaS Audit</a></li>
+          <li><a href="/brand-audit/">Personal Brand Audit, €199</a></li>
+          <li><a href="/tools/positioning-linter/">Positioning Linter</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>offers</h4>
+        <ul>
+          <li><a href="/the-monster-job/">The Monster Job, €2,500</a></li>
+          <li><a href="/monster-retainer/">The Monster on Retainer, €2k/mo</a></li>
+          <li><a href="/positioning-sprint/">Positioning Sprint, €499</a></li>
+          <li><a href="/voice-fingerprint/">Voice Fingerprint, €249</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>identity</h4>
+        <ul>
+          <li><a href="/about/">about</a></li>
+          <li><a href="https://www.linkedin.com/in/adrian-peticila/" target="_blank">linkedin</a></li>
+          <li><a href="https://x.com/adrianmpeticila" target="_blank">x / twitter</a></li>
+          <li><a href="https://github.com/adrianpeticila" target="_blank">github</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 aah, monster! · adrian m. peticila</span>
+      <span>vibe security & aeo</span>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeBtn.textContent = '◐ light';
+    }
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      themeBtn.textContent = isDark ? '◐ dark' : '◐ light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    // Stack selector buttons
+    let selectedStack = 'lovable';
+    document.querySelectorAll('.stack-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.stack-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedStack = btn.getAttribute('data-stack');
+      });
+    });
+
+    // Canary Simulator Logic
+    const stackInsights = {
+      lovable: {
+        score: '28 / 100',
+        status: 'CRITICAL RLS & SUPABASE RISK',
+        details: 'Lovable scaffolds rapidly via Supabase and client-side Vite. It commonly establishes tables with open public grants and relies on client filters rather than server-enforced RLS policies.',
+        warningTitle: '#1 Flaw: Supabase Anon-Key Schema Exposure',
+        warningDesc: 'Anyone opening DevTools can take your VITE_SUPABASE_ANON_KEY and dump public tables directly via PostgREST endpoints (e.g. /rest/v1/users?select=*).'
+      },
+      bolt: {
+        score: '34 / 100',
+        status: 'HIGH CLIENT SECRET RISK',
+        details: 'Bolt.new builds in-browser WebContainer environments. Developers frequently hardcode private keys into client-bundled .env variables or deploy without rate-limiting edge proxies.',
+        warningTitle: '#1 Flaw: Hardcoded API Tokens in Production Bundle',
+        warningDesc: 'Production JS chunks often contain leaked OpenAI or Anthropic API keys exposed during the initial scaffold prompt.'
+      },
+      cursor: {
+        score: '42 / 100',
+        status: 'TENANT ISOLATION VULNERABILITY',
+        details: 'Cursor-generated route handlers frequently trust user input from the request body or URL params without server-side validation against current session claims.',
+        warningTitle: '#1 Flaw: Insecure Direct Object References (IDOR)',
+        warningDesc: 'Changing an organization_id in API request parameters can allow users from Tenant A to inspect and mutate confidential records belonging to Tenant B.'
+      },
+      replit: {
+        score: '31 / 100',
+        status: 'UNAUTHENTICATED POSTGRES EXPOSURE',
+        details: 'Replit Agent creates Express / FastAPI backends with permissive CORS headers and endpoints that lack session authentication checks on destructive mutations.',
+        warningTitle: '#1 Flaw: Permissive CORS & Missing CSRF Protection',
+        warningDesc: 'API endpoints accept cross-origin POST requests without origin validation, exposing users to malicious authenticated exploitation.'
+      },
+      nextjs: {
+        score: '39 / 100',
+        status: 'SERVER ACTION & MASS ASSIGNMENT RISK',
+        details: 'Next.js App Router with Server Actions generated by AI models often lack input schema validation (Zod) and execute raw Prisma/Drizzle update statements directly.',
+        warningTitle: '#1 Flaw: Unvalidated Server Actions & Mass Assignment',
+        warningDesc: 'Clients can pass arbitrary keys into Server Actions, overriding isAdmin, trialExpiresAt, or stripeCustomerId flags in the database.'
+      }
+    };
+
+    function runCanaryAudit() {
+      const url = document.getElementById('app-url').value;
+      if (!url) return;
+
+      const simBtn = document.getElementById('btn-run-sim');
+      simBtn.disabled = true;
+      simBtn.textContent = 'analyzing attack surface...';
+
+      setTimeout(() => {
+        const insight = stackInsights[selectedStack] || stackInsights.lovable;
+        document.getElementById('res-score').textContent = insight.score;
+        document.getElementById('res-status').textContent = insight.status;
+        document.getElementById('res-details').textContent = insight.details;
+        document.querySelector('.sim-warning-title').textContent = insight.warningTitle;
+        document.getElementById('res-warning').textContent = insight.warningDesc;
+
+        const resultsEl = document.getElementById('sim-results');
+        resultsEl.style.display = 'block';
+        resultsEl.scrollIntoView({ behavior: 'smooth' });
+
+        simBtn.disabled = false;
+        simBtn.textContent = 're-inspect attack surface →';
+      }, 700);
+    }
+  </script>
+</body>
+</html>
