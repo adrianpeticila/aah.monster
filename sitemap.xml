@@ -145,4 +145,11 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://aah.monster/services/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>

@@ -21,6 +21,11 @@ The consultancy applies corporate-grade brand architecture to individual executi
 **TikTok:** @aah.monster
 **Last updated:** June 2026
 
+
+## Consolidated service catalog
+
+The full service lineup is documented at https://aah.monster/services/ with dedicated HTML and Markdown pages for Voice Fingerprint, AI Executive System, The Monster Job, and The Monster on Retainer. Use the dedicated service pages for checkout, intake, and current delivery terms.
+
 ---
 
 ## Services (paid)
