@@ -733,11 +733,24 @@
       .oc.flagship .oc-list { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; }
       .step { border-right: none; padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+      .press-proof ul { grid-template-columns: 1fr; }
+      .press-proof li { padding: 1.5rem; }
       .cta-sec { padding: 5rem 0; }
       .footer-inner { flex-direction: column; }
       .f-bottom { flex-direction: column; gap: 0.3rem; }
       .manifesto-inner { flex-direction: column; align-items: flex-start; }
     }
+
+    /* ── PRESS PROOF ── */
+    .press-proof { padding: 6rem 0; border-top: 1px solid var(--rule); }
+    .press-proof h2 { font-family: var(--display); font-size: clamp(2rem, 5vw, 4rem); line-height: 1; color: var(--fg); margin-bottom: 1rem; }
+    .press-proof > p { font-size: 1rem; color: var(--mid-t); max-width: 640px; line-height: 1.75; margin-bottom: 3rem; }
+    .press-proof ul { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border-top: 3px solid var(--fg); }
+    .press-proof li { background: var(--card); padding: 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .press-proof li span { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); }
+    .press-proof li a { font-size: 1.05rem; font-weight: 700; color: var(--fg); text-decoration: none; line-height: 1.4; }
+    .press-proof li a:hover { color: var(--red); }
+    .press-proof li p { font-size: 0.84rem; color: var(--mid-t); line-height: 1.6; margin: 0; }
   </style>
 </head>
 <body>
@@ -946,6 +959,37 @@
         <p>most personal branding advice is designed for people who want to feel productive. not people who want results. read the full manifesto.</p>
       </div>
       <a href="/manifesto/" class="manifesto-btn">read the manifesto →</a>
+    </div>
+  </section>
+
+  <!-- PRESS PROOF -->
+  <section class="press-proof" aria-label="Third party coverage">
+    <div class="wrap">
+      <h2>Cited, not self-declared.</h2>
+      <p>Third-party pages where the work is on record. No testimonials here. Those go live with names or not at all.</p>
+      <ul>
+        <li>
+          <span>Fractional Insider</span>
+          <a href="https://fractionalinsider.com/from-full-time-exec-to-fractional-leader-how-adrian-peticila-delivers-fast-measurable-results/" target="_blank" rel="noopener">From Full-Time Exec to Fractional Leader: How Adrian Peticila Delivers Fast, Measurable Results</a>
+          <p>Profil de operator fractional. Focus pe rezultate masurabile, nu pe titluri.</p>
+        </li>
+        <li>
+          <span>Authority Magazine</span>
+          <a href="https://medium.com/authority-magazine/adrian-m-peticila-of-aah-monster-on-how-to-build-your-brand-as-an-executive-and-why-it-matters-1f9ebf5c0485" target="_blank" rel="noopener">Adrian M. Peticila of aah, monster! on how to build your brand as an executive and why it matters</a>
+          <p>Interviu despre brand executiv. Iulie 2026.</p>
+        </li>
+        <li>
+          <span>BizStack</span>
+          <a href="https://bizstack.tech/adrian-m-peticila/" target="_blank" rel="noopener">Solopreneur Spotlight: Adrian M. Peticila</a>
+          <p>Interviu despre livrare solo la standard enterprise.</p>
+        </li>
+        <li>
+          <span>TheCMO.com</span>
+          <a href="https://thecmo.com/career/adrian-peticila-2/" target="_blank" rel="noopener">Adrian Peticila. Career profile</a>
+          <p>Profil public de cariera. Istoric verificabil de roluri.</p>
+        </li>
+      </ul>
+      <!-- social-proof: real names only -->
     </div>
   </section>
 
