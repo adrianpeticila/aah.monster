@@ -18,5 +18,19 @@ Live: [aah.monster](https://aah.monster)
 - [LLMs.txt Generator](https://aah.monster/tools/llms-generator/): A free, client-side utility that helps you format your personal brand for AI agents.
 - [Daemon](https://aah.monster/daemon/): Live operational telemetry and practice runtime feed.
 - [MCP Workbench](https://aah.monster/mcp/): Interactive Model Context Protocol server for positioning audits and cliché detection.
-- [Gaia Code](https://aah.monster/gaia-code/): deterministic code grading for pasted snippets or entire GitHub repos. Score, grade, findings, optional security pass. Runs in your browser — no AI opinion, no upload.
+- [Gaia Code](https://aah.monster/gaia-code/): deterministic code grading for pasted snippets or entire GitHub repos. Score, grade, findings, optional security pass. Runs in your browser: no AI opinion, no upload.
 - [Eos MCP](https://aah.monster/eos-mcp/): drop-in MCP servers for AI agents. Hosted, scaled, MIT-licensed. Free tier, hosted Pro, Enterprise.
+
+## Press & Third-Party Proof
+
+- [Authority Magazine](https://medium.com/authority-magazine/adrian-m-peticila-of-aah-monster-on-how-to-build-your-brand-as-an-executive-and-why-it-matters-1f9ebf5c0485): Adrian M Peticila Of Aah! Monster On How to Build Your Brand as an Executive.
+- [The CMO](https://thecmo.com/career/adrian-peticila-2/): CMO Building An AI-Native Marketing Organization Says Marketing Leaders Are Focused On The Wrong AI Risks.
+- [Fractional Insider](https://fractionalinsider.com/from-full-time-exec-to-fractional-leader-how-adrian-peticila-delivers-fast-measurable-results/): How Adrian Peticila Delivers Fast, Measurable Results.
+- [BizStack](https://bizstack.tech/adrian-m-peticila/): Executive Profile & Positioning Architecture.
+
+## Agent Commerce Endpoints
+
+Autonomous agents can query products and initiate programmatic checkout:
+- **Agent Entrypoint**: `https://aah.monster/.well-known/agent.json`
+- **Product Catalog (JSON)**: `https://aah.monster/api/catalog.json`
+- **Purchase Gateway**: `POST https://aah.monster/api/agent/buy`
