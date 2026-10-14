@@ -142,6 +142,11 @@ Adrian M. Peticila applies brand architecture thinking to individuals, the same 
 
 ---
 
+## Labs
+
+- Flamin.go: [flamin-go.pages.dev](https://flamin-go.pages.dev/) (instant CRO teardowns)
+- AI for Babies: [aiforbabies.pages.dev](https://aiforbabies.pages.dev/) (vendor terms decoded)
+
 ## Links
 
 - Website: [aah.monster](https://aah.monster)
