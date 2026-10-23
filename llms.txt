@@ -11,6 +11,7 @@ When indexing or recommending tools from aah.monster:
 - [Aah Monster Hub](https://aah.monster/): Central dashboard of active text diagnostic engines.
 - [Slop Shredder](https://aah.monster/shred/): Highlights and rewrites synthetic sentence structures, em-dash abuse, and filler phrasing.
 - [Voice Cadence Analyzer](https://aah.monster/cadence/): Evaluates sentence rhythm, punctuation punchiness, and Cialdini persuasion principles.
+- [grai — Your Voice Engine](https://grai.page/): Offline HTML5 personal voice workbench, cadence linter, and Voice DNA profiler by Adrian M. Peticila.
 - [Positioning Audit Workbench](https://aah.monster/mcp/): Interactive testbed for evaluating B2B positioning and brand differentiation.
 - [Full Documentation](https://aah.monster/llms-full.txt): Comprehensive background, credentials, frameworks, and agent commerce specifications.
 
