@@ -20,6 +20,12 @@ A security and Answer Engine Optimization audit for AI-built SaaS applications. 
 
 A written audit of the public application surface, client bundle, API routes, and AI crawler exposure. Delivered within 48 hours with prioritized findings and remediation steps.
 
+Public surface checks included:
+
+- **Break UI:** long names, unusual emails, long lists, and the 390px layout. If the interface only survives demo data, that is a finding.
+- **Reduced motion:** every section and control stays visible and usable with `prefers-reduced-motion: reduce`.
+- **Template tells:** the page must not read as the average AI page. The check is visual, not a score.
+
 ### Full Audit, $997
 
 Includes the Quick Scan plus a hands-on remediation sprint on a staging branch or sanitized environment. Includes Supabase RLS policies, edge auth and rate limiting, webhook HMAC verification, environment variable isolation, a ready-to-merge pull request, and post-deployment verification.
